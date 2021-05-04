@@ -1,0 +1,23 @@
+:host{
+  display: flex;
+  justify-content: space-between;
+  padding: 2rem;
+}
+
+
+.logo{
+  width: 8.375rem;
+  height: 2.25rem;
+  fill: hsl(357deg 92% 47%);
+}
+
+button{
+  color: white;
+  background-color: red;
+  outline: none;
+  border: none;
+  padding: .5rem;
+  font-weight: bold;
+}
+
+
