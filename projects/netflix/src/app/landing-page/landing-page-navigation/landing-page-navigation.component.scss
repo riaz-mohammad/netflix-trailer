@@ -1,11 +1,16 @@
 :host{
-  display: flex;
-  justify-content: space-between;
-  padding: 2.5rem;
+  display: block;
 }
 
 
-.logo{
+nav{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 2.5rem;
+  
+}
+#logo{
   width: 8.375rem;
   height: 2.25rem;
   fill: hsl(357deg 92% 47%);
@@ -17,6 +22,7 @@ button{
   outline: none;
   border: none;
   width: 5rem;
+  height: 2.25rem;
   font-weight: bold;
   border-radius: 1rem;
 
