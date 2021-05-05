@@ -1,7 +1,7 @@
 :host{
   display: flex;
   justify-content: space-between;
-  padding: 2rem;
+  padding: 2.5rem;
 }
 
 
@@ -16,8 +16,10 @@ button{
   background-color: red;
   outline: none;
   border: none;
-  padding: .5rem;
+  width: 5rem;
   font-weight: bold;
+  border-radius: 1rem;
+
 }
 
 

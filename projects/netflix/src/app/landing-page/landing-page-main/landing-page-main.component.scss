@@ -1,17 +1,18 @@
 :host{
   display: flex;
   flex-direction: column;
-  border: 2px solid red;
 }
   
   
   
 
 section{
+  box-sizing: border-box;
   height: 90vh;
   position: relative;
   overflow: hidden;
-  background-color: rgba(0, 0, 0, .5);
+  background-image: linear-gradient(0deg, rgba(39, 35, 35, 0.5), rgba(0, 0, 0, 0.856));
+  border-bottom: 5px solid rgb(238, 8, 8);
 }
 
   video{
