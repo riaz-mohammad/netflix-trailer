@@ -13,7 +13,7 @@ nav{
 #logo{
   width: 8.375rem;
   height: 2.25rem;
-  fill: hsl(357deg 92% 47%);
+  fill: red;
 }
 
 button{
@@ -22,6 +22,7 @@ button{
   outline: none;
   border: none;
   width: 5rem;
+  font-size: .9rem;
   height: 2.25rem;
   font-weight: bold;
   border-radius: 1rem;

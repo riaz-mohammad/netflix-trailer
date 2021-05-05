@@ -6,10 +6,10 @@ export const logoAnimation = trigger('logoAnimation', [
   transition(':enter', [
     query('path', [
       style({
-        transform: 'translateY(-100%)'
+        opacity: 0
       }),
-      stagger('200ms', animate('500ms', style({
-        transform: 'translateY(0)'
+      stagger('200ms', animate('600ms', style({
+       opacity: 1
       })))
     ], {optional: true})
     
