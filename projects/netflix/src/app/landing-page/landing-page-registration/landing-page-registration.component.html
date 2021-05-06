@@ -1,1 +1,24 @@
-<p>landing-page-registration works!</p>
+<div class="container">
+
+    <div class="container-text">
+    <h1>Unlimited Movies, TV</h1>
+    <h2>Shows, and more.</h2>
+    <h3>Watch anywhere. Cancel anytime.</h3>
+    <p>Ready to watch? Enter your email to create or restart your membership.</p>
+    </div>
+    
+
+     <div class="registration-container">
+        <mat-form-field appearance="fill" class="registration-field">
+          <mat-label>Enter your email</mat-label>
+          <input matInput  [formControl]="email" class="registration-input">
+          <mat-error *ngIf="email.invalid">{{ getErrorMessage }}</mat-error>
+        </mat-form-field>
+        <button class="registration-button">Get Started</button>
+    </div>
+
+      
+</div>
+
+
+

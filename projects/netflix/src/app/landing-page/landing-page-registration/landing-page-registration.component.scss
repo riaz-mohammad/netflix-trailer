@@ -1,0 +1,47 @@
+:host{
+  display: flex;
+  position: absolute;
+  top: 40%;
+  left: 20%;
+  right: 20%;
+  outline: 1px solid white;
+  
+}
+  
+
+
+.container{
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  width: 80vw;
+  color: white;
+  cursor: pointer;
+  padding: 2rem;
+ 
+}
+
+.registration-container{
+  display: flex;
+  width: 90%;
+  outline: 1px solid;
+}
+.registration-field{
+  height: 3.9rem;
+  background-color: white;
+  color: blue;
+  font-size: 1.1rem;
+  flex-grow: 2;
+}
+
+
+
+.registration-button{
+  color: white;
+  font-weight: bold;
+  background: red;
+  outline: none;
+  border: none;
+  height: 3.95rem;
+  flex-grow: 1;
+}
