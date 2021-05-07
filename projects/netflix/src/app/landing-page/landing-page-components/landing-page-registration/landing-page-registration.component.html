@@ -1,0 +1,14 @@
+
+       
+    <form class="registration-form">
+       <div class="registration-field-wrapper">
+          <mat-form-field appearance="fill" class="registration-field">
+            <mat-label>Enter your email</mat-label>
+            <input matInput  [formControl]="email">
+            <mat-error *ngIf="email.invalid">{{ getErrorMessage }}</mat-error>
+          </mat-form-field>
+        </div>
+        <button class="registration-button">Get Started</button>
+    </form>
+
+

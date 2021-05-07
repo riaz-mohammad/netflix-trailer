@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { logoAnimation } from '../logo-animation';
+import { logoAnimation } from '../../logo-animation';
 
 @Component({
   selector: 'app-landing-page-navigation',

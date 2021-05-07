@@ -1,0 +1,38 @@
+:host{
+ display: block;
+}
+ 
+
+.logo{
+  fill: red;
+  width: 10rem;
+  height: 3rem;
+}
+  
+
+@media (max-width: 800px) {
+  .logo-container{
+    margin-top: -15px;
+  }
+
+  .logo{
+    width: 6rem;
+    height: 2.8rem;
+  } 
+
+
+}
+
+@media (max-width: 600px) {
+  .logo{
+    box-sizing: border-box;
+    width: 5rem;
+    height: 2.5rem;
+    padding: 0rem;
+  }
+
+  .logo-container{
+    margin-top: -15px;
+  }
+}
+    

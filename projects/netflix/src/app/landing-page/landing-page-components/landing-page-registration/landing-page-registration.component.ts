@@ -9,9 +9,10 @@ import { FormControl, Validators } from '@angular/forms';
 })
 export class LandingPageRegistrationComponent implements OnInit {
   public email!: FormControl;
-  
+
   constructor() {}
 
+  
 
   public get getErrorMessage() {
     if (this.email.hasError('required')) {
@@ -20,11 +21,7 @@ export class LandingPageRegistrationComponent implements OnInit {
     return this.email.hasError('email') ? 'Not a valid email' : '';
   }
 
-  
   ngOnInit(): void {
-    this.email = new FormControl('', [
-      Validators.required,
-      Validators.email,
-    ]);
+    this.email = new FormControl('', [Validators.required, Validators.email]);
   }
 }

@@ -1,0 +1,26 @@
+:host{
+  display: block;
+  box-sizing: border-box;
+  margin: 0;
+  outline: 2px solid red;
+}
+
+.header-grid{
+
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 1fr 70vh;
+}
+  
+
+
+
+
+
+    
+    
+
+    
+    
+  
