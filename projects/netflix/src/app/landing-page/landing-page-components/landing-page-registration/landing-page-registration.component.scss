@@ -64,7 +64,7 @@ $degree: 50deg;
 
   @keyframes arrow {
     0%{
-      transform: translateX(1px) rotate($degree) scale(0.5);
+      transform: translateX(0px) rotate($degree) scale(0.5);
     }
     50%{
       transform: translateX(4px) rotate($degree) scale(0.8);
