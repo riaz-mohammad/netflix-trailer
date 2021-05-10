@@ -11,6 +11,7 @@ export class LandingPageLoginButtonComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    console.log()
   }
 
 }
