@@ -11,7 +11,7 @@ import { registrationAnimation } from '../../registration-animation';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class LandingPageRegistrationComponent implements OnInit {
-  @HostBinding('@registrationAnimation')
+  
   public email!: FormControl;
   constructor() {}
 
