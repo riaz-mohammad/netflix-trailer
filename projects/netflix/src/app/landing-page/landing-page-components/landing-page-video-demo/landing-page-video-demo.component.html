@@ -1,1 +1,10 @@
-<p>landing-page-video works!</p>
+<ng-container *ngIf="showCase | async as data">
+  <div>
+      <h1>{{ data.title }}</h1>
+      <h3> {{ data.description}}</h3>
+  </div>
+
+  <video muted autoplay loop>
+    <source [src]="data.path" type="video/mp4">
+  </video>
+</ng-container>

@@ -1,4 +1,7 @@
-import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { VideoDemoService, ShowCaseData } from './../../video-demo.service';
+import { Observable } from 'rxjs';
+import { Component, OnInit, ChangeDetectionStrategy, Input } from '@angular/core';
+import { Demo } from '../../video-demo.service';
 
 @Component({
   selector: 'app-landing-page-video-demo',
@@ -7,11 +10,14 @@ import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class LandingPageVideoDemoComponent implements OnInit {
+  @Input() title!: string;
 
-  constructor() { }
+  public showCase!: Observable<ShowCaseData>;
+  constructor(private demoVideos: VideoDemoService) { }
 
   ngOnInit(): void {
-    console.log();
+      this.showCase = this.demoVideos.demoVideos(this.title);
+    this.showCase.subscribe(data => console.table(data));
   }
 
 }
