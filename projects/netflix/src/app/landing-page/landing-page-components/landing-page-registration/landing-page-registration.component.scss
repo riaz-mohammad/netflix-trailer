@@ -30,6 +30,7 @@ $degree: 50deg;
  border-bottom: 1.5px solid yellow;
  box-sizing: border-box;
  border-radius: 5px;
+ box-shadow: 2px 2px 10px 0px rgba(0, 0, 0, 0.582);
 }
 
 
@@ -43,6 +44,7 @@ $degree: 50deg;
   font-size: 1.3rem;
   position: relative;
   border-radius: 5px;
+  box-shadow: 2px 2px 10px 0px rgba(0, 0, 0, 0.582);
 }
 
 .registration-button::after{
