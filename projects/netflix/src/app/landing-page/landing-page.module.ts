@@ -10,6 +10,7 @@ import { LandingPageLogoComponent } from './landing-page-components/landing-page
 import { LandingPageLoginButtonComponent } from './landing-page-components/landing-page-login-button/landing-page-login-button.component';
 import { LandingPageVideoBackgroundComponent } from './landing-page-components/landing-page-video-background/landing-page-video-background.component';
 import { LandingPageRegistrationComponent } from './landing-page-components/landing-page-registration/landing-page-registration.component';
+import { LandingPageVideoDemoComponent } from './landing-page-components/landing-page-video-demo/landing-page-video-demo.component';
 
 @NgModule({
   declarations: [
@@ -18,15 +19,12 @@ import { LandingPageRegistrationComponent } from './landing-page-components/land
     LandingPageLogoComponent,
     LandingPageLoginButtonComponent,
     LandingPageVideoBackgroundComponent,
-    LandingPageRegistrationComponent
+    LandingPageRegistrationComponent,
+    LandingPageVideoDemoComponent,
   ],
-  imports: [
-    CommonModule,
-    ReactiveFormsModule,
-    MatInputModule
-  ],
-  exports: [LandingPageMainGridComponent]
+  imports: [CommonModule, ReactiveFormsModule, MatInputModule],
+  exports: [LandingPageMainGridComponent],
 })
-export class LandingPageModule { }
+export class LandingPageModule {}
 
 
