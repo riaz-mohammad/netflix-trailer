@@ -1,31 +1,21 @@
-import { animate, style, transition } from '@angular/animations';
+import { animate, state, style, transition } from '@angular/animations';
 import { trigger } from '@angular/animations';
 
 
-export const loadFromRight = trigger('loadFromRight', [
-  transition('false => true', [
-    style({
-      opacity: 0,
-      transform: 'translateX(100%)'
-    }),
-    animate('500ms', style({
-      opacity: 0,
-      transform: 'translateX(0%)'
-    }))
-      
-  ])
+export const showOrHide = trigger('showOrHide', [
+  
+  state('false', style({
+    opacity: 0,
+    transform: 'scale(0.9)'
+  })),
+
+  state('true', style({
+    opacity: 1,
+    transform: 'scale(1)'
+  })),
+
+  transition('false <=> true', animate('1000ms'))
 ])
-export const loadFromLeft = trigger('loadFromLeft', [
-  transition('false => true', [
-    style({
-      opacity: 0,
-      transform: 'translateX(-100%)'
-      
-    }),
-    animate('500ms', style({
-      opacity: 1,
-      transform: 'translateX(0%)'
-      
-    }))
-  ])
-])
+  
+
+  

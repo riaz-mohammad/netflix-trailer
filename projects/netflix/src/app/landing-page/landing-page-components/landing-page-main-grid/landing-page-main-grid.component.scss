@@ -2,21 +2,19 @@
   display: block;
   box-sizing: border-box;
   margin: 0;
-
+  background-color: hsla(0, 0%, 0%, 1);  
 }
 
 .header-grid{
   width: 100%;
   display: grid;
-  // grid-template-columns: repeat(2, 1fr);
-  // grid-template-rows: 1fr 70vh;
   grid-template: 1fr 70vh / repeat(2, 1fr);
 }
 
-
+//repeat(2, 50vh)
 .section-grid{
   display: grid;
-  grid-template: 60vh repeat(2, 50vh) / repeat(2, 1fr);
+  grid-template: 60vh repeat(2, 50vh)  / repeat(2, 1fr);
 }
 
 
@@ -27,11 +25,6 @@
   }
 }
   
-
-.yellowBorder{
-  color: purple;
-}
-
 
 
     

@@ -1,10 +1,12 @@
 :host{
-  display: flex;
-  justify-content: center;
   // parent component has display GRID
   grid-column: 3 / 11;
   grid-row: 3 / 4;
+
+  display: flex;
+  justify-content: center;
   z-index: 99; 
+
 }
 
 $degree: 50deg;
@@ -16,6 +18,7 @@ $degree: 50deg;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: 3.7rem;
   gap: .2rem;
+ 
 }
 
 

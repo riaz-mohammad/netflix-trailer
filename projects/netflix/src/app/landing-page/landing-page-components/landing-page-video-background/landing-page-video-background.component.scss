@@ -13,7 +13,6 @@
   background-color: hsla(0, 0%, 0%, 1);
   box-sizing: border-box;
   position: relative;
-  perspective: 1000px;
 }
 
 
@@ -39,8 +38,8 @@
   height: 100%;
   width: 100%;
   object-fit: cover;
-  transform: translateZ(50px);
 }
+  
   
   
 
