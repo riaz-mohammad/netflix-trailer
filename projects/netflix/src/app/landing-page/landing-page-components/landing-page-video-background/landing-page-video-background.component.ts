@@ -1,4 +1,4 @@
-import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 
 @Component({
   selector: 'app-landing-page-video-background',
@@ -6,11 +6,9 @@ import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
   styleUrls: ['./landing-page-video-background.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class LandingPageVideoBackgroundComponent implements OnInit {
-
+export class LandingPageVideoBackgroundComponent {
   constructor() { }
-
-  ngOnInit(): void {
-  }
-
 }
+
+
+

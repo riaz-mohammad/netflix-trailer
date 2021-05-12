@@ -31,7 +31,7 @@ export class VideoDemoService {
 
     new Demo(
       'second',
-      'Download your shows to watch offline.',
+      'Download and watch offline.',
       'Save your favorites easily and always have something to watch.',
       '../../assets/second-demo-video.mp4'
     ),

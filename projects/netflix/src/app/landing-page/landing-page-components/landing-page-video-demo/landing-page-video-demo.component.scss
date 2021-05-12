@@ -1,0 +1,87 @@
+:host{
+  // parent component has display Grid
+  grid-column: 1 / -1;
+
+  display: flex;
+  background-color: hsla(0, 0%, 0%, 1);
+  color: white;
+  padding: .5rem;
+  gap: 1rem;
+  border-bottom: 1px solid grey;
+  overflow: hidden;
+}
+  
+.headers-container{
+  flex-basis: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+  padding: .5rem;
+  
+  
+    .header-h1{
+      font-weight: bold;
+      font-size: 2rem;
+      line-height: 40px;
+      width: 70%;
+      flex-basis: 20%;
+      color: rgba(255, 255, 0, 0.836);
+    }
+
+    .header-h3{
+      box-sizing: border-box;
+      padding: .5rem;
+      height: 8rem;
+      line-height: 2rem;
+      width: 70%;
+    }
+}
+
+.demo-video-container{
+  perspective: 1000px;
+  flex-basis: 50%;
+
+    .demo-video{
+      height: 100%;
+      width: 100%;
+      transform: rotateY(-20deg) translateZ(50px);
+    }
+}
+
+
+
+@media(max-width: 800px) {
+  :host{
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .headers-container{
+    align-items: center;
+    
+  }
+  
+}
+
+
+
+@media(max-width: 600px) {
+  .header-h3{
+    font-size: 16px;
+    font-weight: normal;
+  }
+
+
+  .header-h1{
+    font-size: 28px;
+  }
+
+  
+}
+
+
+
+
+
+

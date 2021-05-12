@@ -1,10 +1,15 @@
-<ng-container *ngIf="showCase | async as data">
-  <div>
-      <h1>{{ data.title }}</h1>
-      <h3> {{ data.description}}</h3>
+<ng-container *ngIf="showCase | async as data" >
+  <div class="headers-container">
+      <h1 class="header-h1">{{ data.title }}</h1>
+      <h2 class="header-h3"> {{ data.description}}</h2>
   </div>
 
-  <video muted autoplay loop>
-    <source [src]="data.path" type="video/mp4">
-  </video>
+    <div class="demo-video-container">
+      <video muted autoplay loop class="demo-video">
+        <source [src]="data.path" type="video/mp4">
+      </video>
+    </div>
+    
+
+  
 </ng-container>

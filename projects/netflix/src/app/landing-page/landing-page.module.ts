@@ -1,3 +1,4 @@
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -11,6 +12,7 @@ import { LandingPageLoginButtonComponent } from './landing-page-components/landi
 import { LandingPageVideoBackgroundComponent } from './landing-page-components/landing-page-video-background/landing-page-video-background.component';
 import { LandingPageRegistrationComponent } from './landing-page-components/landing-page-registration/landing-page-registration.component';
 import { LandingPageVideoDemoComponent } from './landing-page-components/landing-page-video-demo/landing-page-video-demo.component';
+import { ObserveAndAnimateDirective } from './observe-and-animate.directive';
 
 @NgModule({
   declarations: [
@@ -21,8 +23,9 @@ import { LandingPageVideoDemoComponent } from './landing-page-components/landing
     LandingPageVideoBackgroundComponent,
     LandingPageRegistrationComponent,
     LandingPageVideoDemoComponent,
+    ObserveAndAnimateDirective,
   ],
-  imports: [CommonModule, ReactiveFormsModule, MatInputModule],
+  imports: [CommonModule, ReactiveFormsModule, MatInputModule, BrowserAnimationsModule],
   exports: [LandingPageMainGridComponent],
 })
 export class LandingPageModule {}
