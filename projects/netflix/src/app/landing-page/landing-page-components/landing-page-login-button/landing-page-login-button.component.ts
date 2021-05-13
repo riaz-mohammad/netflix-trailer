@@ -1,4 +1,6 @@
-import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { LoginButtonClickService } from './../../login-button-click.service';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
+
 
 @Component({
   selector: 'app-landing-page-login-button',
@@ -6,12 +8,11 @@ import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
   styleUrls: ['./landing-page-login-button.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class LandingPageLoginButtonComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit(): void {
-    console.log()
+export class LandingPageLoginButtonComponent{
+  constructor(private loginButtonClickEmitter: LoginButtonClickService) { }
+  public clickHandler(): void {
+    this.loginButtonClickEmitter.emitClickEvent();
   }
+  
 
 }

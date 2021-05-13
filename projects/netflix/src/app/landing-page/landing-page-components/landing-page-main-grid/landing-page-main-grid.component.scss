@@ -18,6 +18,12 @@
 }
 
 
+.footer-grid{
+  display: grid;
+  grid-template: 20vh / 1fr;
+}
+  
+
 
 @media(max-width: 800px) {
   .section-grid{

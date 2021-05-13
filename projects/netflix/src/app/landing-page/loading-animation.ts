@@ -14,7 +14,7 @@ export const showOrHide = trigger('showOrHide', [
     transform: 'scale(1)'
   })),
 
-  transition('false <=> true', animate('1000ms'))
+  transition('false <=> true', animate('700ms'))
 ])
   
 

@@ -1,20 +1,18 @@
-import { Directive, ElementRef, HostBinding, OnInit } from '@angular/core';
-import { Subject } from 'rxjs';
+import { Directive, ElementRef, HostBinding, OnDestroy, OnInit } from '@angular/core';
+
 
 @Directive({
   selector: '[appObserveAndAnimate]'
 })
-export class ObserveAndAnimateDirective implements OnInit {
-  public animate!: Subject<boolean | void>;
+export class ObserveAndAnimateDirective implements OnInit, OnDestroy {
   @HostBinding('@showOrHide')
-  showBorder = false;
+    showBorder = false;
+  private observation!: IntersectionObserver;
   constructor(private element: ElementRef) {}
-
+  
   ngOnInit(): void {
-    this.animate = new Subject();
-    const observation = new IntersectionObserver(([entry], observation) => {
+        this.observation = new IntersectionObserver(([entry], observation) => {
       if (entry.isIntersecting) {
-        this.animate.next(true);
         this.showBorder = true;
         return;
       }
@@ -25,7 +23,11 @@ export class ObserveAndAnimateDirective implements OnInit {
       threshold: [0.2]
 
     });
-    observation.observe(this.element.nativeElement)
+    this.observation.observe(this.element.nativeElement)
     
   }
+  ngOnDestroy(): void {
+    this.observation.unobserve(this.element.nativeElement);
+  }
+
 }

@@ -13,6 +13,7 @@ import { LandingPageVideoBackgroundComponent } from './landing-page-components/l
 import { LandingPageRegistrationComponent } from './landing-page-components/landing-page-registration/landing-page-registration.component';
 import { LandingPageVideoDemoComponent } from './landing-page-components/landing-page-video-demo/landing-page-video-demo.component';
 import { ObserveAndAnimateDirective } from './observe-and-animate.directive';
+import { NavigationPageFooterComponent } from './landing-page-components/navigation-page-footer/navigation-page-footer.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { ObserveAndAnimateDirective } from './observe-and-animate.directive';
     LandingPageRegistrationComponent,
     LandingPageVideoDemoComponent,
     ObserveAndAnimateDirective,
+    NavigationPageFooterComponent,
   ],
   imports: [CommonModule, ReactiveFormsModule, MatInputModule, BrowserAnimationsModule],
   exports: [LandingPageMainGridComponent],

@@ -20,15 +20,12 @@ export class LandingPageVideoDemoComponent implements OnInit {
   public loadAnimation!: boolean;
 
   public showCase!: Observable<ShowCaseData>;
-  constructor(private demoVideos: VideoDemoService,
-              private observer: ObserveAndAnimateDirective) { }
+  constructor(private demoVideos: VideoDemoService) { }
 
   ngOnInit(): void {
     this.showCase = this.demoVideos.demoVideos(this.title);
-    this.observer.animate
-      .subscribe(val => console.log(val));
-      
   }
+      
       
     
     

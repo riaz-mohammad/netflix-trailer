@@ -1,0 +1,17 @@
+:host{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  background-color: red;
+  
+  clip-path: polygon(0 100%, 0 0, 50% 40%, 100% 0, 100% 100%);
+}
+
+
+.footer-heading{
+  color: white;
+  font-weight: bold;
+  flex-basis: 50%;
+  font-size: clamp(12px, 2.5vw, 2rem);
+}
