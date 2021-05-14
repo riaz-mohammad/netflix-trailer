@@ -1,5 +1,8 @@
 :host{
   display: block;
+
+
+     
 }
 
 @mixin dimensions($width, $height, $padding) {
@@ -15,14 +18,39 @@
   border: none;
   color: white;
   border-radius: 10px;
-  transition: box-shadow 300ms ease;
-  &:hover{
-    box-shadow: 1px 1px 30px 3px rgba(134, 118, 118, 0.747);
-  }
+  transition: all 400ms ease-in-out;
 
+  z-index: 1;
+  &::after{
+      position: absolute;
+      content: '';
+      width: 100vw;
+      height: 100vh;
+      top: 0;
+      left: 0;
+      background-color: transparent;
+      clip-path: circle(12.2% at 100% 0);
+      transition: 400ms all ease;
+      z-index: -1;
+      pointer-events: none;
+     }
+
+    &:hover::after{
+        clip-path: circle(18.4% at 100% 0);
+        background-color: rgb(202, 5, 5);
+        
+     }
+  &:hover{
+    color: red;
+    font-weight: 600;
+    background-color: white;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  }
   &:active{
     color: black;
   }
+
+  
 }
   
  
