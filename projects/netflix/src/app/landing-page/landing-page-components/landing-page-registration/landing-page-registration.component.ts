@@ -24,8 +24,14 @@ export class LandingPageRegistrationComponent implements OnInit, OnDestroy {
     return this.email.hasError('email') ? 'Not a valid email' : '';
   }
   public onSubmit(): void {
-    console.log(this.email.value);
+    this.email.invalid ? (
+      this.email.setValue(''),
+      this.email.markAsTouched()
+    ) : (
+        console.log(this.email.value)
+    )
   };
+    
   ngOnInit(): void {
     // this.email = new FormControl('', [Validators.required, Validators.email]);
     this.email = new FormControl('', {
@@ -36,11 +42,14 @@ export class LandingPageRegistrationComponent implements OnInit, OnDestroy {
     this.sub = this.loginButtonClick.clickEmitter$
       .pipe(
         tap(() => {
-          this.email.setValue('');
-          this.email.markAsTouched();
+          if (this.email.invalid) {
+            this.email.setValue('');
+            this.email.markAsTouched();
+          }
         })
       )
       .subscribe();
+            
   }
 
   ngOnDestroy(): void {
