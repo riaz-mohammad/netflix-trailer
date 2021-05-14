@@ -5,7 +5,7 @@ import { Subject } from 'rxjs';
   providedIn: 'root'
 })
 export class LoginButtonClickService {
-  private clickEmitter = new Subject();
+  private clickEmitter = new Subject<void>();
   public clickEmitter$ = this.clickEmitter.asObservable();
   public emitClickEvent(): void {
     this.clickEmitter.next();

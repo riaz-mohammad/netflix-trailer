@@ -4,15 +4,17 @@
       BRING CINEMA TO YOUR HOME
     </h1>
 
-    <form class="registration-form" @registrationAnimation>
+    <form (ngSubmit)="onSubmit()" @registrationAnimation class="registration-form">
        <div class="registration-field-wrapper">
           <mat-form-field appearance="fill" class="registration-field">
             <mat-label>Enter your email</mat-label>
-            <input matInput  [formControl]="email">
+            <input type="text" matInput  [formControl]="email">
             <mat-error *ngIf="email.invalid">{{ getErrorMessage }}</mat-error>
-          </mat-form-field>
+          </mat-form-field> 
         </div>
-        <button class="registration-button">Get Started</button>
+
+      <button type="submit" class="registration-button">Get Started</button>
     </form>
+
 
 
