@@ -8,7 +8,11 @@
   padding: .5rem;
   gap: 1rem;
   overflow: hidden;
+  position: relative;
 }
+
+
+
   
 .headers-container{
   flex-basis: 50%;
@@ -19,17 +23,26 @@
   padding: .5rem;
 
   
-  
-  
     .header-h1{
       font-weight: bold;
       font-size: clamp(16px, 3vw, 3rem);
       line-height: 50px;
       width: 70%;
       flex-basis: 20%;
-      color: rgba(255, 255, 0, 0.836);
+      color: white;
       margin: 0;
+
+      .headers-h1-first-letter{
+        padding-left: 10px;
+        background-color: red;
+        border-radius: 50%;
+        text-align: center;
+      }
     }
+    
+
+    
+
 
     .header-h4{
       box-sizing: border-box;
@@ -37,6 +50,7 @@
       font-size: clamp(12px, 1.2vw, 1rem);
       width: 70%;
     }
+     
 }
 
 .demo-video-container{

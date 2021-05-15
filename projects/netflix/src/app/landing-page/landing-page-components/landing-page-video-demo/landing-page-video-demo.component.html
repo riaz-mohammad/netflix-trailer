@@ -1,6 +1,10 @@
 <ng-container *ngIf="showCase | async as data" >
   <div class="headers-container">
-      <h1 class="header-h1">{{ data.title }}</h1>
+      <h1 class="header-h1">
+        <span class="headers-h1-first-letter">
+          {{ data.title | slice: 0 : 1}}
+        </span>
+        {{ data.title | slice: 1 : -1}}</h1>
       <h4 class="header-h4"> {{ data.description}}</h4>
   </div>
 
