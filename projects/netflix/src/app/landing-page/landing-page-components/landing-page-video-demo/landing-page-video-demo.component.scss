@@ -11,13 +11,22 @@
   position: relative;
   justify-content: center;
   
+  
+  &::after{
+    content: '';
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    width: 2px;
+    height: 50%;
+    background-color: grey;
+    border-radius: 10px;
+  }
 }
-
 
 
   
 .headers-container{
-  
   flex-basis: 40%;
   display: flex;
   flex-direction: column;
@@ -76,14 +85,22 @@
   :host{
     flex-direction: column;
     gap: 0;
+  
+      &::after{
+        display: none;
+      }
   }
- 
+
+      
   .headers-container{
     align-items: center;
   }
     
-  
 }
+
+ 
+    
+  
 
 
 
