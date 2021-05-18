@@ -1,9 +1,9 @@
 :host{
   display: block;
-
-
-     
-}
+  padding-top: 8px;
+ }
+$text-color: white;
+$background-color: red;
 
 @mixin dimensions($width, $height, $padding) {
        width: $width;
@@ -12,15 +12,16 @@
 }
 
 .login-button{
-  background-color: red;
-  @include dimensions(6rem, 2.5rem, 10px);
+  background-color: $background-color;
+  @include dimensions(5rem, 2rem, 5px);
   outline: none;
   border: none;
-  color: white;
+  color: $text-color;
   border-radius: 10px;
-  transition: all 400ms ease-in-out;
-
+  font-size: 14px;
+  transition: all 400ms ease;
   z-index: 1;
+
   &::after{
       position: absolute;
       content: '';
@@ -29,37 +30,39 @@
       top: 0;
       left: 0;
       background-color: transparent;
-      clip-path: circle(12.2% at 100% 0);
+      // clip-path: circle(10% at 100% 0);
+      clip-path: circle(8.3% at 95% 0);
       transition: 400ms all ease;
       z-index: -1;
       pointer-events: none;
      }
 
     &:hover::after{
-        clip-path: circle(18.4% at 100% 0);
+        // clip-path: circle(25% at 100% 0);
+        clip-path: circle(17.9% at 95% 0);
         background-color: rgb(202, 5, 5);
-        
      }
-  &:hover{
-    color: red;
-    font-weight: 600;
-    background-color: white;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  }
-  &:active{
-    color: black;
-  }
-
-  
+        
 }
+    
+ 
+ .login-button:hover{
+   color: $background-color;
+   font-weight: bold;
+   background-color: $text-color;
+   box-shadow: 1px 1px 15px 5px rgba(0, 0, 0, 0.267);
+
+ }
+
+
   
  
 @media(max-width: 800px) {
   .login-button{
-    @include dimensions(3.5rem, 1.5rem, 5px);
-    font-weight: normal;
-    font-size: 9px;
-  }
+    @include dimensions(3rem, 1.2rem, 5px);
+    font-size: 8px;
+    padding: 2.5px;
+    }
 }
 
        

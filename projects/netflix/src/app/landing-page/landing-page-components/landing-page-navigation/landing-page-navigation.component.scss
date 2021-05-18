@@ -1,27 +1,25 @@
 :host{
   display: block;
-  grid-area: 1 / 1 / 2 / -1;
-  z-index: 100;
   position: fixed;
-  top: 0;
-  left: 0;
+  z-index: 100;
+  top: 0%;
+  left: 5%;
   right: 0;
-
-// clip-path: polygon(50% 59%, 100% 100%, 100% 0, 0 0, 0 100%);
-// clip-path: polygon(50% 95%, 100% 85%, 100% 0, 0 0, 0 85%);
-//  background-color: rgba(169, 169, 169, 0.445);
+  
+  
 }
+
 
 nav{
   display: flex;
   justify-content: space-between;
-  padding: 15px 20px;
+  height: 4rem;
+  width: 95%;
+  box-sizing: border-box;
+  margin-top: 1rem;
 }
 
-    
-   
 
- 
 
 
   

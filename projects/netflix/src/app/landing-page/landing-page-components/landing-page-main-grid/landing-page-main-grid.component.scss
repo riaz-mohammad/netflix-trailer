@@ -3,12 +3,14 @@
   box-sizing: border-box;
   margin: 0;
   background-color: hsla(0, 0%, 0%, 1);  
+  
+  
 }
 
 .header-grid{
   width: 100%;
   display: grid;
-  grid-template: .5fr 80vh / repeat(2, 1fr);
+  grid-template: .5fr 90vh / repeat(2, 1fr);
 }
 
 //repeat(2, 50vh)
@@ -20,7 +22,7 @@
 
 .footer-grid{
   display: grid;
-  grid-template: 20vh / 1fr;
+  grid-template: 25vh / 1fr;
 }
   
 

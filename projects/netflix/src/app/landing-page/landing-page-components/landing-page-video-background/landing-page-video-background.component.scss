@@ -3,10 +3,11 @@
   box-sizing: border-box;
 
   //parent component has display Grid
-  grid-area: 1 / 1 / 3 / 3;
+  grid-area: 1 / 1 / -1 / -1;
+
 }
 
-.container{
+.video-container{
   width: 100%;
   height: 100%;
   display: grid;
@@ -20,7 +21,7 @@
 
 
 
-.container::after{
+.video-container::after{
    content: '';
    position: absolute;
    display: block;

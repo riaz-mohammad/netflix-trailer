@@ -31,6 +31,8 @@ export class LandingPageLoginComponent implements OnInit {
       this.name.setValue('');
       this.name.markAsDirty();
     }
+
+    
   }
 
   public get invalidName(): boolean {
