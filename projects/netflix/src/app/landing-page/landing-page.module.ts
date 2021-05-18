@@ -14,7 +14,7 @@ import { LandingPageRegistrationComponent } from './landing-page-components/land
 import { LandingPageVideoDemoComponent } from './landing-page-components/landing-page-video-demo/landing-page-video-demo.component';
 import { ObserveAndAnimateDirective } from './observe-and-animate.directive';
 import { NavigationPageFooterComponent } from './landing-page-components/navigation-page-footer/navigation-page-footer.component';
-import { LandingPageLoginComponent } from './landing-page-login/landing-page-login.component';
+import { LandingPageLoginComponent } from './landing-page-components/landing-page-login/landing-page-login.component';
 
 @NgModule({
   declarations: [
