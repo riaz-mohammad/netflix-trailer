@@ -69,6 +69,12 @@
     z-index: 1;
     margin-top: 2rem;
   }
+
+  .form-container{
+    grid-area: 2 / 1 / -1 / -1;
+    border: 1px solid white;
+    z-index: 1;
+  }
   // button{
   //    width: 90%;
   //    flex-basis: 12%;

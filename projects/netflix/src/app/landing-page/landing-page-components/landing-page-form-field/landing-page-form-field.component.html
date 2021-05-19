@@ -1,1 +1,15 @@
-<p>landing-page-form-field works!</p>
+<div class="input-container">
+    <label for="input" class="label" [class.moveUp]="moveUp">
+        {{ label }}
+    </label>
+        <input [type]="type" id="input"
+               [formControl]="formControl"
+              (input)="onValueChange()"
+              (blur)="onTouched()"
+              (focus)="onFocus()"
+              [style.--border-color]="borderColor"
+              [style.--border-color-focus]="borderColorFocus"
+        />
+</div>
+
+
