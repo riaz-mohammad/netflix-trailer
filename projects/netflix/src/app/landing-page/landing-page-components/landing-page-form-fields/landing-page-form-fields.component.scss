@@ -1,3 +1,47 @@
 :host{
-  display: block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  height: 100%;
 }
+  
+.form{
+  box-sizing: border-box;
+  height: 90%;
+  width: 90%;
+  position: relative;
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  
+
+  .form-field-container{
+    box-sizing: border-box;
+    flex-basis: 10%;
+    width: 100%;
+  }
+  
+  .submit-button-container{
+    flex-basis: 10%;
+    width: 80%;
+    outline: none;
+    border: none;
+    
+  }
+}
+    
+    
+    
+
+ 
+
+    
+
+  
+  
+  
+
+  

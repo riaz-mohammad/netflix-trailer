@@ -5,20 +5,25 @@ import { FormBuilder, FormGroup } from '@angular/forms';
   selector: 'app-landing-page-form-fields',
   templateUrl: './landing-page-form-fields.component.html',
   styleUrls: ['./landing-page-form-fields.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class LandingPageFormFieldsComponent implements OnInit {
   public formGroup!: FormGroup;
-  constructor(private formBuilder: FormBuilder) { }
+  constructor(private formBuilder: FormBuilder) {}
 
   ngOnInit(): void {
     this.formGroup = this.formBuilder.group({
-      name: ''
+      name: '',
+      country: '',
+      password: ''
     });
+  }
+      
+      
 
-    this.formGroup.valueChanges.subscribe(console.log);
-  } 
-    
     
 
+  public onSubmit(): void {
+    console.log(this.formGroup.value);
+  }
 }

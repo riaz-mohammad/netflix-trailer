@@ -1,6 +1,6 @@
 import { Component, OnInit, ChangeDetectionStrategy, forwardRef, Input } from '@angular/core';
-import { ControlValueAccessor, NG_VALUE_ACCESSOR, FormControl } from '@angular/forms';
-import { map } from 'rxjs/operators';
+import { ControlValueAccessor, NG_VALUE_ACCESSOR, FormControl, Validators } from '@angular/forms';
+
 
 @Component({
   selector: 'app-landing-page-form-field',
@@ -15,7 +15,7 @@ import { map } from 'rxjs/operators';
   ],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class LandingPageFormFieldComponent implements OnInit, ControlValueAccessor{
+export class LandingPageFormFieldComponent implements ControlValueAccessor {
   public formControl!: FormControl;
   @Input() type: unknown;
   // eslint-disable-next-line @angular-eslint/no-input-rename
@@ -27,7 +27,7 @@ export class LandingPageFormFieldComponent implements OnInit, ControlValueAccess
   public valueChanged!: (val: string) => void;
   public touched!: () => void;
   constructor() {
-    this.formControl = new FormControl();
+    this.formControl = new FormControl('', Validators.required);
   }
 
   writeValue(value: unknown): void {
@@ -39,23 +39,23 @@ export class LandingPageFormFieldComponent implements OnInit, ControlValueAccess
   registerOnTouched(fn: any): void {
     this.touched = fn;
   }
- 
+
   public onTouched(): void {
-    this.formControl.value ? null : (
-      this.moveUp = false
-    )
+    if (!this.formControl.value) {
+      this.moveUp = false;
+    }
+    this.touched();
   }
+
   public onFocus(): void {
     this.moveUp = true;
-
   }
   public onValueChange(): void {
     this.valueChanged(this.formControl.value);
   }
 
-    
-  ngOnInit(): void {
-    console.log();
-  }
-    
+  public get invalid(): boolean {
+    return this.formControl.dirty && this.formControl.invalid ? true : false;
+ }   
+  
 }

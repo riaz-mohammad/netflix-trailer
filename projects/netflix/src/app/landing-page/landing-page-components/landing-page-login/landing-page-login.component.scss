@@ -72,50 +72,15 @@
 
   .form-container{
     grid-area: 2 / 1 / -1 / -1;
-    border: 1px solid white;
     z-index: 1;
+    display: grid;
   }
-  // button{
-  //    width: 90%;
-  //    flex-basis: 12%;
-  //    background-color: rgb(180, 4, 4);
-  //    border-radius: 5px;
-  //    outline: none;
-  //    border: none;
-  //    font-weight: bold;
-  //    color: white;
-  //    font-size: clamp(12px, 1.3vw, 2rem);
-  //    box-shadow: 8px 8px 10px 0px rgba(0, 0, 0, 0.123);
-  //    position: relative;
-  //    z-index: 1;
-  //    transition: color 500ms ease-out;
+    
+    
 
-  //    &::after{
-  //      content: '';
-  //      position: absolute;
-  //      top: 0;
-  //      left: 0;
-  //      width: 100%;
-  //      height: 100%;
-  //      transition: all 500ms ease-out;
-  //      background-color: white;
-  //      transform: scaleX(0);
-  //     transform-origin: left;
-  //     z-index: -1;
-  //     border-radius: 5px;
-
-  //    }
-
-  //    &:hover::after{
-  //       transform: scaleX(1);
-  
-  //    }
-
-  //    &:hover{
-  //      color: red;
-  //    }
-  // }
-
-
-
+    @media(max-width: 1000px) {
+      .login-container{
+        grid-column: 2 / 6;
+      }
+    }
 

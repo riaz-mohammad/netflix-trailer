@@ -1,10 +1,40 @@
-<form [formGroup]="formGroup">
-   <app-landing-page-form-field
-        type="text"
-        placeholder="NAME"
-        formControlName="name">
-   </app-landing-page-form-field>
+<form [formGroup]="formGroup" class="form" (ngSubmit)="onSubmit()">
+   
+   <div  class="form-field-container">
+      <app-landing-page-form-field
+         type="text"
+         placeholder="NAME"
+         formControlName="name">
+      </app-landing-page-form-field>
+   </div>
+
+   <div class="form-field-container">
+         <app-landing-page-form-field
+            type="password"
+            placeholder="PASSWORD"
+            formControlName="password"
+            >
+         </app-landing-page-form-field>
+   </div>
+   
+   <div class="form-field-container">
+         <app-landing-page-form-field
+            type="text"
+            placeholder="COUNTRY"
+            formControlName="country"
+            >
+         </app-landing-page-form-field>
+   </div>
+
+   <div class="submit-button-container">
+      <app-landing-page-form-button type="submit">
+         LOGIN
+      </app-landing-page-form-button>
+   </div>
 </form>
+
+
+      
       
      
 
