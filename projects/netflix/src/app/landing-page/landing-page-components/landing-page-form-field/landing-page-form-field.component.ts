@@ -27,7 +27,7 @@ export class LandingPageFormFieldComponent implements ControlValueAccessor {
   public valueChanged!: (val: string) => void;
   public touched!: () => void;
   constructor() {
-    this.formControl = new FormControl('', Validators.required);
+    this.formControl = new FormControl('', {validators: [Validators.required], updateOn: 'blur'});
   }
 
   writeValue(value: unknown): void {
