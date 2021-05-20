@@ -13,10 +13,12 @@ export class LandingPageFormFieldsComponent implements OnInit {
 
   ngOnInit(): void {
     this.formGroup = this.formBuilder.group({
-      name: '',
-      country: '',
-      password: ''
-    }, {validators: Validators.required ,updateOn: 'blur'});
+      name: ['', Validators.required],
+      country: ['', Validators.required],
+      password: ['', Validators.required]
+    }, {updateOn: 'change' });
+    
+    
   }
       
       

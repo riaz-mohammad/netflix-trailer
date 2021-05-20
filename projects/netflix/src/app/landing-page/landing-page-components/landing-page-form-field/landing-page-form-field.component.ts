@@ -1,5 +1,5 @@
 import { Component, OnInit, ChangeDetectionStrategy, forwardRef, Input } from '@angular/core';
-import { ControlValueAccessor, NG_VALUE_ACCESSOR, FormControl, Validators } from '@angular/forms';
+import { ControlValueAccessor, NG_VALUE_ACCESSOR, FormControl, Validators, FormGroupDirective } from '@angular/forms';
 
 
 @Component({
@@ -15,23 +15,22 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR, FormControl, Validators } from
   ],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class LandingPageFormFieldComponent implements ControlValueAccessor {
-  public formControl!: FormControl;
-  @Input() type: unknown;
+export class LandingPageFormFieldComponent implements ControlValueAccessor, OnInit {
+  
+  @Input() type!: string;
   // eslint-disable-next-line @angular-eslint/no-input-rename
   @Input('placeholder') label!: string;
   @Input() borderColor: string | undefined;
   @Input() borderColorFocus: string | undefined;
   public moveUp: boolean | undefined;
-  public inputValue!: unknown;
+  public initialValue!: string;
+  public userTypedValue: string | undefined;
   public valueChanged!: (val: string) => void;
   public touched!: () => void;
-  constructor() {
-    this.formControl = new FormControl('');
-  }
+  constructor(private formGroup: FormGroupDirective) {}
 
-  writeValue(value: unknown): void {
-    this.formControl.setValue(value);
+  writeValue(value: string): void {
+    this.initialValue = value;
   }
   registerOnChange(fn: any): void {
     this.valueChanged = fn;
@@ -41,21 +40,32 @@ export class LandingPageFormFieldComponent implements ControlValueAccessor {
   }
 
   public onTouched(): void {
-    if (!this.formControl.value) {
-      this.moveUp = false;
-    }
-    this.touched();
+    (this.userTypedValue) ?
+          this.touched() :
+          (this.moveUp = false);
   }
+    
+    
+  public get validity(): boolean {
+    let control = this.formGroup.control
+      .get(this.label.toLowerCase()) as FormControl;
+    return (control.dirty && control.invalid) ? true : false;
+    // return (this.formGroup.touched && this.formGroup.invalid) ? true : false;
+  }
+    
+    
 
   public onFocus(): void {
     this.moveUp = true;
   }
-  public onValueChange(): void {
-    this.valueChanged(this.formControl.value);
+    
+  public onValueChange(event: Event): void {
+    this.userTypedValue = (<HTMLInputElement>event.target).value;
+    this.valueChanged(this.userTypedValue);
   }
-
-  public get invalid(): boolean {
-    return this.formControl.dirty && this.formControl.invalid ? true : false;
- }   
+    
   
+  ngOnInit(): void {
+    console.log();
+  }
 }
