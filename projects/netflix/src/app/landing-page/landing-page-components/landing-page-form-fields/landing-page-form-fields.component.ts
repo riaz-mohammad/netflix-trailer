@@ -1,5 +1,5 @@
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-landing-page-form-fields',
@@ -16,7 +16,7 @@ export class LandingPageFormFieldsComponent implements OnInit {
       name: '',
       country: '',
       password: ''
-    });
+    }, {validators: Validators.required ,updateOn: 'blur'});
   }
       
       
