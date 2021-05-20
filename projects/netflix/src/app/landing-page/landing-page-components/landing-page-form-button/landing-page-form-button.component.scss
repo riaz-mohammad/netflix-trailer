@@ -17,6 +17,7 @@
     position: relative; 
     z-index: 1;
     transition: color 400ms ease;
+    box-sizing: border-box;
     &::after{
       box-sizing: border-box;
       position: absolute;

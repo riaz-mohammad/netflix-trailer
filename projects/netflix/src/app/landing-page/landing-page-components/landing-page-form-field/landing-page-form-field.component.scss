@@ -1,3 +1,7 @@
+$width: 100%;
+$height: 100%;
+$animation-time: 300ms;
+
 :host{
   --border-color: grey;
   --border-color-focus: white;
@@ -6,15 +10,15 @@
   box-sizing: border-box;
   display: block;
   font-size: 1rem;
-  width: 100%;
-  height: 100%;;
+  width: $width;
+  height: $height;;
 }
   
   
 .input-container{
   position: relative;
-  width: 100%;
-  height: 100%;
+  width: $width;
+  height: $height;
   z-index: 1;
   overflow: hidden;
 
@@ -23,13 +27,15 @@
   top: 99;
   bottom: 0;
   left: 0;
-  width: 100%;
-  height: 2%;
+  width: $width;
+  height: 3%;
+  box-sizing: border-box;
+  // border: 1px solid yellow;
 
   line{
-    stroke: white;
+    stroke: var(--border-color-focus);
     stroke-width: 100%;
-    transition: all 300ms ease;
+    transition: all $animation-time ease;
     stroke-dasharray:  0 150%;
         &.moveLine{
         stroke-dasharray: 150% 0;
@@ -43,34 +49,22 @@
   }
 }
   
-    
-    
-  
-
-  
 
 #input{
   display: block;
   color: var(--text-color);
   box-sizing: border-box;
   display: flex;
-  width: 100%;
-  height: 100%;
+  width: $width;
+  height: $height;
   border: none;
   outline: none;
   font-size: inherit;
   padding-top: 4%;
   background-color: transparent;
-  // border-bottom: 2px solid;
-  // border-bottom-color: var(--border-color);
-  transition: all 300ms ease;
-
-  // &.invalid{
-  //   border-bottom-color: red;
-  // } 
-  // &:focus{
-  //   border-bottom-color: var(--border-color-focus);
-  // }
+  border-bottom: 1px solid;
+  border-bottom-color: var(--border-color);
+  transition: all $animation-time ease;
 
 }
 
@@ -83,10 +77,10 @@
   z-index: -1;
   top: 0%;
   left: 0%;
-  width: 100%;
-  height: 100%;
+  width: $width;
+  height: $height;
   font-size: 14px;
-  transition: all 300ms cubic-bezier(0.215, 0.610, 0.355, 1);
+  transition: all $animation-time cubic-bezier(0.215, 0.610, 0.355, 1);
   color: var(--text-color-focus);
   &.moveUp{
     height: 30%;
