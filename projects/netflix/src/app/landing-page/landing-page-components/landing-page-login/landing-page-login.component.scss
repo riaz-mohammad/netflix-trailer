@@ -1,30 +1,38 @@
-@mixin pseudoProps($color, $shape){
+@mixin pseudoProps(){
   content: '';
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: -1;
-  background-color: $color;
-  clip-path: polygon($shape);
+  @content
 }
 
 :host{
-  display: grid;
-  grid-template: repeat(6, 1fr) / repeat(6, 1fr);
+  display: flex;
+  justify-content: center;
+  align-items: center;
   position: relative;
   width: 100vw;
   height: 100vh;
   color: white;
-  z-index: 1;
+   z-index: 99;
   overflow: hidden;
   &::before{
-    @include pseudoProps((hsla(0, 0%, 0%, 0.918)), (0 0, 0 100%, 100% 0));
+    @include pseudoProps(){
+        background-color: hsla(0, 0%, 0%, 0.918);
+        clip-path: polygon((0 0, 0 100%, 100% 0));
+        z-index: -99;
+    };
   }
+
    
   &::after{
-    @include pseudoProps((rgba(184, 1, 1, 0.945)), (100% 0, 0 100%, 100% 100%));
+    @include pseudoProps(){
+      background-color: rgba(184, 1, 1, 0.945);
+      clip-path: polygon((100% 0, 0 100%, 100% 100%));
+      z-index: -99;
+    };
   }
     
 }
@@ -32,29 +40,28 @@
 
 
 .login-container{
-  grid-area: 2 / 3 / 6 / 5;
+  width: 35%;
+  height: 70%;
   display: grid;
   grid-template: .2fr repeat(3, 1fr) / .5fr 2fr .5fr;
   border-radius: 5px;
   box-shadow: 1px 1px 30px 2px rgba(0, 0, 0, 0.74);
-  background-color: black;
-  position: relative;
-  z-index: 99;
-  &::after{
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.623), black);
-  }
 }
+  
+  
+    
   
   .video-container{
     grid-area: 1 / 1 / -1 / -1;
     display: grid;
-    z-index: -1;
+    z-index: -10;
+    position: relative;
+    &::after{
+      @include pseudoProps() {
+          background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.527), black);
+      }
+    }
+
   }
 
   .logo-container{
@@ -66,17 +73,15 @@
     margin-top: 2rem;
   }
 
-  .form-container{
-    grid-area: 2 / 1 / -1 / -1;
-    z-index: 1;
-    display: grid;
-  }
-    
-    
-
     @media(max-width: 1000px) {
       .login-container{
-        grid-column: 2 / 6;
+        width: 50%;
+      }
+    }
+
+    @media(max-width: 600px) {
+      .login-container{
+        width: 80%;
       }
     }
 
