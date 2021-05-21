@@ -12,6 +12,7 @@ $animation-time: 300ms;
   font-size: 1rem;
   width: $width;
   height: $height;;
+
 }
   
   
@@ -20,7 +21,17 @@ $animation-time: 300ms;
   width: $width;
   height: $height;
   z-index: 1;
-  overflow: hidden;
+  // overflow: hidden;
+  // outline: 1px solid yellow;
+  .error-message{
+  position: absolute;
+  width: $width;
+  height: $height;
+  top: 100%;
+  left: 0%;
+  color: red;
+  font-size: .8rem;
+}
 
 .border-container{
   position: absolute;
@@ -28,7 +39,7 @@ $animation-time: 300ms;
   bottom: 0;
   left: 0;
   width: $width;
-  height: 3%;
+  height: 4%;
   box-sizing: border-box;
   // border: 1px solid yellow;
 

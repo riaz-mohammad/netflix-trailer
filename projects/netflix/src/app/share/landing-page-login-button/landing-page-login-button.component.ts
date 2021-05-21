@@ -1,4 +1,4 @@
-import { LoginButtonClickService } from './../../login-button-click.service';
+import { LoginButtonClickService } from '../../landing-page/login-button-click.service';
 import { Component, ChangeDetectionStrategy } from '@angular/core';
 
 

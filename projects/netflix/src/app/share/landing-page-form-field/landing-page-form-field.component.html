@@ -11,11 +11,15 @@
               [style.--border-color-focus]="borderColorFocus"
         />
                              
-
+    
     <svg class="border-container">
         <line x1="0" y1="100%" x1="100%" y1="100%" [class.moveLine]="moveUp" [class.invalid]="validity"/>
     </svg>
-              
+
+    <span *ngIf="validity" class="error-message"
+          @errorMessageAnimation>
+          Enter Your {{ label }} Please!
+    </span>          
 </div>
 
 

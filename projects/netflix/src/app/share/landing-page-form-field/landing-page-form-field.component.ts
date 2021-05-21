@@ -1,12 +1,14 @@
-import { Component, OnInit, ChangeDetectionStrategy, forwardRef, Input } from '@angular/core';
+import { Component,  ChangeDetectionStrategy, forwardRef, Input } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR, FormControl, Validators, FormGroupDirective } from '@angular/forms';
-import { of } from 'rxjs';
+
+import { errorMessageAnimation } from './error-message-animation';
 
 
 @Component({
   selector: 'app-landing-page-form-field',
   templateUrl: './landing-page-form-field.component.html',
   styleUrls: ['./landing-page-form-field.component.scss'],
+  animations: [errorMessageAnimation],
   providers: [
     {
       provide: NG_VALUE_ACCESSOR,
@@ -41,27 +43,21 @@ export class LandingPageFormFieldComponent implements ControlValueAccessor {
   }
 
   public onTouched(): void {
-    if (!(this.formControl.value)) {
+    if (!this.formControl.value) {
       this.moveUp = false;
-    } 
+    }
     this.touched();
   }
-    
-    
+
   public get validity(): boolean {
-    return (this.formControl.dirty && this.formControl.invalid) ? true : false;
+    return this.formControl.dirty && this.formControl.invalid ? true : false;
   }
-    
-    
-    
 
   public onFocus(): void {
     this.moveUp = true;
   }
-    
+
   public onValueChange(): void {
     this.valueChanged(this.formControl.value);
-    
   }
-    
 }

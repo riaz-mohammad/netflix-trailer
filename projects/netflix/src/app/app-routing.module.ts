@@ -1,9 +1,7 @@
-
-
+import { LandingPageLoginComponent } from './landing-page/landing-page-components/landing-page-login/landing-page-login.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LandingPageMainGridComponent } from './landing-page/landing-page-components/landing-page-main-grid/landing-page-main-grid.component';
-import { LandingPageLoginComponent } from './landing-page/landing-page-components/landing-page-login/landing-page-login.component';
 
 
 
@@ -14,7 +12,9 @@ const routes: Routes = [
   },
 
   {
-    path: 'login', component: LandingPageLoginComponent
+    path: 'login',
+    loadChildren: () => import('./landing-page-login/landing-page-login.module')
+                        .then(loginModule => loginModule.LandingPageLoginModule)
   },
   {
     path: '', pathMatch: 'full', redirectTo: ''
