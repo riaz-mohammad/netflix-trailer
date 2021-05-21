@@ -3,8 +3,8 @@
         {{ label }}
     </label>
         <input [type]="type" id="input"
-               [value]="initialValue"
-              (input)="onValueChange($event)"
+              [formControl]="formControl"
+              (input)="onValueChange()"
               (blur)="onTouched()"
               (focus)="onFocus()"
               [style.--border-color]="borderColor"

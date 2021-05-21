@@ -1,4 +1,5 @@
 <form [formGroup]="formGroup" class="form" (ngSubmit)="onSubmit()">
+   <span class="error-message" *ngIf="notValid" @errorAnimation>!</span>
    
    <div  class="form-field-container">
       <app-landing-page-form-field
@@ -31,6 +32,8 @@
          LOGIN
       </app-landing-page-form-button>
    </div>
+
+
 </form>
 
 
