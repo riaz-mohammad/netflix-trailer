@@ -1,5 +1,5 @@
 
-import { ObserveAndAnimateDirective } from './../../observe-and-animate.directive';
+
 import { Component, OnInit, ChangeDetectionStrategy, Input} from '@angular/core';
 import { Observable } from 'rxjs';
 

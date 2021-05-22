@@ -12,6 +12,7 @@
   justify-content: center;
   
   
+  
   &::after{
     content: '';
     position: absolute;
@@ -72,7 +73,6 @@
 
 .demo-video-container{
   flex-basis: 40%;
-  
   .demo-video{
       height: 100%;
       width: 100%;

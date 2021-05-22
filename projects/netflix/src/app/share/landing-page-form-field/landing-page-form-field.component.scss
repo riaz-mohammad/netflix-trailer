@@ -5,13 +5,14 @@ $animation-time: 300ms;
 :host{
   --border-color: grey;
   --border-color-focus: white;
-  --text-color: white;
-  --text-color-focus: grey;
+  --color: white;
+  --color-focus: grey;
   box-sizing: border-box;
   display: block;
   font-size: 1rem;
   width: $width;
   height: $height;;
+  
 
 }
   
@@ -35,12 +36,17 @@ $animation-time: 300ms;
 
 .border-container{
   position: absolute;
-  top: 99;
+  top: 98%;
   bottom: 0;
   left: 0;
   width: $width;
-  height: 4%;
+  height: 3%;
   box-sizing: border-box;
+  border: none;
+  outline: none;
+  overflow: none;
+  border-radius: 5px;
+
   // border: 1px solid yellow;
 
   line{
@@ -48,6 +54,7 @@ $animation-time: 300ms;
     stroke-width: 100%;
     transition: all $animation-time ease;
     stroke-dasharray:  0 150%;
+   
         &.moveLine{
         stroke-dasharray: 150% 0;
       }
@@ -56,14 +63,18 @@ $animation-time: 300ms;
          stroke-dasharray: 150% 0;
          stroke: red;
        }
+
+      
     }
+
+  
   }
 }
   
 
 #input{
   display: block;
-  color: var(--text-color);
+  color: var(--color);
   box-sizing: border-box;
   display: flex;
   width: $width;
@@ -71,10 +82,11 @@ $animation-time: 300ms;
   border: none;
   outline: none;
   font-size: inherit;
-  padding-top: 3%;
+  padding-top: 2%;
+  padding-left: 5px;
   background-color: transparent;
   border-bottom: 1px solid;
-  border-bottom-color: var(--border-color);
+  border-bottom-color: var(--color-focus);
   transition: all $animation-time ease;
 
 }
@@ -87,15 +99,15 @@ $animation-time: 300ms;
   position: absolute;
   z-index: -1;
   top: 0%;
-  left: 0%;
+  left: 5px;
   width: $width;
   height: $height;
   font-size: 14px;
   transition: all $animation-time cubic-bezier(0.215, 0.610, 0.355, 1);
-  color: var(--text-color-focus);
+  color: var(--color-focus);
   &.moveUp{
     height: 30%;
-    font-size: 8px;
+    font-size: 10px;
     
   }
 }

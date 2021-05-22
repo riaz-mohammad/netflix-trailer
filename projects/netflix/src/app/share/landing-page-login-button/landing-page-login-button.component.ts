@@ -12,6 +12,7 @@ export class LandingPageLoginButtonComponent{
   constructor(private loginButtonClickEmitter: LoginButtonClickService) { }
   public clickHandler(): void {
     this.loginButtonClickEmitter.emitClickEvent();
+    
   }
   
 

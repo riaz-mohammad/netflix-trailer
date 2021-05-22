@@ -1,0 +1,24 @@
+<form  [formGroup]="formGroup" (ngSubmit)="onSubmit()" class="form">
+        
+      <div class="input-container">
+          <app-landing-page-form-field
+            type="text"
+            placeholder="EMAIL"
+            formControlName="email">
+          </app-landing-page-form-field> 
+      </div>
+            
+      <div class="button-container">
+            <app-landing-page-form-button type="submit">
+               GET STARTED
+            </app-landing-page-form-button>
+      </div>   
+      
+       
+</form>
+ 
+      
+  
+     
+ 
+

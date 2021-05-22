@@ -1,5 +1,5 @@
 import { Component,  ChangeDetectionStrategy, forwardRef, Input } from '@angular/core';
-import { ControlValueAccessor, NG_VALUE_ACCESSOR, FormControl, Validators, FormGroupDirective } from '@angular/forms';
+import { ControlValueAccessor, NG_VALUE_ACCESSOR, FormControl, Validators } from '@angular/forms';
 
 import { errorMessageAnimation } from './error-message-animation';
 
@@ -28,7 +28,7 @@ export class LandingPageFormFieldComponent implements ControlValueAccessor {
   public moveUp: boolean | undefined;
   public valueChanged!: (val: string) => void;
   public touched!: () => void;
-  constructor(private formGroup: FormGroupDirective) {
+  constructor() {
     this.formControl = new FormControl('', Validators.required);
   }
 

@@ -1,0 +1,51 @@
+:host{
+  width: 100%;
+  flex-basis: 28%;
+  box-sizing: border-box;
+  margin-top: -20px;
+}
+
+
+.form{
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+
+ .input-container{
+   background-color: rgba(0, 0, 0, 0.63);
+   flex-basis: 60%;
+   height: 45%;
+   box-sizing: border-box;
+   box-shadow: 1px 1px 20px 10px rgba(0, 0, 0, 0.205);
+   
+ } 
+
+  .button-container{
+   flex-basis: 20%;
+   height: 45.4%;
+   box-shadow: 1px 1px 20px 10px rgba(0, 0, 0, 0.26);
+ }
+
+
+@media(max-width: 1000px) {
+  .form{
+    flex-direction: column;
+
+    
+  }
+  .input-container{
+    flex-basis: 40%;
+    margin-bottom: 20px;
+  }
+  .button-container{
+    align-self: center;
+    flex-basis: 35%;
+    width: 40%;
+  }
+}
+
