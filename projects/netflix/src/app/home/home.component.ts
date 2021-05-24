@@ -1,3 +1,4 @@
+import { MoviesService } from './movies.service';
 import { trigger, transition, query, style, group, animate, state, keyframes } from '@angular/animations';
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 
@@ -10,7 +11,7 @@ import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
   public show: boolean | undefined;
-  
+  constructor(private movies: MoviesService) {}  
   ngOnInit(): void {
     console.log();
   }
