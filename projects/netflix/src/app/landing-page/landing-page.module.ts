@@ -30,7 +30,6 @@ import { NavigationPageFooterComponent } from './landing-page-components/navigat
   imports: [
     CommonModule,
     ReactiveFormsModule,
-    MatInputModule,
     ShareModule
   ],
   exports: [],

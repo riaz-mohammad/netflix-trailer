@@ -12,6 +12,11 @@ export class LandingPageLoginButtonComponent{
   constructor(private loginButtonClickEmitter: LoginButtonClickService) { }
   public clickHandler(): void {
     this.loginButtonClickEmitter.emitClickEvent();
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: 'smooth'
+    })
     
   }
   
