@@ -24,7 +24,6 @@
           "skipTests": true
         },
         "@schematics/angular:module": {
-          "skipTests": true
         },
         "@schematics/angular:pipe": {
           "skipTests": true
@@ -45,7 +44,6 @@
             "main": "projects/netflix/src/main.ts",
             "polyfills": "projects/netflix/src/polyfills.ts",
             "tsConfig": "projects/netflix/tsconfig.app.json",
-            "aot": true,
             "assets": [
               "projects/netflix/src/favicon.ico",
               "projects/netflix/src/assets"
@@ -53,7 +51,13 @@
             "styles": [
               "projects/netflix/src/styles.scss"
             ],
-            "scripts": []
+            "scripts": [],
+            "vendorChunk": true,
+            "extractLicenses": false,
+            "buildOptimizer": false,
+            "sourceMap": true,
+            "optimization": false,
+            "namedChunks": true
           },
           "configurations": {
             "production": {

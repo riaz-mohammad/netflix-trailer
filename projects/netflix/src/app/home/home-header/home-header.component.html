@@ -1,3 +1,15 @@
-<h3>HEADER COMPONENT</h3>
 
+ <ng-container *ngIf="data | async as movies">
+   
+    <div class="image-container">
+      
+      <ng-container *ngFor="let movie of movies.results">
+        <img (click)="getMovieInfo(movie)" [src]="images+movie.backdrop_path" alt="movie_poster">
+      </ng-container>
+    </div>
+   
+ </ng-container>
+
+          
+   
  
