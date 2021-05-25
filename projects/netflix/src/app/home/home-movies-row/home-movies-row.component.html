@@ -1,6 +1,5 @@
-
- <ng-container *ngIf="data | async as movies">
-   
+<ng-container *ngIf="trending | async as movies">
+    
     <div class="image-container">
       
       <ng-container *ngFor="let movie of movies.results">

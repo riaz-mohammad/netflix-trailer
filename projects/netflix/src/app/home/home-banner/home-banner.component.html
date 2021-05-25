@@ -1,0 +1,18 @@
+
+
+
+
+  <ng-container *ngIf="moviePoster$ | async as poster">
+      <img [src]="images+poster.backdrop_path" alt="movie poster" class="banner-photo" />
+      <header class="banner-header">
+        <h1>{{ poster.name}}</h1>
+        <button class="banner-play-button">PLAY</button>
+        <h3>{{ poster.overview }}</h3>
+      </header>
+  </ng-container>
+
+
+
+  
+  
+      

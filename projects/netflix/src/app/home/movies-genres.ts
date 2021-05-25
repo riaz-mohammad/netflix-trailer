@@ -1,5 +1,6 @@
-const MOVIES_GENRES = {
-  genres: [
+import { MovieGenre } from './types';
+
+export const MOVIES_GENRES: MovieGenre[] =  [
     {
       id: 28,
       name: 'Action',
@@ -77,4 +78,3 @@ const MOVIES_GENRES = {
       name: 'Western',
     },
   ]
-};

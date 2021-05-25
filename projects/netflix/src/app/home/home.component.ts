@@ -11,7 +11,8 @@ import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
   public show: boolean | undefined;
-  constructor(private movies: MoviesService) {}  
+  constructor(private movies: MoviesService) { }
+  
   ngOnInit(): void {
     console.log();
   }

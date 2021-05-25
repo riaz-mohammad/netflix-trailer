@@ -1,0 +1,116 @@
+:host{
+  display: flex;
+  box-sizing: border-box;
+  height: 80vh;
+  border: 1px solid yellow;
+  position: relative;
+  &::before{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background-image: radial-gradient(transparent, rgb(0, 0, 0));
+  }
+  
+  &::after{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 10%;
+    left: 0;
+    bottom: 0;
+    background-image: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.699));
+  }
+   
+}
+
+@mixin outline {
+   outline: 1px solid white;
+}
+.banner-header{
+  box-sizing: border-box;
+  position: absolute;
+  color: white;
+  font-weight: bold;
+  top: 40%;
+  left: 5%;
+  width: 40%;
+  height: 50%;
+  z-index: 1;
+  @include outline();
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: flex-start;
+  padding: 1rem;
+
+  h1{
+    font-size: clamp(1.2rem, 3vw, 3rem);
+    @include outline();
+    padding: 1rem;
+  }
+    
+
+  h3{
+    font-size: clamp(12px, 1vw, 1.2rem);
+    color: white;
+    @include outline();
+    width: 80%;
+    padding: 1rem;
+    box-sizing: border-box;
+    font-size: normal;
+  }
+   
+    
+  
+}
+  
+.banner-photo{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+  
+  
+
+  
+  
+   .banner-play-button{
+     display: block;
+      width: 20%;
+      height: 40px;
+      border: none;
+      outline: none;
+      font-weight: bold;
+      font-size: 1rem;
+      background-color: rgba(255, 0, 0, 0.63);
+      color: white;
+      align-self: flex-start;
+      position: relative;
+      transition: all 300ms ease-in-out;
+      z-index: 1;
+      &::after{
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(255, 255, 255, 0.932);
+        transform: scaleX(0);
+        transform-origin: left;
+       transition: transform 300ms ease-in-out;
+       z-index: -1;
+      }
+
+      &:hover::after{
+        transform: scaleX(1);
+      }
+        
+      &:hover{
+        color: black;
+      }  
+      
+   }
