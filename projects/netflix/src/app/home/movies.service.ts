@@ -37,16 +37,19 @@ export class MoviesService {
   }
 
   public getMovieTrailer(id: number): Observable<any> {
-    return this.http.get<MovieTrailer>(this.MOVIE_TRAILER_URL).pipe(
-      map(({ results }) => results?.[0] ?? 'Not Found'),
-      catchError((error) => of(error))
-    );
+    const movieTrailer_url = `${this.BASE_URL}/movie/${id}/videos?api_key=${ this.API_KEY}`;
+    return this.http.get<MovieTrailer>(movieTrailer_url);
+      
+    //   .pipe(
+    //   map(({ results }) => results?.[0] ?? 'Not Found'),
+    //   catchError((error) => of(error))
+    // );
   }
 
   public getNetflixOriginal(): Observable<Movie[]> {
-    return this.http.get<Results>(this.NETFLIX_ORIGINAL_URL).pipe(
-      map(({ results }) => results)
-    );
+    return this.http
+      .get<Results>(this.NETFLIX_ORIGINAL_URL)
+          .pipe(map(({ results }) => results));
   }
 
   public getMoviesByGenre(genre: number): void {
@@ -59,6 +62,11 @@ export class MoviesService {
  
   private get randomGenre(): number {
     return SHOWS_GENRES[Math.floor(Math.random() * SHOWS_GENRES.length)].id;
+  }
+
+
+  public search(name: string) {
+    return this.http.get<any>(this.SEARCH_URL + name);
   }
   
 }

@@ -15,11 +15,11 @@ export class NetflixOriginalComponent implements OnInit {
   public images = this.movieService.IMAGES;
   ngOnInit(): void {
     this.netflixOriginal = this.movieService.getNetflixOriginal();
-    this.netflixOriginal.subscribe(console.log)
   }
+    
 
   getMovieInfo(movie: Movie): void {
-      
-    
+    console.log(movie);
   }
+    
 }

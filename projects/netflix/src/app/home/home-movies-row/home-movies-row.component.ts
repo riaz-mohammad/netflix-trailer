@@ -23,7 +23,7 @@ export class HomeMoviesRowComponent implements OnInit, OnDestroy {
   }
 
   getMovieInfo(movie: Movie): void {
-    this.sub = this.moviesService.getMovieTrailer(movie.id).subscribe(console.log);
+    console.log(movie);
     
   }
 

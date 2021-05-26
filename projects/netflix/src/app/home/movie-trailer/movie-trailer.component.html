@@ -1,0 +1,15 @@
+    <div class="player-container" (click)="onClick()">
+          <youtube-player 
+                  [videoId]="videoId" 
+                  [playerVars]="playerVars"
+                  [width]="width"
+                  [height]="height">
+                  (ready)="onReady($event)"
+                  (stateChange)="onStateChange($event)"
+          </youtube-player>
+      </div>
+ 
+
+
+      
+

@@ -21,10 +21,10 @@ export class HomeBannerComponent implements OnInit {
     );
   }
     
-   movieBanner(poster: Movie): string {
+   movieBanner(poster: Movie): void {
      console.log(poster);
-     return '';
   } 
+     
      
     
   

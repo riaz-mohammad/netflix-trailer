@@ -1,4 +1,15 @@
+<ng-container *ngIf="videoIdService.id$ | async as id">
+    <app-movie-trailer
+        (closePlayer)="onClosePlayer()" 
+        [videoId]="id"
+        [width]="1000"
+        [height]="600">
+    </app-movie-trailer>
+</ng-container>
 <app-home-banner></app-home-banner>
 <app-netflix-original></app-netflix-original>
-<app-home-movies-row></app-home-movies-row>
+<app-home-movies-row 
+      title="TRENDING">
+</app-home-movies-row>
+
  

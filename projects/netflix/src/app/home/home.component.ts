@@ -1,20 +1,24 @@
-import { MoviesService } from './movies.service';
-import { trigger, transition, query, style, group, animate, state, keyframes } from '@angular/animations';
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { VideoIdService } from './video-id.service';
+
+
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  animations: []
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class HomeComponent implements OnInit {
-  public show: boolean | undefined;
-  constructor(private movies: MoviesService) { }
+  constructor(public videoIdService: VideoIdService) { }
   
   ngOnInit(): void {
     console.log();
   }
+
+  public onClosePlayer(): void {
+    this.videoIdService.removeVideoId();
+  }
+  
 
 }

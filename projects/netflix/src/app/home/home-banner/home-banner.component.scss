@@ -2,8 +2,8 @@
   display: flex;
   box-sizing: border-box;
   height: 80vh;
-  border: 1px solid yellow;
   position: relative;
+  z-index: 100;
   &::before{
     content: '';
     position: absolute;
@@ -39,7 +39,7 @@
   width: 40%;
   height: 50%;
   z-index: 1;
-  @include outline();
+  
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
@@ -48,17 +48,14 @@
 
   h1{
     font-size: clamp(1.2rem, 3vw, 3rem);
-    @include outline();
-    padding: 1rem;
+
   }
     
 
   h3{
     font-size: clamp(12px, 1vw, 1.2rem);
     color: white;
-    @include outline();
     width: 80%;
-    padding: 1rem;
     box-sizing: border-box;
     font-size: normal;
   }
@@ -73,11 +70,7 @@
   object-fit: cover;
 }
   
-  
-
-  
-  
-   .banner-play-button{
+ .banner-play-button{
      display: block;
       width: 20%;
       height: 40px;

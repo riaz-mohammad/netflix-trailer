@@ -20,7 +20,10 @@ export interface Movie {
   overview: string;
   poster_path: string;
   backdrop_path: string;
+  original_name: string;
 }
+  
+  
 export interface Results {
   results: Movie[];
 }
