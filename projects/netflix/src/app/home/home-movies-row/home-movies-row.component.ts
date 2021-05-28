@@ -1,6 +1,6 @@
 import { Component, OnInit, ChangeDetectionStrategy, OnDestroy, Input } from '@angular/core';
-import { Observable, Subscription } from 'rxjs';
 import { MoviesService } from '../movies.service';
+import { Show } from './../types';
 import { Movie } from '../types';
 
 @Component({
@@ -9,25 +9,29 @@ import { Movie } from '../types';
   styleUrls: ['./home-movies-row.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class HomeMoviesRowComponent implements OnInit, OnDestroy {
+export class HomeMoviesRowComponent implements OnInit{
   @Input() title!: string;
   @Input() genre!: string;
   constructor(private moviesService: MoviesService) {}
   public images = this.moviesService.IMAGES;
   public trending = this.moviesService.getTrending();
-  public sub!: Subscription;
+
+  
 
 
   ngOnInit(): void {
-    console.log('Initiated...');
+    console.log();
   }
 
-  getMovieInfo(movie: Movie): void {
+  getMovieInfo(movie: Movie | Show): void {
     console.log(movie);
-    
   }
 
-  ngOnDestroy(): void {
-    this.sub.unsubscribe();
-  }
+
+
 }
+  
+
+  
+  
+  

@@ -1,10 +1,10 @@
-import { SHOWS_GENRES } from './shows-genres';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { catchError, map, tap } from 'rxjs/operators';
 
-import { Movie, MovieTrailer, Results } from './types';
+import { SHOWS_GENRES } from './shows-genres';
+import { Movie, MovieTrailer, Results, Show, Title } from './types';
 
 @Injectable({
   providedIn: 'root',
@@ -14,7 +14,8 @@ export class MoviesService {
   private readonly API_KEY = '214849890feefa84c31c1ba22d9ef072';
   public readonly IMAGES = 'https://image.tmdb.org/t/p/original/';
   MOVIE_INFO_URL = `${this.BASE_URL}/movie/${123}?api_key=${this.API_KEY}`;
-  NETFLIX_ORIGINAL_URL = `${this.BASE_URL}/discover/tv?api_key=${this.API_KEY}&with_networks=213`;
+  NETFLIX_ORIGINAL_MOVIES_URL = `${this.BASE_URL}/discover/movie?api_key=${this.API_KEY}&with_networks=213`;
+  NETFLIX_ORIGINAL_SHOWS_URL = `${this.BASE_URL}/discover/tv?api_key=${this.API_KEY}&with_networks=213`;
   TOP_RATED_URL =  `${this.BASE_URL}/movie/top_rated?api_key=${this.API_KEY}&page=2`
   TRENDING_URL = `${this.BASE_URL}/trending/all/week?api_key=${this.API_KEY}`;
   POPULAR_MOVIES_URL = `${this.BASE_URL}/movie/popular?api_key=${this.API_KEY}&page=1`;
@@ -32,8 +33,10 @@ export class MoviesService {
 
   constructor(private http: HttpClient) {}
 
-  public getTrending(): Observable<Results> {
-    return this.http.get<Results>(this.TRENDING_URL);
+  public getTrending(): Observable<Movie[] | Show[]> {
+    return this.http.get<Results<Movie[] | Show[]>>(this.TRENDING_URL).pipe(
+      map(({ results }) => results)
+    );
   }
 
   public getMovieTrailer(id: number): Observable<any> {
@@ -46,10 +49,20 @@ export class MoviesService {
     // );
   }
 
-  public getNetflixOriginal(): Observable<Movie[]> {
+  public getNetflixOriginalMovies(): Observable<Movie[]> {
     return this.http
-      .get<Results>(this.NETFLIX_ORIGINAL_URL)
-          .pipe(map(({ results }) => results));
+      .get<Results<Movie[]>>(this.NETFLIX_ORIGINAL_MOVIES_URL)
+      .pipe(
+        tap(data => console.log('Original Movies', data)),
+        map(({ results }) => results))
+  }
+
+  public getNetflixOriginalShows(): Observable<Show[]> {
+    return this.http
+      .get<Results<Show[]>>(this.NETFLIX_ORIGINAL_SHOWS_URL)
+      .pipe(
+        tap(data => console.log('Original Shows', data)),
+        map(({ results }) => results))
   }
 
   public getMoviesByGenre(genre: number): void {

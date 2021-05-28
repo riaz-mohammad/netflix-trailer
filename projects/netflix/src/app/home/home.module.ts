@@ -8,6 +8,9 @@ import { HomeBannerComponent } from './home-banner/home-banner.component';
 import { NetflixOriginalComponent } from './netflix-original/netflix-original.component';
 import { HomeMoviesRowComponent } from './home-movies-row/home-movies-row.component';
 import { MovieTrailerComponent } from './movie-trailer/movie-trailer.component';
+import { MovieInfoComponent } from './movie-info/movie-info.component';
+import { HomeMoviesComponent } from './home-movies/home-movies.component';
+import { HomeShowsComponent } from './home-shows/home-shows.component';
 
 
 
@@ -17,7 +20,10 @@ import { MovieTrailerComponent } from './movie-trailer/movie-trailer.component';
     HomeBannerComponent,
     HomeMoviesRowComponent,
     NetflixOriginalComponent,
-    MovieTrailerComponent
+    MovieTrailerComponent,
+    MovieInfoComponent,
+    HomeMoviesComponent,
+    HomeShowsComponent
   ],
   imports: [
     CommonModule,

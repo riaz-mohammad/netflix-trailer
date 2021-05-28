@@ -1,5 +1,6 @@
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { VideoIdService } from './video-id.service';
+import { MoviePreviewService } from './movie-preview.service';
 
 
 
@@ -10,8 +11,11 @@ import { VideoIdService } from './video-id.service';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class HomeComponent implements OnInit {
-  constructor(public videoIdService: VideoIdService) { }
+  constructor(public videoIdService: VideoIdService,
+              public moviePreview: MoviePreviewService) {}
   
+  public trailerId = this.videoIdService.id$;
+  public movieInfo = this.moviePreview.preview$;
   ngOnInit(): void {
     console.log();
   }

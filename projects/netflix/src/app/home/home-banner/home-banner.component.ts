@@ -1,7 +1,8 @@
 import { Component, OnInit, ChangeDetectionStrategy, Input } from '@angular/core';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
-import { Movie } from '../types';
+import { Movie, Show } from './../types';
+
 import {MoviesService } from './../movies.service';
 
 @Component({
@@ -12,21 +13,26 @@ import {MoviesService } from './../movies.service';
 })
 export class HomeBannerComponent implements OnInit {
   constructor(private movieService: MoviesService) { }
-  public original$: Observable<Movie[]> = this.movieService.getNetflixOriginal();
   public images = this.movieService.IMAGES;
-  public moviePoster$!: Observable<Movie>;
+  public moviePoster$!: Observable<Movie | Show>;
   ngOnInit(): void {
-    this.moviePoster$ = this.original$.pipe(
-      map(movies => movies[Math.floor(Math.random() * movies.length)])
+    this.moviePoster$ = this.movieService.getTrending().pipe(
+      map((movies: Movie[] | Show[]) => movies[Math.floor(Math.random() * movies.length)])
     );
   }
     
-   movieBanner(poster: Movie): void {
+   movieBanner(poster: Show | Movie): void {
      console.log(poster);
   } 
+
+}
+     
+     
+     
+     
+     
      
      
     
   
 
-}
