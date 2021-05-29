@@ -1,3 +1,4 @@
+import { ShareModule } from './../share/share.module';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
@@ -11,6 +12,7 @@ import { MovieTrailerComponent } from './movie-trailer/movie-trailer.component';
 import { MovieInfoComponent } from './movie-info/movie-info.component';
 import { HomeMoviesComponent } from './home-movies/home-movies.component';
 import { HomeShowsComponent } from './home-shows/home-shows.component';
+import { OnSelectDirective } from './on-select.directive';
 
 
 
@@ -23,12 +25,14 @@ import { HomeShowsComponent } from './home-shows/home-shows.component';
     MovieTrailerComponent,
     MovieInfoComponent,
     HomeMoviesComponent,
-    HomeShowsComponent
+    HomeShowsComponent,
+    OnSelectDirective
   ],
   imports: [
     CommonModule,
     HomeRoutingModule,
-    YouTubePlayerModule
+    YouTubePlayerModule,
+    ShareModule
   ]
 })
 export class HomeModule { }

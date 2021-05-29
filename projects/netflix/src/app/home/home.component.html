@@ -1,3 +1,4 @@
+<!--  Movie Trailer Player Component -->
 <ng-container *ngIf="trailerId | async as id">
     <app-movie-trailer
         (closePlayer)="onClosePlayer()" 
@@ -5,16 +6,27 @@
         [width]="1000"
         [height]="600">
     </app-movie-trailer>
-
-  <app-movie-info>
-  </app-movie-info>  
-    
 </ng-container>
+
+  <!-- Movie Preview/Info Component  -->
+  <ng-container *ngIf="movieInfo | async as preview">
+      <app-movie-info @moveOutPreview
+        [movieInfo]="preview"
+        [imageUrl]="movieImages"
+        (closeInfo)="onClosePreview()">
+      </app-movie-info>  
+  </ng-container>
+
+
+<!-- Home Page Components -->
 <app-home-banner></app-home-banner>
-<app-netflix-original title="Shows"></app-netflix-original>
-<app-netflix-original title="Movies"></app-netflix-original>
-<app-home-movies-row 
-      title="TRENDING">
-</app-home-movies-row>
+<app-netflix-original title="ORIGINAL SHOWS" ></app-netflix-original>
+<app-netflix-original title="ORIGINAL MOVIES" ></app-netflix-original>
+<app-netflix-original title="TRENDING"></app-netflix-original>
+<app-netflix-original title="TOP RATED MOVIES" ></app-netflix-original>
+<app-netflix-original title="TOP RATED SHOWS" ></app-netflix-original>
+<app-netflix-original title="POPULAR SHOWS" ></app-netflix-original>
+<app-netflix-original title="POPULAR MOVIES" ></app-netflix-original>
+
 
  

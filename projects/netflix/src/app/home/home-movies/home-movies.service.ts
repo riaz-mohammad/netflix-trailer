@@ -14,7 +14,11 @@ export class HomeMoviesService {
   private readonly LATEST_MOVIES = `${this.BASE_URL}/movie/latest?api_key=${this.API_KEY}&language=en-US`;
   private readonly TOP_RATED_MOVIES = `${this.BASE_URL}/movie/top_rated?api_key=${this.API_KEY}&language=en-US&page=1`;
   private readonly POPULAR_MOVIES = `${this.BASE_URL}/movie/popular?api_key=${this.API_KEY}&language=en-US&page=1`;
-  TRENDING_URL = `${this.BASE_URL}/trending/movie/week?api_key=${this.API_KEY}`;
+  private readonly TRENDING_URL = `${this.BASE_URL}/trending/movie/week?api_key=${this.API_KEY}`;
+  private readonly MOVIE_TRAILER_URL = `${
+    this.BASE_URL
+  }/movie/${123}/videos?api_key=${this.API_KEY}`;
+  private readonly MOVIES_BY_GENRES_URL = `${this.BASE_URL}/discover/movie?api_key=${this.API_KEY}&with_genres=`;
   // private readonly SIMILAR_MOVIES = `${this.BASE_URL}/movie/${movie_id}/similar?api_key=${this.API_KEY}&language=en-US&page=1`;
   constructor(private http: HttpClient) {}
   public getOriginalMovies(): any {}

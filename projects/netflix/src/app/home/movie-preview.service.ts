@@ -8,5 +8,13 @@ import { Preview } from './types';
 export class MoviePreviewService {
   private _preview: Subject<Preview> = new Subject();
   public preview$ = this._preview.asObservable();
-  constructor() {}
+  constructor() { }
+  
+  public showMovieInfo(preview: Preview): void {
+    this._preview.next(preview);
+  }
+
+  public closePreview(): void {
+    this._preview.next();
+  }
 }

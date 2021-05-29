@@ -9,12 +9,22 @@
    &::before{
      position: absolute;
      content: '';
-     top: 0;
+     top: 10%;
      left: 0;
-     width: 100%;
-     height: 20%;
-     background-image: linear-gradient(to top, transparent, black);
-     z-index: -1;
+     width: 5%;
+     height: 90%;
+    //  background-image: linear-gradient(to top, transparent, black);
+     z-index: 2;
+   }
+
+   &::after{
+     position: absolute;
+     content: '';
+     top: 10%;
+     right: 0;
+     width: 5%;
+     height: 90%;
+     z-index: 2;
    }
 
    .n{
@@ -31,9 +41,11 @@
   box-sizing: border-box;
   display: flex;
   overflow-y: hidden;
+  overflow-x: scroll;
   padding-top: 2rem;
   padding-bottom: 2rem;
   cursor: pointer;
+  
   &::-webkit-scrollbar {
    display: none;
   }
@@ -84,15 +96,14 @@
 
       button{
         position: absolute;
-        left: 30%;
+        left: 25%;
         bottom: 8%;
         width: 50%;
         height: 30px;
         border: none;
         outline: none;
-        background-color: rgba(206, 161, 15, 0.705);
+        background-color: black;
         color: white;
-        font-weight: bold;
         transition: all 500ms ease;
         transform: translateY(100%);
         opacity: 0;
@@ -106,6 +117,7 @@
         &:hover{
           background-color: rgba(255, 255, 255, 0.5);
           color: black;
+          font-weight: bold;
         }
 
         .info{

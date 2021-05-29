@@ -1,3 +1,4 @@
+import { ObserveAndAnimateDirective } from './../landing-page/observe-and-animate.directive';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { NgModule } from '@angular/core';
@@ -15,6 +16,7 @@ import { LandingPageLoginButtonComponent } from './landing-page-login-button/lan
 
 @NgModule({
   declarations: [
+    ObserveAndAnimateDirective,
     LandingPageVideoBackgroundComponent,
     LandingPageLogoComponent,
     LandingPageFormFieldComponent,
@@ -24,7 +26,8 @@ import { LandingPageLoginButtonComponent } from './landing-page-login-button/lan
   ],
   imports: [
     CommonModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    
   ],
   exports: [
     LandingPageVideoBackgroundComponent,
@@ -32,7 +35,8 @@ import { LandingPageLoginButtonComponent } from './landing-page-login-button/lan
     LandingPageFormFieldComponent,
     LandingPageFormButtonComponent,
     LandingPageLoginButtonComponent,
-    LandingPageFormWrapperComponent
+    LandingPageFormWrapperComponent,
+    ObserveAndAnimateDirective
   ]
 })
 

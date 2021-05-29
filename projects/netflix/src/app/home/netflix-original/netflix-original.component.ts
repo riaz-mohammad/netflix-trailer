@@ -1,9 +1,10 @@
+import { MoviePreviewService } from './../movie-preview.service';
 import { Component, OnInit, ChangeDetectionStrategy, Input } from '@angular/core';
 import { BehaviorSubject, Observable, Subject } from 'rxjs';
 import { MoviesService } from './../movies.service';
-import { Movie, Show } from '../types';
+import { Media } from '../types';
 import { Title } from './../types';
-import { map } from 'rxjs/operators';
+
 
 export enum ORIGINAL {
   shows = 'SHOWS',
@@ -16,35 +17,34 @@ export enum ORIGINAL {
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class NetflixOriginalComponent implements OnInit {
-  private media: BehaviorSubject<Title | undefined> =
-                 new BehaviorSubject<Title | undefined>(undefined);
-  
+  private _title!: Title;
   @Input()
-  get title(): Title | undefined {return this.media.value}
-  set title(_title: Title | undefined) {this.media.next(_title)}
+  get title(): Title {return this._title}
+  set title(title: Title) { this._title = title}
   
-  public netflixOriginal$!: Observable<Movie[]>;
+  public netflixOriginal$!: Observable<Media[]>;
   public images = this.movieService.IMAGES;
 
-  constructor(private movieService: MoviesService) { }
+  constructor(private movieService: MoviesService,
+              private moviePreview: MoviePreviewService) { }
   ngOnInit(): void {
-    this.media.pipe(
-      map(_ => this.netflixOriginal$ = this.movieService.getNetflixOriginalMovies())
-    ).subscribe();
+    console.log();
+    this.netflixOriginal$ = this.movieService.getMedia(this._title);
   }
     
     
 
+  getMovieInfo(movie: Media): void {
+    this.moviePreview.showMovieInfo(movie);
+  }
+    
+    
+    
+    
+
+}
 
       
      
      
     
-
-  getMovieInfo(movie: Movie): void {
-    console.log(movie);
-    
-    
-  }
-    
-}

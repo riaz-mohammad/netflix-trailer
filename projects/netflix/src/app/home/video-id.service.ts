@@ -1,21 +1,36 @@
 import { Injectable } from '@angular/core';
-import { Subject } from 'rxjs';
+import { Subject, Subscription } from 'rxjs';
+import { filter, map } from 'rxjs/operators';
+import { MoviesService } from './movies.service';
+import { Media, TrailerKey } from './types';
+export enum TRAILER {
+  MOVIE_TRAILER = 'MOVIE TRAILER',
+  SHOW_TRAILER  = 'SHOW TRAILER'
+}
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class VideoIdService {
-  private sourceIds = new Subject<string>();
-  public  id$ = this.sourceIds.asObservable();
-  constructor() {}
+  private sourceIds = new Subject<TrailerKey>();
+  public trailerKey$ = this.sourceIds.asObservable();
+  
+  constructor(private movieService: MoviesService) {}
 
-  public videoId(id: string): void {
-    id ? (this.sourceIds.next(id)) : null;
-  }
- 
-  //explicitly remove the id which will cause the player to close
-  public removeVideoId(): void {
-    this.sourceIds.next(undefined)
-  }
+  public findTrailer(media: Media): void {
     
+    this.movieService.getTrailer(media)
+      .pipe(
+        map(data => data.filter(data => data.type === 'Trailer')),
+        map(trailers => trailers[0])
+      )
+        
+      .subscribe(data => this.sourceIds.next(data));
+        
+  }
+
+  
+  public removeTrailer(): void {
+    this.sourceIds.next(undefined);
+  }
 }

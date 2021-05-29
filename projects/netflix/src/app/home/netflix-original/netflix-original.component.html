@@ -1,11 +1,11 @@
 <ng-container *ngIf="netflixOriginal$ | async as original">
-   <h1><span class="n">N</span>ETFLIX ORIGINAL {{ title }}</h1>
+   <h1><span class="n">N</span>ETFLIX {{ title | titlecase}}</h1>
       
     <div class="image-container">
       <ng-container *ngFor="let movieOrShow of original">
-             <div class="overlay">
+             <div class="overlay" (click)="getMovieInfo(movieOrShow)">
                 <img [src]="images+movieOrShow.poster_path" alt="movie_poster">
-                  <button (click)="getMovieInfo(movieOrShow)">MOVIE INFO
+                  <button>MOVIE INFO
                         <svg fill="none" viewBox="0 0 54 48" class="info">
                           <g clip-path="url(#clip0)">
                             <path fill="#404041" d="M54 24c0 13.3-12 24-27 24S0 37.3 0 24 12 0 27 0s27 10.7 27 24z"/>

@@ -1,7 +1,8 @@
+import { Observable } from 'rxjs';
 import { Component, OnInit, ChangeDetectionStrategy, OnDestroy, Input } from '@angular/core';
 import { MoviesService } from '../movies.service';
-import { Show } from './../types';
-import { Movie } from '../types';
+import { Media } from './../types';
+
 
 @Component({
   selector: 'app-home-movies-row',
@@ -10,20 +11,20 @@ import { Movie } from '../types';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class HomeMoviesRowComponent implements OnInit{
-  @Input() title!: string;
-  @Input() genre!: string;
   constructor(private moviesService: MoviesService) {}
   public images = this.moviesService.IMAGES;
-  public trending = this.moviesService.getTrending();
+  public trending!: Observable<Media[]>;
+  
 
   
 
 
   ngOnInit(): void {
     console.log();
+    this.trending = this.moviesService.getMedia('TRENDING');
   }
 
-  getMovieInfo(movie: Movie | Show): void {
+  getMovieInfo(movie: Media): void {
     console.log(movie);
   }
 

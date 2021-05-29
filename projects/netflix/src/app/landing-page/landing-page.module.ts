@@ -11,7 +11,7 @@ import { LandingPageMainGridComponent } from './landing-page-components/landing-
 import { LandingPageNavigationComponent } from './landing-page-components/landing-page-navigation/landing-page-navigation.component';
 import { LandingPageRegistrationComponent } from './landing-page-components/landing-page-registration/landing-page-registration.component';
 import { LandingPageVideoDemoComponent } from './landing-page-components/landing-page-video-demo/landing-page-video-demo.component';
-import { ObserveAndAnimateDirective } from './observe-and-animate.directive';
+
 import { NavigationPageFooterComponent } from './landing-page-components/navigation-page-footer/navigation-page-footer.component';
 
 
@@ -24,7 +24,7 @@ import { NavigationPageFooterComponent } from './landing-page-components/navigat
     LandingPageVideoDemoComponent,
     NavigationPageFooterComponent,
     FormWrapperComponent,
-    ObserveAndAnimateDirective,
+    
   ],
     
   imports: [

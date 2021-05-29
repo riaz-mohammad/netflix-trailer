@@ -1,13 +1,17 @@
-    <div class="player-container" (click)="onClick()">
+    <div class="player-container">
+        <div class="container" @trailerAnimation>
           <youtube-player 
-                  [videoId]="videoId" 
+                  [videoId]="videoId.key" 
                   [playerVars]="playerVars"
                   [width]="width"
-                  [height]="height">
+                  [height]="height"
                   (ready)="onReady($event)"
-                  (stateChange)="onStateChange($event)"
+                  (stateChange)="onStateChange($event)">
           </youtube-player>
+          <button>CLOSE</button>
+        </div>
       </div>
+
  
 
 
