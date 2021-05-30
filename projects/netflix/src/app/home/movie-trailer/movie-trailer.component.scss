@@ -8,7 +8,7 @@
   right: 0;
   bottom: 0;
   background-color: rgba(34, 29, 29, 0.707);
-  z-index: 1000;
+  z-index: 2000;
   cursor: pointer;
 }
 
@@ -39,6 +39,7 @@
     background-color: red;
     color: white;
     font-weight: bold;
+    z-index: 100;
   }
   }
 

@@ -1,3 +1,4 @@
+import { VideoIdService } from './../video-id.service';
 import { Component, OnInit, ChangeDetectionStrategy, Input } from '@angular/core';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
@@ -12,7 +13,8 @@ import {MoviesService } from './../movies.service';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class HomeBannerComponent implements OnInit {
-  constructor(private movieService: MoviesService) { }
+  constructor(private movieService: MoviesService,
+              private videoIdService: VideoIdService) { }
   public images = this.movieService.IMAGES;
   public moviePoster$!: Observable<Media>;
   ngOnInit(): void {
@@ -21,8 +23,8 @@ export class HomeBannerComponent implements OnInit {
     );
   }
     
-   movieBanner(poster: Media): void {
-     console.log(poster);
+   movieBanner(media: Media): void {
+     this.videoIdService.findTrailer(media);
   } 
 
 }

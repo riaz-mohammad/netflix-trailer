@@ -13,6 +13,7 @@ import { MovieInfoComponent } from './movie-info/movie-info.component';
 import { HomeMoviesComponent } from './home-movies/home-movies.component';
 import { HomeShowsComponent } from './home-shows/home-shows.component';
 import { OnSelectDirective } from './on-select.directive';
+import { SelectedDirective } from './selected.directive';
 
 
 
@@ -26,7 +27,8 @@ import { OnSelectDirective } from './on-select.directive';
     MovieInfoComponent,
     HomeMoviesComponent,
     HomeShowsComponent,
-    OnSelectDirective
+    OnSelectDirective,
+    SelectedDirective
   ],
   imports: [
     CommonModule,

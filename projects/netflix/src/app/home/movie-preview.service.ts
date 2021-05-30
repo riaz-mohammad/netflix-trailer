@@ -6,7 +6,7 @@ import { Preview } from './types';
   providedIn: 'root',
 })
 export class MoviePreviewService {
-  private _preview: Subject<Preview> = new Subject();
+  private _preview: Subject<Preview | undefined> = new Subject();
   public preview$ = this._preview.asObservable();
   constructor() { }
   

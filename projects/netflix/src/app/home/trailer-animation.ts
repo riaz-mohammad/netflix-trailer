@@ -4,15 +4,17 @@ import { trigger, transition, style, animate } from '@angular/animations';
 export const trailerAnimation = trigger('trailerAnimation', [
   transition(':enter', [
     style({
-      opacity: 0,
-      transform: 'translateY(100%)'
+      transform: 'translateY(-100%)'
     }),
-    animate('1200ms ease', style({
-      opacity: 1,
+      
+    animate('1000ms ease', style({
       transform: 'translateY(0%)'
     }))
+      
   ]),
-
 ]);
+
+      
+
   
 

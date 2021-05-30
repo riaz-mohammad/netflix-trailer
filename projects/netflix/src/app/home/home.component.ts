@@ -23,9 +23,12 @@ export class HomeComponent implements OnInit {
     private moviePreview: MoviePreviewService,
     private movieService: MoviesService
   ) {}
-
+  
+  //video id Observable to pass to the trailer component in the template
   public trailerId = this.videoIdService.trailerKey$;
+  //Movie or Show Object to pass to the info component in the template
   public movieInfo = this.moviePreview.preview$;
+  // All media images url 
   public movieImages = this.movieService.IMAGES;
 
   ngOnInit(): void {

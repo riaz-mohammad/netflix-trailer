@@ -20,9 +20,9 @@ export const moviePreviewAnimation = trigger('moviePreviewAnimation', [
   
 export const moveOutPreview = trigger('moveOutPreview', [
   transition(':leave', [
-    animate('800ms ease', style({
+    animate('500ms ease', style({
       opacity: 0,
-      transform: 'translateY(-100%)'
+      // transform: 'translateY(-100%)'
     }))
   ])
 ])

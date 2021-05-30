@@ -21,8 +21,8 @@
 
 
 
-                <div class="like-dislike" >
-                <svg viewBox="0 0 512 512" appOnSelect #choose>
+                <div class="like-dislike">
+                <svg viewBox="0 0 512 512" appOnSelect>
                         <defs>
                           <filter id="a" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse">
                             <feColorMatrix values="-1 0 0 0 1 0 -1 0 0 1 0 0 -1 0 1 0 0 0 1 0"/>
@@ -77,8 +77,16 @@
       
       <div class="movie-description">
         <h4>{{ movieInfo.overview}} </h4>
+        <p *ngFor="let selectDirective of onSelect">
+          {{selectDirective.select}}
+        </p> 
+
          <button (click)="closePreview($event)">CLOSE</button>
+         
       </div>
+   
+
+        
           
         
       

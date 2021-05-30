@@ -8,8 +8,7 @@
   z-index: 1000;
   position: fixed;
   
-
-
+  
   .parent-container{
     width: 100%;
     height: 100%;
@@ -17,7 +16,6 @@
     background-color: rgba(34, 29, 29, 0.707);
     display: flex;
     justify-content: center;
-
   }
   
 }
@@ -33,7 +31,15 @@
   z-index: 100;
   position: relative;
   background-color: rgba(0, 0, 0, 0.864);
-
+  @media(max-width: 1000px) {
+      width: 80%;
+      box-sizing: border-box;
+  }
+  @media(max-width: 700px) {
+    width: 100%;
+    height: 100%;
+  }
+  
   .movie-description{
     flex-basis: 50%;
     color: white;
@@ -89,6 +95,10 @@
   position: relative;
   z-index: 100;
   overflow: hidden;
+
+  @media(max-width: 800px) {
+     height: 50%;
+  }
   &::after{
     content: '';
     position: absolute;
@@ -108,6 +118,11 @@
     position: relative;
     animation-delay: 1000ms;
     animation: move 20000ms ease infinite;
+
+    @media(max-width: 800px) {
+        height: 100%;
+    }
+        
     
   }
   
@@ -125,6 +140,7 @@
      display: flex;
      align-items: center;
      padding-left: 1rem;
+     font-size: clamp(1rem, 5vw, 2rem);
    }
 
    h5{
@@ -158,6 +174,13 @@
          fill: yellow;
          transform: scale(1);
        }
+
+       @media(max-width: 500px) {
+          
+          width: 30px;
+          height: 20px;
+        
+        }
      }
       
     .like-dislike, .rating{
@@ -167,11 +190,18 @@
       }
     }
       
-
+      
     .rating *{
       width: 35px;
       height: 25px;
+      @media(max-width: 500px) {
+       width: 20px;
+       height: 10px;
+      }
     }
+
+
+
 
    }
 
@@ -180,7 +210,7 @@
       width: 10rem;
       height: 2.5rem;
       font-weight: bold;
-      font-size: 1rem;
+      font-size: clamp(10px, 1.5vw, 1rem);
       background-color: rgba(255, 0, 0, 0.692);
       outline: none;
       border: none;
@@ -192,6 +222,12 @@
       transition: all 500ms ease;
       z-index: 1;
       padding: 5px;
+
+      @media(max-width: 500px) {
+        width: 6rem;
+        height: 2rem;
+        
+      }
       &::before{
          content: '';
          position: absolute;
@@ -219,6 +255,11 @@
         height: 30px;
         stroke: white;
         z-index: 1;
+
+        @media (max-width: 500px) {
+           width: 20px;
+           height: 20px;
+        }
       }
      
     }
@@ -239,6 +280,8 @@
 100%{
   transform: scale(1) translate(0px);
 }
+}
+
+
 
     
-}

@@ -1,6 +1,6 @@
 <!--  Movie Trailer Player Component -->
 <ng-container *ngIf="trailerId | async as id">
-    <app-movie-trailer
+    <app-movie-trailer 
         (closePlayer)="onClosePlayer()" 
         [videoId]="id"
         [width]="1000"
