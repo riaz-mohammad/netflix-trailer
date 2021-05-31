@@ -26,11 +26,14 @@
      height: 90%;
      z-index: 2;
    }
+   h1{
+     font-size: clamp(1rem, 5vw, 2rem);
+   }
 
    .n{
      color: rgba(255, 0, 0, 0.87);
      font-weight: bold;
-     font-size: 35px;
+     font-size: clamp(1.2rem, 5.2vw, 2.5rem);
      line-height: 10px;
    }
 

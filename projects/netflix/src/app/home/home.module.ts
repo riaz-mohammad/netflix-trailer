@@ -1,3 +1,4 @@
+import { OnlikeDirective } from './onlike.directive';
 import { ShareModule } from './../share/share.module';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -13,7 +14,10 @@ import { MovieInfoComponent } from './movie-info/movie-info.component';
 import { HomeMoviesComponent } from './home-movies/home-movies.component';
 import { HomeShowsComponent } from './home-shows/home-shows.component';
 import { OnSelectDirective } from './on-select.directive';
-import { SelectedDirective } from './selected.directive';
+import { OndislikeDirective } from './ondislike.directive';
+
+
+
 
 
 
@@ -28,7 +32,9 @@ import { SelectedDirective } from './selected.directive';
     HomeMoviesComponent,
     HomeShowsComponent,
     OnSelectDirective,
-    SelectedDirective
+    OnlikeDirective,
+    OndislikeDirective,
+
   ],
   imports: [
     CommonModule,

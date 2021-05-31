@@ -37,7 +37,6 @@ export class MovieTrailerComponent implements OnInit {
     const tag = document.createElement('script');
     tag.src = 'https://www.youtube.com/iframe_api';
     document.body.appendChild(tag);
-    console.log(this.videoId);
   }
 
   public onReady(event: YT.PlayerEvent): void {}

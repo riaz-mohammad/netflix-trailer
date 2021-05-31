@@ -5,7 +5,7 @@
         <h1>{{ poster.name || poster.title }}</h1>
         
         <button (click)="movieBanner(poster)" class="banner-play-button">PLAY</button>
-        <h3>{{ poster.overview }}</h3>
+        <h5>{{ poster.overview | slice: 0:200}}...</h5>
       </header>
   </ng-container>
 

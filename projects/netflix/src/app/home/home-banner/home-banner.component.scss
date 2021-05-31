@@ -1,9 +1,11 @@
 :host{
-  display: flex;
   box-sizing: border-box;
-  height: 80vh;
   position: relative;
+  height: 100vh;
   z-index: 100;
+  display: grid;
+  grid-template: repeat(2, 1fr) / repeat(2, 1fr);
+  
   &::before{
     content: '';
     position: absolute;
@@ -11,79 +13,86 @@
     height: 100%;
     left: 0;
     top: 0;
-    background-image: radial-gradient(transparent, rgb(0, 0, 0));
+    background-image: radial-gradient(transparent, rgba(0, 0, 0, 0.63));
   }
   
   &::after{
     content: '';
     position: absolute;
     width: 100%;
-    height: 10%;
+    height: 50%;
     left: 0;
     bottom: 0;
-    background-image: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.699));
+    background-image: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.904));
   }
    
+    .banner-photo{
+      grid-area: 1 / 1 / -1 / -1;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: -10;
+    }
+
+
 }
 
-@mixin outline {
-   outline: 1px solid white;
-}
+
 .banner-header{
   box-sizing: border-box;
-  position: absolute;
   color: white;
   font-weight: bold;
-  top: 40%;
-  left: 5%;
-  width: 40%;
-  height: 50%;
-  z-index: 1;
-  
+  grid-area: 2 / 1 / -1 / -1;
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
+  padding-left: 4rem;
   align-items: flex-start;
-  padding: 1rem;
+  justify-content: center;
+  z-index: 10;
 
-  h1{
-    font-size: clamp(1.2rem, 3vw, 3rem);
-
+  @media(max-width: 500px) {
+    padding-left: 2rem;
   }
-    
-
-  h3{
-    font-size: clamp(12px, 1vw, 1.2rem);
-    color: white;
+  
+  h1{
+    font-size: clamp(2rem, 5vw, 3rem);
     width: 80%;
     box-sizing: border-box;
+    
+
+    }
+    
+ h5{
+    font-size: clamp(12px, 1.5vw, 1.2rem);
+    color: white;
+    width: 50%;
+    box-sizing: border-box;
     font-size: normal;
+    flex-basis: 30%;
   }
+}
    
     
-  
-}
-  
-.banner-photo{
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-  
- .banner-play-button{
-     display: block;
-      width: 20%;
-      height: 40px;
+.banner-play-button{
+      width: 15%;
+      flex-basis: 12%;
       border: none;
       outline: none;
       font-weight: bold;
       font-size: 1rem;
-      background-color: rgba(255, 0, 0, 0.63);
+      background-color: rgba(0, 0, 0, 0.733);
       color: white;
-      align-self: flex-start;
+      margin-top: 5px;
+      margin-bottom: 20px;
+      border: 1px solid white;
+      @media(max-width: 600px) {
+        width: 30%;
+      }
+      
       position: relative;
       transition: all 300ms ease-in-out;
       z-index: 1;
+      box-sizing: border-box;
       &::after{
         content: '';
         position: absolute;

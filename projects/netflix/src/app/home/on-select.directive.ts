@@ -1,22 +1,35 @@
 
-import { Directive, HostBinding, HostListener, Input } from '@angular/core';
+import { Directive, HostBinding, HostListener} from '@angular/core';
+
 
 @Directive({
-  selector: '[appOnSelect]'
+  selector: '[appOnSelect]',
+  exportAs: 'selection'
 })
 export class OnSelectDirective {
-  private onSelectSelf: boolean = false;
-  
+  private _selfState = false;
   @HostBinding('class.selected')
-  
-  get select(): boolean {
-    return this.onSelectSelf;
+   get select(): boolean {
+    return this._selfState;
     }
 
   @HostListener('click')
   onClick(): void {
-    this.onSelectSelf = !this.onSelectSelf;
-    }
+    this.toggleState();
+  }
+
+  public toggleState(): void {
+    this._selfState = !this._selfState;
+  }
+}
+    
+    
+
+    
+
+    
+    
+     
+  
   
 
-}
