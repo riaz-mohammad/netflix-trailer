@@ -1,5 +1,5 @@
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
-import { MoviesService } from './../movies.service';
+import { MoviesService } from '../../services/movies.service';
 
 @Component({
   selector: 'app-home-movies',

@@ -4,7 +4,7 @@ import { Observable, of } from 'rxjs';
 import { catchError, map, tap } from 'rxjs/operators';
 
 
-import { Media, TrailerKey, Results, Trailer, Title } from './types';
+import { Media, TrailerKey, Results, Trailer, Title } from '../types/types';
 
 export enum NETFLIX {
   TRENDING         = 'TRENDING',

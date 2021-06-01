@@ -4,7 +4,7 @@ import { Component, OnInit, ChangeDetectionStrategy, Input} from '@angular/core'
 import { Observable } from 'rxjs';
 
 
-import { VideoDemoService, ShowCaseData } from './../../video-demo.service';
+import { VideoDemoService, ShowCaseData } from '../../../services/video-demo.service';
 
 
 

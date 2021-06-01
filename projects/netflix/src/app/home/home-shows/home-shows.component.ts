@@ -1,5 +1,5 @@
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
-import { HomeShowsService } from './home-shows.service';
+import { HomeShowsService } from '../../services/home-shows.service';
 
 @Component({
   selector: 'app-home-shows',

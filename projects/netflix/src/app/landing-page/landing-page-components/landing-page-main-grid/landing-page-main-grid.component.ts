@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { showOrHide } from './../../loading-animation';
+import { showOrHide } from '../../../animations/loading-animation';
 
 
 @Component({

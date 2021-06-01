@@ -1,8 +1,8 @@
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { FormControl, Validators, FormGroup, FormBuilder } from '@angular/forms';
 import { Router } from '@angular/router';
-import { invalidEmail } from '../../email-invalid-animation';
-import { LoginButtonClickService } from './../../login-button-click.service';
+import { invalidEmail } from '../../../animations/email-invalid-animation';
+import { LoginButtonClickService } from '../../../services/login-button-click.service';
 
 
 

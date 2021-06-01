@@ -1,4 +1,4 @@
-import { LoginButtonClickService } from './../../landing-page/login-button-click.service';
+import { LoginButtonClickService } from '../../services/login-button-click.service';
 import { Component, ChangeDetectionStrategy, forwardRef, Input, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR, FormControl, Validators, FormGroup, FormGroupDirective } from '@angular/forms';
 

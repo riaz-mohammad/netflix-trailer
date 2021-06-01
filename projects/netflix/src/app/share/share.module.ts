@@ -1,5 +1,5 @@
 import { LandingPageNavigationComponent } from './../landing-page/landing-page-components/landing-page-navigation/landing-page-navigation.component';
-import { ObserveAndAnimateDirective } from './../landing-page/observe-and-animate.directive';
+import { ObserveAndAnimateDirective } from '../directives/observe-and-animate.directive';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { NgModule } from '@angular/core';

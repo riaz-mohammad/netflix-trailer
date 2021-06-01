@@ -1,9 +1,9 @@
-import { MoviePreviewService } from './../movie-preview.service';
+import { MoviePreviewService } from '../../services/movie-preview.service';
 import { Component, OnInit, ChangeDetectionStrategy, Input } from '@angular/core';
 import { BehaviorSubject, Observable, Subject } from 'rxjs';
-import { MoviesService } from './../movies.service';
-import { Media } from '../types';
-import { Title } from './../types';
+import { MoviesService } from '../../services/movies.service';
+import { Media } from '../../types/types';
+import { Title } from '../../types/types';
 
 
 export enum ORIGINAL {

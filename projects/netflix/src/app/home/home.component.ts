@@ -1,10 +1,10 @@
 import { Observable } from 'rxjs';
-import { MoviesService } from './movies.service';
-import { showOrHide } from './../landing-page/loading-animation';
+import { MoviesService } from '../services/movies.service';
+import { showOrHide } from '../animations/loading-animation';
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
-import { VideoIdService } from './video-id.service';
-import { MoviePreviewService } from './movie-preview.service';
-import { moveOutPreview, moviePreviewAnimation } from './movie-preview-animation';
+import { VideoIdService } from '../services/video-id.service';
+import { MoviePreviewService } from '../services/movie-preview.service';
+import { moveOutPreview, moviePreviewAnimation } from '../animations/movie-preview-animation';
 
 
 

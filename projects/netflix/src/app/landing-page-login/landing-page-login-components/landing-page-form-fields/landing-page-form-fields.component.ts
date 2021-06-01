@@ -1,7 +1,7 @@
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { errorAnimation } from '../../form-error-animation';
+import { errorAnimation } from '../../../animations/form-error-animation';
 
 @Component({
   selector: 'app-landing-page-form-fields',

@@ -1,9 +1,9 @@
 import { Component, OnInit, ChangeDetectionStrategy, HostBinding, OnDestroy } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
-import { registrationAnimation } from '../../registration-animation';
+import { registrationAnimation } from '../../../animations/registration-animation';
 import { map, tap } from 'rxjs/operators';
 import { Subscription } from 'rxjs';
-import { LoginButtonClickService } from './../../login-button-click.service';
+import { LoginButtonClickService } from '../../../services/login-button-click.service';
 
 @Component({
   selector: 'app-landing-page-registration',

@@ -1,5 +1,5 @@
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
-import { logoAnimation } from '../../landing-page/logo-animation';
+import { logoAnimation } from '../../animations/logo-animation';
 
 @Component({
   selector: 'app-landing-page-logo',

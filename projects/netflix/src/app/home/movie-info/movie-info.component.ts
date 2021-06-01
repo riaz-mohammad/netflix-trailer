@@ -1,10 +1,10 @@
-import { moveOutPreview } from './../movie-preview-animation';
+import { moveOutPreview } from '../../animations/movie-preview-animation';
 
-import { VideoIdService } from './../video-id.service';
+import { VideoIdService } from '../../services/video-id.service';
 import { Component, OnInit, ChangeDetectionStrategy, Input, Output, EventEmitter, ViewChild, ElementRef, AfterViewInit, HostListener, HostBinding, QueryList, ViewContainerRef, ViewChildren } from '@angular/core';
-import { Preview } from './../types';
-import { moviePreviewAnimation } from '../movie-preview-animation';
-import { OnSelectDirective } from '../on-select.directive';
+import { Preview } from '../../types/types';
+import { moviePreviewAnimation } from '../../animations/movie-preview-animation';
+import { OnSelectDirective } from '../../directives/on-select.directive';
 
 
 
