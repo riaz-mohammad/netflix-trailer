@@ -14,19 +14,20 @@ export enum TRAILER {
 export class VideoIdService {
   private sourceIds = new Subject<TrailerKey>();
   public trailerKey$ = this.sourceIds.asObservable();
+  private sub!: Subscription;
   
   constructor(private movieService: MoviesService) {}
 
   public findTrailer(media: Media): void {
-    
-    this.movieService.getTrailer(media)
+    this.sub = this.movieService.getTrailer(media)
       .pipe(
-        map(data => data.filter(data => data.type === 'Trailer')),
+        map(data => data.filter(data => data.type === ('Trailer' || 'Teaser'))),
         map(trailers => trailers[0])
       )
-        
-      .subscribe(data => this.sourceIds.next(data));
-        
+      .subscribe(data => (
+        this.sourceIds.next(data),
+        this.sub.unsubscribe()
+      ));
   }
 
   

@@ -3,8 +3,8 @@ import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { catchError, map, tap } from 'rxjs/operators';
 
-import { SHOWS_GENRES } from './shows-genres';
-import { Media, TrailerKey, Results, Trailer} from './types';
+
+import { Media, TrailerKey, Results, Trailer, Title } from './types';
 
 export enum NETFLIX {
   TRENDING         = 'TRENDING',
@@ -14,7 +14,7 @@ export enum NETFLIX {
   POPULAR_SHOWS    = 'POPULAR SHOWS',
   TOP_RATED_MOVIES = 'TOP RATED MOVIES',
   TOP_RATED_SHOWS  = 'TOP RATED SHOWS',
-  SIMILAR_MOVIES   = 'SIMILAR  MOVIES',
+  SIMILAR_MOVIES   = 'SIMILAR MOVIES',
   SIMILAR_SHOWS    = 'SIMILAR SHOWS',
 }
   
@@ -58,7 +58,7 @@ export class MoviesService {
           map(({ results }) => results))
     }
   
-  public getMedia(title: string): Observable<Media[]> {
+  public getMedia(title: Title): Observable<Media[]> {
          switch (title) {
            case NETFLIX.TRENDING:
              return this.getNetflixMedia(this.TRENDING_URL);
@@ -111,19 +111,6 @@ export class MoviesService {
         
   }
     
-      
-  // }
-  
-    //   .pipe(
-    //   map(({ results }) => results?.[0] ?? 'Not Found'),
-    //   catchError((error) => of(error))
-    // );
-
-
- 
-  private get randomGenre(): number {
-    return SHOWS_GENRES[Math.floor(Math.random() * SHOWS_GENRES.length)].id;
-  }
 
 
   public search(name: string) {

@@ -10,18 +10,20 @@ const routes: Routes = [
   {
     path: '',
     component: LandingPageMainGridComponent,
+    data: {animation: 'landingPage'}
   },
 
   {
     path: 'login',
     loadChildren: () =>
       import('./landing-page-login/landing-page-login.module').then(
-        (loginModule) => loginModule.LandingPageLoginModule
-      ),
+        (loginModule) => loginModule.LandingPageLoginModule),
+    data: {animation: 'loginPage'}
   },
   {
     path: 'home',
-    loadChildren: () => import('./home/home.module').then((m) => m.HomeModule),
+    loadChildren: () => import('./home/home.module').then((homeModule) => homeModule.HomeModule),
+    data: {animation: 'homePage'}
   },
 
   {

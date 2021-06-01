@@ -5,10 +5,10 @@ import { Subject } from 'rxjs';
   providedIn: 'root'
 })
 export class LoginButtonClickService {
-  private clickEmitter = new Subject<void>();
+  private clickEmitter = new Subject<string>();
   public clickEmitter$ = this.clickEmitter.asObservable();
   public emitClickEvent(): void {
-    this.clickEmitter.next();
+    this.clickEmitter.next('Clicked');
   }
 }
   

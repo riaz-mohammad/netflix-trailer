@@ -1,10 +1,20 @@
-   <!-- <app-landing-page-navigation>
+   
+   <app-landing-page-navigation *ngIf="router.url !== '/login'">
       <app-landing-page-logo>
       </app-landing-page-logo>
 
-      <app-landing-page-login-button>
-        SING IN
+      <app-landing-page-login-button >
+        {{ textToShow }}
       </app-landing-page-login-button>
-  </app-landing-page-navigation> -->
+  </app-landing-page-navigation>
 
-<router-outlet></router-outlet>
+
+ <div [@routeAnimations]="getRouteState(routerOutlet)" class="router-outlet">
+    <router-outlet 
+          #routerOutlet="outlet">
+    </router-outlet>
+ </div>
+ 
+
+
+

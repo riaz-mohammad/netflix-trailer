@@ -1,5 +1,6 @@
 import { LoginButtonClickService } from '../../landing-page/login-button-click.service';
-import { Component, ChangeDetectionStrategy } from '@angular/core';
+import { Component, ChangeDetectionStrategy, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -9,9 +10,17 @@ import { Component, ChangeDetectionStrategy } from '@angular/core';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class LandingPageLoginButtonComponent{
-  constructor(private loginButtonClickEmitter: LoginButtonClickService) { }
+  
+  constructor(
+    private router: Router,
+    private loginButtonClickEmitter: LoginButtonClickService) { }
   public clickHandler(): void {
-    this.loginButtonClickEmitter.emitClickEvent();
+    if (this.router.url === '/') {
+      this.loginButtonClickEmitter.emitClickEvent();
+      return;
+    }
+
+  this.router.navigate(['/'])
     window.scrollTo({
       top: 0,
       left: 0,

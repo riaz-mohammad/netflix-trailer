@@ -1,3 +1,4 @@
+import { fadeIn } from './../trailer-animation';
 import { TrailerKey } from './../types';
 import { Component, OnInit, ChangeDetectionStrategy, Input, Output, EventEmitter, HostBinding, HostListener } from '@angular/core';
 
@@ -9,7 +10,7 @@ import {trailerAnimation } from '../trailer-animation';
   selector: 'app-movie-trailer',
   templateUrl: './movie-trailer.component.html',
   styleUrls: ['./movie-trailer.component.scss'],
-  animations: [trailerAnimation],
+  animations: [trailerAnimation, fadeIn],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class MovieTrailerComponent implements OnInit {
@@ -17,6 +18,11 @@ export class MovieTrailerComponent implements OnInit {
   @Input() height!: number;
   @Input() videoId!: TrailerKey;
   @Output() closePlayer: EventEmitter<void> = new EventEmitter();
+  @HostBinding('@fadeIn')
+  get runAnimation(): boolean {
+    return true;
+  };
+  
   @HostListener('click', ['$event'])
   _onclick(): void {
     this.closePlayer.emit();
@@ -30,7 +36,6 @@ export class MovieTrailerComponent implements OnInit {
 
   public onClick(): void {
     this.closePlayer.emit();
-    console.log('Clicked');
   }
 
   ngOnInit(): void {

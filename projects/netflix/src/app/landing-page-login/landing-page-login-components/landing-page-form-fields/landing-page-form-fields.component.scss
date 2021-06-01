@@ -5,9 +5,11 @@
   box-sizing: border-box;
   height: 100%;
   width: 100%;
+
 }
   
 .form{
+  
   box-sizing: border-box;
   height: 90%;
   width: 90%;
@@ -18,18 +20,27 @@
   justify-content: space-around;
   align-items: center;
   .error-message{
-    background-color: red;
     position: absolute;
-    top: 0;
-    left: 45%;
-    width: 25px;
-    height: 25px;
-    clip-path: polygon(50% 0%, 0 100%, 99% 100%);
-    font-size: 1.1rem;
-    font-weight: bold;
+    top: 0%;
+    left: 10%;
+    width: 80%;
+    height: 8%;
+    color: red;
     text-align: center;
-    padding: 5px;
+    background-color: rgba(0, 0, 0, 0.274);
+    font-size: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    // left: 45%;
+    // width: 25px;
+    // height: 25px;
+    // clip-path: polygon(50% 0%, 0 100%, 99% 100%);
     box-sizing: border-box;
+
+
+
+   
   }
 
   .form-field-container{

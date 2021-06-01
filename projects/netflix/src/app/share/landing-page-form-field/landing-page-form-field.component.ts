@@ -1,7 +1,9 @@
-import { Component,  ChangeDetectionStrategy, forwardRef, Input } from '@angular/core';
-import { ControlValueAccessor, NG_VALUE_ACCESSOR, FormControl, Validators } from '@angular/forms';
+import { LoginButtonClickService } from './../../landing-page/login-button-click.service';
+import { Component, ChangeDetectionStrategy, forwardRef, Input, OnInit, ViewChild, ElementRef } from '@angular/core';
+import { ControlValueAccessor, NG_VALUE_ACCESSOR, FormControl, Validators, FormGroup, FormGroupDirective } from '@angular/forms';
 
 import { errorMessageAnimation } from './error-message-animation';
+import { tap } from 'rxjs/operators';
 
 
 @Component({
@@ -18,19 +20,33 @@ import { errorMessageAnimation } from './error-message-animation';
   ],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class LandingPageFormFieldComponent implements ControlValueAccessor {
+export class LandingPageFormFieldComponent implements ControlValueAccessor, OnInit {
   public formControl!: FormControl;
   @Input() type!: string;
   // eslint-disable-next-line @angular-eslint/no-input-rename
   @Input('placeholder') label!: string;
   @Input() borderColor: string | undefined;
   @Input() borderColorFocus: string | undefined;
+  @ViewChild('input', {static: true}) input!: ElementRef<HTMLInputElement>
   public moveUp: boolean | undefined;
   public valueChanged!: (val: string) => void;
   public touched!: () => void;
   constructor() {
     this.formControl = new FormControl('', Validators.required);
   }
+
+  ngOnInit(): void {
+    console.log();
+  }
+    
+    
+  public focusOnInput(): void {
+    this.input.nativeElement.focus();
+  }
+
+    
+    
+    
 
   writeValue(value: string): void {
     this.formControl.setValue(value);

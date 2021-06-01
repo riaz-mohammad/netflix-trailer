@@ -1,21 +1,27 @@
+import { moveOutPreview } from './../movie-preview-animation';
 
 import { VideoIdService } from './../video-id.service';
 import { Component, OnInit, ChangeDetectionStrategy, Input, Output, EventEmitter, ViewChild, ElementRef, AfterViewInit, HostListener, HostBinding, QueryList, ViewContainerRef, ViewChildren } from '@angular/core';
 import { Preview } from './../types';
 import { moviePreviewAnimation } from '../movie-preview-animation';
 import { OnSelectDirective } from '../on-select.directive';
-import {  of, Observable, from } from 'rxjs';
-import { concatMap } from 'rxjs/operators';
+
+
 
 
 @Component({
   selector: 'app-movie-info',
   templateUrl: './movie-info.component.html',
   styleUrls: ['./movie-info.component.scss'],
-  animations: [moviePreviewAnimation],
+  animations: [moviePreviewAnimation, moveOutPreview],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class MovieInfoComponent implements OnInit, AfterViewInit {
+  @HostBinding('@moveOutPreview')
+  get runAnimation(): boolean {
+    return true;
+  }
+  
   @Input() movieInfo!: Preview;
   @Input() imageUrl!: string;
   @Output() closeInfo: EventEmitter<void> = new EventEmitter();

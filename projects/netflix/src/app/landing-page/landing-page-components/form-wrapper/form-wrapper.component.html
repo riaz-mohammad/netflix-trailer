@@ -1,19 +1,31 @@
-<form  [formGroup]="formGroup" (ngSubmit)="onSubmit()" class="form">
+<form  [formGroup]="formGroup" (ngSubmit)="onSubmit(input)" class="form">
         
       <div class="input-container">
-          <app-landing-page-form-field
+          <app-landing-page-form-field #input
             type="text"
             placeholder="EMAIL"
             formControlName="email">
           </app-landing-page-form-field> 
+      <span class="invalid-email" @invalidEmail *ngIf="email.hasError('email')">
+            Email is not Valid!
+      </span>
+            
+      <ng-container 
+            *ngIf="buttonClick.clickEmitter$ | async">
+            {{ input.focusOnInput() }}
+      </ng-container>
+      
+            
+
+      
+
       </div>
             
-      <div class="button-container">
-            <app-landing-page-form-button type="submit">
+      <div class="button-container" >
+            <app-landing-page-form-button type="submit" >
                GET STARTED
             </app-landing-page-form-button>
       </div>   
-      
        
 </form>
  

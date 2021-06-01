@@ -1,10 +1,11 @@
-import { VideoIdService } from './../video-id.service';
 import { Component, OnInit, ChangeDetectionStrategy, Input } from '@angular/core';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
-import {  Media } from './../types';
 
+import {  Media } from './../types';
+import { VideoIdService } from './../video-id.service';
 import {MoviesService } from './../movies.service';
+
 
 @Component({
   selector: 'app-home-banner',
@@ -13,11 +14,13 @@ import {MoviesService } from './../movies.service';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class HomeBannerComponent implements OnInit {
-  constructor(private movieService: MoviesService,
-              private videoIdService: VideoIdService) { }
+  constructor(
+    private movieService: MoviesService,
+    private videoIdService: VideoIdService) { }
   public images = this.movieService.IMAGES;
   public moviePoster$!: Observable<Media>;
   ngOnInit(): void {
+    // TO PICK A RANDOM MOVIE/SHOW FOR BANNER
     this.moviePoster$ = this.movieService.getMedia('TRENDING').pipe(
        map((movies: Media[]) => movies[Math.floor(Math.random() * movies.length)])
     );

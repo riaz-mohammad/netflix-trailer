@@ -1,4 +1,5 @@
-import { Component,  ChangeDetectionStrategy } from '@angular/core';
+import { Component,  ChangeDetectionStrategy, HostBinding } from '@angular/core';
+
 
 @Component({
   selector: 'app-landing-page-login',
@@ -7,7 +8,7 @@ import { Component,  ChangeDetectionStrategy } from '@angular/core';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class LandingPageLoginComponent  {
-  constructor() {}
+  constructor() { }
 }
   
 

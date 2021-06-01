@@ -1,5 +1,7 @@
 <form [formGroup]="formGroup" class="form" (ngSubmit)="onSubmit()">
-   <span class="error-message" *ngIf="notValid" @errorAnimation>!</span>
+   <span class="error-message" *ngIf="notValid" @errorAnimation>
+      Please Fill All The Fields!
+   </span>
    
    <div  class="form-field-container">
       <app-landing-page-form-field

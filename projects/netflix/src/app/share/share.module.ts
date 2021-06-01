@@ -1,3 +1,4 @@
+import { LandingPageNavigationComponent } from './../landing-page/landing-page-components/landing-page-navigation/landing-page-navigation.component';
 import { ObserveAndAnimateDirective } from './../landing-page/observe-and-animate.directive';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
@@ -23,6 +24,7 @@ import { LandingPageLoginButtonComponent } from './landing-page-login-button/lan
     LandingPageFormButtonComponent,
     LandingPageLoginButtonComponent,
     LandingPageFormWrapperComponent,
+    LandingPageNavigationComponent,
   ],
   imports: [
     CommonModule,
@@ -30,6 +32,7 @@ import { LandingPageLoginButtonComponent } from './landing-page-login-button/lan
     
   ],
   exports: [
+    LandingPageNavigationComponent,
     LandingPageVideoBackgroundComponent,
     LandingPageLogoComponent,
     LandingPageFormFieldComponent,

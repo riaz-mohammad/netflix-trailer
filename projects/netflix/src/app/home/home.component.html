@@ -10,7 +10,7 @@
 
   <!-- Movie Preview/Info Component  -->
   <ng-container *ngIf="movieInfo | async as preview">
-      <app-movie-info @moveOutPreview
+      <app-movie-info 
         [movieInfo]="preview"
         [imageUrl]="movieImages"
         (closeInfo)="onClosePreview()">

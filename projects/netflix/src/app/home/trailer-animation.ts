@@ -1,4 +1,4 @@
-import { trigger, transition, style, animate } from '@angular/animations';
+import { trigger, transition, style, animate, query } from '@angular/animations';
 
 
 export const trailerAnimation = trigger('trailerAnimation', [
@@ -15,6 +15,18 @@ export const trailerAnimation = trigger('trailerAnimation', [
 ]);
 
       
+export const fadeIn = trigger('fadeIn', [
+  transition(':leave', [
+    style({
+      opacity: 1
+    }),
 
+    query(':self', [
+      animate('800ms ease', style({
+        opacity: 0
+      }))
+    ], {optional: true})
+  ])
+])
   
 

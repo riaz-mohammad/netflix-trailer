@@ -1,5 +1,6 @@
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { errorAnimation } from '../../form-error-animation';
 
 @Component({
@@ -11,7 +12,8 @@ import { errorAnimation } from '../../form-error-animation';
 })
 export class LandingPageFormFieldsComponent implements OnInit {
   public formGroup!: FormGroup;
-  constructor(private formBuilder: FormBuilder) {}
+  constructor(private router: Router,
+              private formBuilder: FormBuilder) { }
   public notValid: boolean | undefined;
   ngOnInit(): void {
     this.formGroup = this.formBuilder.group(
@@ -29,10 +31,13 @@ export class LandingPageFormFieldsComponent implements OnInit {
       this.notValid = true;
       return;
     }
-
     this.notValid = false;
-    console.log(this.formGroup.value);
+    this.router.navigate(['/home'])
+    this.formGroup.reset({ name: '', country: '', password: '' });
+  
+    
   }
+
 }
       
       

@@ -1,3 +1,4 @@
+import { ShareModule } from './share/share.module';
 
 
 import { NgModule } from '@angular/core';
@@ -23,6 +24,7 @@ import { AppComponent } from './app.component';
     BrowserAnimationsModule,
     AppRoutingModule,
     LandingPageModule,
+    ShareModule
     
   ],
     

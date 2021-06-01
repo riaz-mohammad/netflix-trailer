@@ -40,7 +40,7 @@ import { OndislikeDirective } from './ondislike.directive';
     CommonModule,
     HomeRoutingModule,
     YouTubePlayerModule,
-    ShareModule
+    
   ]
 })
 export class HomeModule { }

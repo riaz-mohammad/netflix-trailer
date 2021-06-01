@@ -19,7 +19,7 @@ import { NavigationPageFooterComponent } from './landing-page-components/navigat
 @NgModule({
   declarations: [
     LandingPageMainGridComponent,
-    LandingPageNavigationComponent,
+    // LandingPageNavigationComponent,
     LandingPageRegistrationComponent,
     LandingPageVideoDemoComponent,
     NavigationPageFooterComponent,
