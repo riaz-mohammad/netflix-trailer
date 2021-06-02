@@ -1,8 +1,7 @@
 <button (click)="toggleButtonsState() "class="collection-button">COLLECTION</button>
+  
   <ng-container *ngIf="showButtons">
-    <!-- <button  *ngIf="showOrHide('/home')" [appActivateRoute]="'home'" class="buttons">HOME</button>
-    <button  *ngIf="showOrHide('/movies')" [appActivateRoute]="'movies'" class="buttons">MOVIES</button>
-    <button  *ngIf="showOrHide('/shows')" [appActivateRoute]="'shows'" class="buttons">SHOWS</button> -->
+    
     <app-collection-button
        *ngIf="showOrHide('/home')"
        (click)="toggleButtonsState()"
