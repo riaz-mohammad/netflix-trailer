@@ -25,23 +25,47 @@
   .header{
     color: white;
     flex-basis: 50%;
-    
+    font-size: clamp(15px, 1.5vw, 2rem);
+ 
   }
 }
 .buttons{
    outline: none;
    border: none;
    color: white;
-   flex-basis: 20%;
-   height: 30%;
+   flex-basis: 18%;
+   height: 22%;
   font-weight: bold;
+  transition: all 300ms ease;
+  
 }
 
 .buttons.confirm{
-  background-color: red;
+  background-color: rgba(255, 0, 0, 0.795);
+  &:hover{
+    background-color: red;
+  }
 }
 .buttons.reject{
-  background-color: rgb(255, 255, 255);
+  background-color: rgba(255, 255, 255, 0.836);
   color: black;
+  &:hover{
+    background-color: white;
+  }
 }
 
+@media (max-width: 950px) {
+    .container{
+      flex-direction: column;
+      width: 60%;
+    }
+    .header{
+      flex-basis: 30%;
+      padding: 10px;
+    }
+
+   .buttons{
+      width: 30%;
+   }
+
+}
