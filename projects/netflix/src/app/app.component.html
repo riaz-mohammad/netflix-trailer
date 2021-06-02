@@ -12,11 +12,16 @@
 
                   
          
-            <app-landing-page-login-button >
+            <app-landing-page-login-button (showModal)="showModal = !showModal">
             {{ textToShow }}
             </app-landing-page-login-button>
+
   </app-landing-page-navigation>
       
+ <app-logout-modal *ngIf="showModal" 
+      (confirmLogout)="onShowModal($event)"
+      @modalFadeIn>
+ </app-logout-modal>
         
 
      

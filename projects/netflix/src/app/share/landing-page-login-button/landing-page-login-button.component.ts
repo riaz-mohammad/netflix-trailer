@@ -1,6 +1,7 @@
-import { LoginButtonClickService } from '../../services/login-button-click.service';
-import { Component, ChangeDetectionStrategy, OnInit } from '@angular/core';
+import { Component, ChangeDetectionStrategy, OnInit, EventEmitter, Output } from '@angular/core';
 import { Router } from '@angular/router';
+import { LoginButtonClickService } from '../../services/login-button-click.service';
+
 
 
 @Component({
@@ -10,7 +11,7 @@ import { Router } from '@angular/router';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class LandingPageLoginButtonComponent{
-  
+  @Output() public showModal: EventEmitter<void> = new EventEmitter();
   constructor(
     private router: Router,
     private loginButtonClickEmitter: LoginButtonClickService) { }
@@ -18,9 +19,9 @@ export class LandingPageLoginButtonComponent{
     if (this.router.url === '/') {
       this.loginButtonClickEmitter.emitClickEvent();
       return;
-    }
-
-  this.router.navigate(['/'])
+    }  
+    
+    this.showModal.emit();
     window.scrollTo({
       top: 0,
       left: 0,

@@ -11,6 +11,7 @@ import { HomeCollectionButtonComponent } from
   './home-collection-button/home-collection-button.component';
 import { ActivateRouteDirective } from './directives/activate-route.directive';
 import { CollectionButtonComponent } from './collection-button/collection-button.component';
+import { LogoutModalComponent } from './logout-modal/logout-modal.component';
 
 
 
@@ -21,7 +22,8 @@ import { CollectionButtonComponent } from './collection-button/collection-button
     AppComponent,
     HomeCollectionButtonComponent,
     ActivateRouteDirective,
-    CollectionButtonComponent
+    CollectionButtonComponent,
+    LogoutModalComponent
   ],
   imports: [
     BrowserModule,

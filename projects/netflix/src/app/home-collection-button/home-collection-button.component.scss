@@ -12,6 +12,18 @@
   :nth-child(2){
     border-bottom: 1px solid black;
   }
+  
+  @media(max-width: 1000px){
+      right: 45%;
+      width: 5rem;
+      height: 8rem;
+      top: 1.8rem;
+  }
+
+  @media (max-width: 500px) {
+     height: 6rem;
+     right: 40%;
+  }
 
 }
 
@@ -25,7 +37,7 @@
   justify-content: center;
   align-items: center;
   font-weight: bold;
-  font-size: 1rem;
+  font-size: clamp(10px, 1vw, 2rem);
   outline: none;
   border: none;
   border: 1px solid transparent;
@@ -35,6 +47,10 @@
     background-color: black;
     border-color: white;
     color: white
+  }
+
+  @media (max-width: 1000px) {
+       flex-basis: 20%;
   }
 }
 

@@ -6,6 +6,9 @@
   z-index: -1;
   padding: 0;
   margin: 0;
+  @media (max-width: 1000px) {
+     flex-basis: 10%;
+  }
   
 }
 
@@ -17,9 +20,14 @@
   height: 100%;
   font-weight: bold;
   transition: all 500ms ease;
+  font-size: clamp(8px, 1vw, 2rem);
   &:hover{
     background-color: black;
     color: white;
+  }
+
+  @media (max-width: 1000px) {
+     font-weight: normal;
   }
 }
   
