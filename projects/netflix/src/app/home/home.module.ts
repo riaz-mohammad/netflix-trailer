@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
 import { YouTubePlayerModule } from '@angular/youtube-player';
+
 import { HomeRoutingModule } from './home-routing.module';
 import { HomeComponent } from './home.component';
 import { HomeBannerComponent } from './home-banner/home-banner.component';
@@ -14,6 +14,7 @@ import { HomeShowsComponent } from './home-shows/home-shows.component';
 import { OnSelectDirective } from '../directives/on-select.directive';
 import { OnlikeDirective } from '../directives/onlike.directive';
 import { OndislikeDirective } from '../directives/ondislike.directive';
+
 
 
 
@@ -33,6 +34,7 @@ import { OndislikeDirective } from '../directives/ondislike.directive';
     OnSelectDirective,
     OnlikeDirective,
     OndislikeDirective,
+    
 
   ],
   imports: [

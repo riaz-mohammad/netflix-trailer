@@ -8,12 +8,8 @@ import { logoAnimation } from '../../animations/logo-animation';
   animations: [logoAnimation],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class LandingPageLogoComponent implements OnInit {
+export class LandingPageLogoComponent{
 
   constructor() { }
-
-  ngOnInit(): void {
-    console.log()
-  }
 
 }

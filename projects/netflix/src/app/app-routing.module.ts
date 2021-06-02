@@ -15,17 +15,25 @@ const routes: Routes = [
 
   {
     path: 'login',
-    loadChildren: () =>
-      import('./landing-page-login/landing-page-login.module').then(
-        (loginModule) => loginModule.LandingPageLoginModule),
+    loadChildren: () =>import('./landing-page-login/landing-page-login.module').then((m) => m.LandingPageLoginModule),
     data: {animation: 'loginPage'}
   },
   {
     path: 'home',
-    loadChildren: () => import('./home/home.module').then((homeModule) => homeModule.HomeModule),
+    loadChildren: () => import('./home/home.module').then((m) => m.HomeModule),
     data: {animation: 'homePage'}
   },
 
+  {
+    path: 'movies',
+    loadChildren: () => import('./movies/movies.module').then(m => m.MoviesModule),
+    data: {animation: 'moviesPage'}
+  },
+  {
+    path: 'shows',
+    loadChildren: () => import('./shows/shows.module').then(m => m.ShowsModule),
+    data: {animation: 'showsPage'}
+  },
   {
     path: '',
     pathMatch: 'full',

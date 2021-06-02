@@ -78,3 +78,5 @@ export interface Media {
 }
 
 
+export type ActivateRoute = 'shows' | 'movies' | 'home';
+

@@ -2,12 +2,13 @@ import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { errorAnimation } from '../../../animations/form-error-animation';
+import { loginButtonAnimation } from './../../../animations/login-button-animation';
 
 @Component({
   selector: 'app-landing-page-form-fields',
   templateUrl: './landing-page-form-fields.component.html',
   styleUrls: ['./landing-page-form-fields.component.scss'],
-  animations: [errorAnimation],
+  animations: [errorAnimation, loginButtonAnimation],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class LandingPageFormFieldsComponent implements OnInit {

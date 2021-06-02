@@ -12,7 +12,7 @@ export class AppComponent {
   title = 'netflix';
   constructor(public router: Router) {}
   get textToShow(): string {
-    return this.router.url === '/home' ? 'LOG OUT' : 'LOG IN';
+    return this.router.url === '/' ? 'LOG IN' : 'LOG OUT';
   }
 
   public getRouteState(outlet: RouterOutlet): string {
@@ -20,6 +20,8 @@ export class AppComponent {
            outlet.activatedRouteData.animation);
   }
     
-    
+  public get showOrHide(): boolean {
+    return !(this.router.url === '/' || this.router.url == '/login')
+  }
     
 }

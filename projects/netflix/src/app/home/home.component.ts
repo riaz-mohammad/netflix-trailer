@@ -5,6 +5,7 @@ import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { VideoIdService } from '../services/video-id.service';
 import { MoviePreviewService } from '../services/movie-preview.service';
 import { moveOutPreview, moviePreviewAnimation } from '../animations/movie-preview-animation';
+import { ActivatedRoute, Route } from '@angular/router';
 
 
 
@@ -33,6 +34,7 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {
     console.log();
+    
   }
 
   public onClosePlayer(): void {

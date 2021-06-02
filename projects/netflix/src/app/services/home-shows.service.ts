@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Show, OriginalShow } from '../types/types';
+import { Show, OriginalShow } from '../home/types';
 
 @Injectable({
   providedIn: 'root',

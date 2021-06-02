@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Movie, OriginalMovie } from '../types/types';
+import { Movie, OriginalMovie } from '../home/types';
 
 
 @Injectable({

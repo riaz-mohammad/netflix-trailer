@@ -1,16 +1,31 @@
    
    <app-landing-page-navigation *ngIf="router.url !== '/login'">
-      <app-landing-page-logo>
-      </app-landing-page-logo>
+      
+         <app-landing-page-logo>
+         </app-landing-page-logo>
 
-      <app-landing-page-login-button >
-        {{ textToShow }}
-      </app-landing-page-login-button>
+           <div class="nav-overlay" 
+                  *ngIf="router.url !== '/'">
+           </div>
+            <app-home-collection-button *ngIf="showOrHide">
+            </app-home-collection-button>
+
+                  
+         
+            <app-landing-page-login-button >
+            {{ textToShow }}
+            </app-landing-page-login-button>
   </app-landing-page-navigation>
+      
+        
+
+     
 
 
- <div [@routeAnimations]="getRouteState(routerOutlet)" class="router-outlet">
-    <router-outlet 
+
+ <div [@routeAnimations]="getRouteState(routerOutlet)" 
+      class="router-outlet">
+      <router-outlet 
           #routerOutlet="outlet">
     </router-outlet>
  </div>

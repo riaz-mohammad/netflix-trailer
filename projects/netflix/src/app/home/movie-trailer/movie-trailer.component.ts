@@ -1,5 +1,5 @@
 import { fadeIn } from '../../animations/trailer-animation';
-import { TrailerKey } from '../../types/types';
+import { TrailerKey } from '../types';
 import { Component, OnInit, ChangeDetectionStrategy, Input, Output, EventEmitter, HostBinding, HostListener } from '@angular/core';
 
 

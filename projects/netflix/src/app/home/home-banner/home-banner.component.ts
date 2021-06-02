@@ -2,7 +2,7 @@ import { Component, OnInit, ChangeDetectionStrategy, Input } from '@angular/core
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
-import {  Media } from '../../types/types';
+import {  Media } from '../types';
 import { VideoIdService } from '../../services/video-id.service';
 import {MoviesService } from '../../services/movies.service';
 

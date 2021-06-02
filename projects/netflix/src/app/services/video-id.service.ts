@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Subject, Subscription } from 'rxjs';
 import { filter, map } from 'rxjs/operators';
 import { MoviesService } from './movies.service';
-import { Media, TrailerKey } from '../types/types';
+import { Media, TrailerKey } from '../home/types';
 export enum TRAILER {
   MOVIE_TRAILER = 'MOVIE TRAILER',
   SHOW_TRAILER  = 'SHOW TRAILER'

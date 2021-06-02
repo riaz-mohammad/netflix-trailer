@@ -4,34 +4,51 @@ import { trigger, transition, query, style, animate, group, animateChild } from 
 export const routeAnimations = trigger('routeAnimations', [
   transition('* <=> *', [
     query(
-      ':enter, :leave', [
+      ':enter, :leave',
+      [
         style({
           opacity: 0,
           position: 'absolute',
           top: 0,
           left: 0,
-          width: '100%'
+          width: '100%',
         }),
-      ], { optional: true }
+      ],
+      { optional: true }
     ),
     query(':enter', animateChild(), { optional: true }),
 
     group([
-      query(':enter', [
-        animate('3000ms ease', style({
-          opacity: 1
-        }))
-      ], { optional: true }),
-      
-      query(':leave', [
-        animate('2000ms ease', style({
-          opacity: 0
-        }))
-      ], {optional: true})
+      query('@registrationAnimation', animateChild(), { optional: true }),
+      query('@logoAnimation', animateChild(), { optional: true }),
+      query('@loginButtonAnimation', animateChild(), {optional: true}),
+      query(
+        ':enter',
+        [
+          animate(
+            '3000ms ease',
+            style({
+              opacity: 1,
+            })
+          ),
+        ],
+        { optional: true }
+      ),
+
+      query(
+        ':leave',
+        [
+          animate(
+            '2000ms ease',
+            style({
+              opacity: 0,
+            })
+          ),
+        ],
+        { optional: true }
+      ),
     ]),
 
-    query(':leave', animateChild(), { optional: true })
-
-
+    query(':leave', animateChild(), { optional: true }),
   ]),
 ]);

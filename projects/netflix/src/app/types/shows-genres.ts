@@ -1,4 +1,4 @@
-import { ShowGenre } from './types';
+import { ShowGenre } from '../home/types';
 
 export const SHOWS_GENRES: ShowGenre[] =  [
         {
