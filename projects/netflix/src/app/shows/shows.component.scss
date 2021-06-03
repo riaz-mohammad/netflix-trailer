@@ -1,6 +1,9 @@
 :host{
-  display: block;
-  color: white;
-  text-align: center;
-  font-size: 4rem;
+  display: flex;
+  flex-direction: column;
+  padding-top: 110px;
+  height: 100%;
+  box-sizing: border-box;
+  
 }
+  

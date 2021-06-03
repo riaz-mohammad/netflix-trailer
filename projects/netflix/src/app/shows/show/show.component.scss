@@ -1,37 +1,52 @@
 :host{
   box-sizing: border-box;
-  display: block;
-  height: 30%;
-  position: relative;
-   background-color: #111;
-  border: 1px solid red;  
+  background-color: rgba(17, 17, 17, 0.664);
+  padding: 10px;
+
+  .header{
+    color: white;
+    width: 50%;
+    box-sizing: border-box;
+    padding-left: 1rem;
+  }
 }
   
-.image-container{
-  
-  box-sizing: border-box;
-  display: flex;
-  overflow-y: hidden;
-  padding: .5rem;
-  cursor: pointer;
-  height: 100%;
+.shows-container{
   &::-webkit-scrollbar {
    display: none;
   }
-  
-     img{
-      width: 100%;
-      max-height: 200px;
-      object-fit: contain;
-      margin: .5rem;
-      transition: transform 400ms ease-in-out;
+  padding: 10px;
+  box-sizing: border-box;
+  display: flex;
+  overflow-y: hidden;
+  cursor: pointer;
+  &:hover .image-container{
+     transform: translateX(-20px);
+  }
+
+  .image-container{
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    margin: 5px;
+    transition: transform 400ms ease-in-out;
       &:hover {
         transform: scale(1.1);
-        
       }
+
+      &:hover ~.image-container{
+        transform: translateX(20px);
+      }
+        
+     img{
+      width: 300px;
+      max-height: 300px;
+      object-fit: contain;
     }
      
+  }
+     
+}
     
   
-}
 

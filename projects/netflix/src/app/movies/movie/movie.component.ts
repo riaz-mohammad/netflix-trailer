@@ -1,6 +1,6 @@
 
 import { Observable } from 'rxjs';
-import { Component, OnInit, ChangeDetectionStrategy, Input } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy, Input, ViewEncapsulation } from '@angular/core';
 import { MoviesPageService } from '../../services/movies-page.service';
 import { Movie, MovieGenreName } from '../../types/types';
 

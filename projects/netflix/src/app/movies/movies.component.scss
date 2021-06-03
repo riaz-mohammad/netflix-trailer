@@ -1,6 +1,14 @@
 :host{
-  display: block;
-  color: white;
-  text-align: center;
-  font-size: 4rem;
+  display: flex;
+  flex-direction: column;
+  border: 2px solid white;
+  padding-top: 100px;
+  height: 100%;
+  box-sizing: border-box;
+  
 }
+ 
+  
+  
+
+

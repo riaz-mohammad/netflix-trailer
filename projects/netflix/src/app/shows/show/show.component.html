@@ -1,11 +1,18 @@
 <ng-container *ngIf="shows | async as movies">
     
-    <div class="image-container">
-      
+    <h1 class="header">{{ genre }}</h1>  
+    <div class="shows-container">
       <ng-container *ngFor="let movie of movies">
-        <img (click)="getShowInfo(movie)" [src]="images+movie.backdrop_path" alt="movie_poster">
+            
+        <ng-container *ngIf="movie.backdrop_path">
+            <div class="image-container">
+              <img (click)="getShowInfo(movie)" [src]="images+ movie.backdrop_path" alt="movie_poster">
+            </div>
+        </ng-container>
+
       </ng-container>
     </div>
+
    
  </ng-container>
 
