@@ -12,6 +12,47 @@ export type Title =
   | 'SHOW TRAILER';
 
 
+export type MovieGenreName =
+  | 'Action'
+  | 'Adventure'
+  | 'Animation'
+  | 'Comedy'
+  | 'Crime'
+  | 'Documentary'
+  | 'Drama'
+  | 'Family'
+  | 'Fantasy'
+  | 'History'
+  | 'Horror'
+  | 'Music'
+  | 'Mystery'
+  | 'Romance'
+  | 'Science Fiction'
+  | 'TV Movie'
+  | 'Thriller'
+  | 'War'
+  | 'Western';
+
+
+export type ShowGenreName =
+  | 'Action & Adventure'
+  | 'Animation'
+  | 'Comedy'
+  | 'Crime'
+  | 'Documentary'
+  | 'Drama'
+  | 'Family'
+  | 'Kids'
+  | 'Mystery'
+  | 'News'
+  | 'Reality'
+  | 'Sci-Fi & Fantasy'
+  | 'Soap'
+  | 'Talk'
+  | 'War & Politics'
+  | 'Western';
+
+
 export type Trailer = 'MOVIE TRAILER' | 'SHOW TRAILER';
 export interface ShowGenre {
   id: number;

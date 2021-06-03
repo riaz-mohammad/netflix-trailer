@@ -1,6 +1,6 @@
 import { Directive, HostBinding, HostListener, Input } from '@angular/core';
 import { Router } from '@angular/router';
-import { ActivateRoute } from './../home/types';
+import { ActivateRoute } from '../types/types';
 
 
 @Directive({

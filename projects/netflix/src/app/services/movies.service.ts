@@ -4,7 +4,7 @@ import { Observable, of } from 'rxjs';
 import { catchError, map, tap } from 'rxjs/operators';
 
 
-import { Media, TrailerKey, Results, Trailer, Title } from '../home/types';
+import { Media, TrailerKey, Results, Trailer, Title } from '../types/types';
 
 export enum NETFLIX {
   TRENDING         = 'TRENDING',
@@ -44,8 +44,6 @@ export class MoviesService {
   SEARCH_URL = `${this.BASE_URL}/search/multi?api_key=${this.API_KEY}&query=''`;
   MOVIES_GENRES_URL = `${this.BASE_URL}/genre/movie/list?api_key=${this.API_KEY}`;
   SHOWS_GENRES_URL = `${this.BASE_URL}/genre/tv/list?api_key=${this.API_KEY}`;
-  MOVIES_BY_GENRES_URL = `${this.BASE_URL}/discover/movie?api_key=${this.API_KEY}&with_genres=`;
-  SHOWS_BY_GENRES_URL = `${this.BASE_URL}/discover/tv?api_key=${this.API_KEY}&with_genres=`;
   GET_MOVIE_BY_NAME_URL = `${this.BASE_URL}/search/movie?api_key=${this.API_KEY}&query=''`;
   GET_SHOW_BY_NAME_URL = `${this.BASE_URL}/search/tv?api_key=${this.API_KEY}&query=''`;
 

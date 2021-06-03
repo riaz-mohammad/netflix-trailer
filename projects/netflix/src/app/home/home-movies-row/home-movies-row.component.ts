@@ -1,7 +1,7 @@
 import { Observable } from 'rxjs';
 import { Component, OnInit, ChangeDetectionStrategy, OnDestroy, Input } from '@angular/core';
 import { MoviesService } from '../../services/movies.service';
-import { Media } from '../types';
+import { Media } from '../../types/types';
 
 
 @Component({

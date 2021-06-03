@@ -1,10 +1,10 @@
-import { fadeIn } from '../../animations/trailer-animation';
-import { TrailerKey } from '../types';
+import { fadeIn } from '../../../animations/trailer-animation';
+import { TrailerKey } from '../../../types/types';
 import { Component, OnInit, ChangeDetectionStrategy, Input, Output, EventEmitter, HostBinding, HostListener } from '@angular/core';
 
 
-import { VideoIdService } from '../../services/video-id.service';
-import {trailerAnimation } from '../../animations/trailer-animation';
+import { VideoIdService } from '../../../services/video-id.service';
+import {trailerAnimation } from '../../../animations/trailer-animation';
 
 @Component({
   selector: 'app-movie-trailer',
