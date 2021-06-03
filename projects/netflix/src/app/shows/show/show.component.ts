@@ -1,6 +1,7 @@
+import { Observable } from 'rxjs';
 import { Component, OnInit, ChangeDetectionStrategy, Input } from '@angular/core';
 import { ShowsPageService } from '../../services/shows-page.service';
-import { ShowGenreName } from './../../types/types';
+import { Show, ShowGenreName } from './../../types/types';
 
 @Component({
   selector: 'app-show',
@@ -12,8 +13,9 @@ export class ShowComponent implements OnInit {
   @Input() genre!: ShowGenreName;
   constructor(private showsService: ShowsPageService) {}
   public images = this.showsService.images;
-
+  public shows!: Observable<Show[]>
   ngOnInit(): void {
-    this.showsService.getShows(this.genre).subscribe(console.log);
+    this.shows = this.showsService.getShows(this.genre);
+    this.shows.subscribe((shows: Show[]) => console.log({Shows: shows}))
   }
 }

@@ -1,6 +1,8 @@
+
+import { Observable } from 'rxjs';
 import { Component, OnInit, ChangeDetectionStrategy, Input } from '@angular/core';
 import { MoviesPageService } from '../../services/movies-page.service';
-import { MovieGenreName } from '../../types/types';
+import { Movie, MovieGenreName } from '../../types/types';
 
 @Component({
   selector: 'app-movie',
@@ -12,7 +14,9 @@ export class MovieComponent implements OnInit {
   @Input() genre!: MovieGenreName;
   constructor(private moviesService: MoviesPageService) {}
   public images = this.moviesService.images;
+  public movies!: Observable<Movie[]>
   ngOnInit(): void {
-    this.moviesService.getMovies(this.genre).subscribe(console.log);
+    this.movies = this.moviesService.getMovies(this.genre);
+    this.movies.subscribe((movies: Movie[]) => console.log({ Movies: movies }));
   }
 }
