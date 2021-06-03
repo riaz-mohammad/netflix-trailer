@@ -9,8 +9,8 @@ import { NetflixOriginalComponent } from './netflix-original/netflix-original.co
 import { HomeMoviesRowComponent } from './home-movies-row/home-movies-row.component';
 import { MovieTrailerComponent } from './movie-trailer/movie-trailer.component';
 import { MovieInfoComponent } from './movie-info/movie-info.component';
-import { HomeMoviesComponent } from './home-movies/home-movies.component';
-import { HomeShowsComponent } from './home-shows/home-shows.component';
+// import { HomeMoviesComponent } from './home-movies/home-movies.component';
+// import { HomeShowsComponent } from './home-shows/home-shows.component';
 import { OnSelectDirective } from '../directives/on-select.directive';
 import { OnlikeDirective } from '../directives/onlike.directive';
 import { OndislikeDirective } from '../directives/ondislike.directive';
@@ -29,8 +29,8 @@ import { OndislikeDirective } from '../directives/ondislike.directive';
     NetflixOriginalComponent,
     MovieTrailerComponent,
     MovieInfoComponent,
-    HomeMoviesComponent,
-    HomeShowsComponent,
+    // HomeMoviesComponent,
+    // HomeShowsComponent,
     OnSelectDirective,
     OnlikeDirective,
     OndislikeDirective,
