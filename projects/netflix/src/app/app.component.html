@@ -1,32 +1,26 @@
    
    <app-landing-page-navigation *ngIf="router.url !== '/login'">
-      
-         <app-landing-page-logo>
-         </app-landing-page-logo>
+          <app-landing-page-logo>
+          </app-landing-page-logo>
 
            <div class="nav-overlay" 
-                  *ngIf="router.url !== '/'">
+               *ngIf="router.url !== '/'">
            </div>
             <app-home-collection-button *ngIf="showOrHide">
             </app-home-collection-button>
 
-                  
-         
-            <app-landing-page-login-button (showModal)="showModal = !showModal">
-            {{ textToShow }}
-            </app-landing-page-login-button>
-
+          <app-landing-page-login-button 
+               (showModal)="showModal = !showModal">
+               {{ textToShow }}
+          </app-landing-page-login-button>
   </app-landing-page-navigation>
+
       
  <app-logout-modal *ngIf="showModal" 
       (confirmLogout)="onShowModal($event)"
       @modalFadeIn>
  </app-logout-modal>
         
-
-     
-
-
 
  <div [@routeAnimations]="getRouteState(routerOutlet)" 
       class="router-outlet">
