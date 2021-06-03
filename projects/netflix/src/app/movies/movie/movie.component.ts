@@ -17,6 +17,10 @@ export class MovieComponent implements OnInit {
   public movies!: Observable<Movie[]>
   ngOnInit(): void {
     this.movies = this.moviesService.getMovies(this.genre);
-    this.movies.subscribe((movies: Movie[]) => console.log({ Movies: movies }));
+  }
+    
+
+  public getMovieInfo(movie: Movie): void {
+    console.log({Movie: movie});
   }
 }

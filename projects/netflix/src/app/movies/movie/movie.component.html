@@ -1,1 +1,14 @@
-<p>movie works!</p>
+<ng-container *ngIf="movies | async as movies">
+    
+    <div class="image-container">
+      
+      <ng-container *ngFor="let movie of movies">
+        <img (click)="getMovieInfo(movie)" [src]="images+movie.backdrop_path" alt="movie_poster">
+      </ng-container>
+    </div>
+   
+ </ng-container>
+
+          
+   
+

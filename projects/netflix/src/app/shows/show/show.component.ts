@@ -13,9 +13,13 @@ export class ShowComponent implements OnInit {
   @Input() genre!: ShowGenreName;
   constructor(private showsService: ShowsPageService) {}
   public images = this.showsService.images;
-  public shows!: Observable<Show[]>
+  public shows!: Observable<Show[]>;
   ngOnInit(): void {
     this.shows = this.showsService.getShows(this.genre);
-    this.shows.subscribe((shows: Show[]) => console.log({Shows: shows}))
+  }
+    
+
+  public getShowInfo(show: Show): void {
+    console.log({Show: show});
   }
 }
