@@ -1,12 +1,8 @@
 import { Injectable } from '@angular/core';
 import { Subject, Subscription } from 'rxjs';
-import { filter, map } from 'rxjs/operators';
+import { filter, map, tap } from 'rxjs/operators';
 import { MoviesService } from './movies.service';
 import { Media, TrailerKey } from '../types/types';
-export enum TRAILER {
-  MOVIE_TRAILER = 'MOVIE TRAILER',
-  SHOW_TRAILER  = 'SHOW TRAILER'
-}
 
 @Injectable({
   providedIn: 'root',
@@ -21,7 +17,8 @@ export class VideoIdService {
   public findTrailer(media: Media): void {
     this.sub = this.movieService.getTrailer(media)
       .pipe(
-        map(data => data.filter(data => data.type === ('Trailer' || 'Teaser'))),
+        // map(data => data.filter(data => data.type === ('Trailer' || 'Teaser'))),
+        // tap(data => console.log({trailer: data})),
         map(trailers => trailers[0])
       )
       .subscribe(data => (

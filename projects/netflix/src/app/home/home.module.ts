@@ -22,18 +22,18 @@ import { OndislikeDirective } from '../directives/ondislike.directive';
     HomeBannerComponent,
     HomeMoviesRowComponent,
     NetflixOriginalComponent,
-    MovieTrailerComponent,
-    MovieInfoComponent,
+    // MovieTrailerComponent,
+    // MovieInfoComponent,
     OnSelectDirective,
-    OnlikeDirective,
-    OndislikeDirective,
+    // OnlikeDirective,
+    // OndislikeDirective,
     
 
   ],
   imports: [
     CommonModule,
     HomeRoutingModule,
-    YouTubePlayerModule,
+    // YouTubePlayerModule,
     
   ]
 })

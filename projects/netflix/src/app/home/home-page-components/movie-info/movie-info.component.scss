@@ -112,11 +112,8 @@
   img{
     grid-area: 1 / 1 / -1 / -1;
     width: 100%;
-    // height: 100%;
     object-fit: cover;
     z-index: -10;
-    position: relative;
-    animation-delay: 1000ms;
     animation: move 20000ms ease infinite;
 
     @media(max-width: 800px) {

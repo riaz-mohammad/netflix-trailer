@@ -42,8 +42,8 @@ export class MoviesService {
   MOVIE_TRAILER_URL = `${this.BASE_URL}/movie/${123}/videos?api_key=${ this.API_KEY}`;
   SHOW_TRAILER_URL = `${this.BASE_URL}/tv/${123}/videos?api_key=${this.API_KEY}`;
   SEARCH_URL = `${this.BASE_URL}/search/multi?api_key=${this.API_KEY}&query=''`;
-  MOVIES_GENRES_URL = `${this.BASE_URL}/genre/movie/list?api_key=${this.API_KEY}`;
-  SHOWS_GENRES_URL = `${this.BASE_URL}/genre/tv/list?api_key=${this.API_KEY}`;
+  
+  
   GET_MOVIE_BY_NAME_URL = `${this.BASE_URL}/search/movie?api_key=${this.API_KEY}&query=''`;
   GET_SHOW_BY_NAME_URL = `${this.BASE_URL}/search/tv?api_key=${this.API_KEY}&query=''`;
 
@@ -93,21 +93,27 @@ export class MoviesService {
         return this.http
           .get<Results<TrailerKey[]>>(SHOW_TRAILER_URL)
           .pipe(
-            map(({ results }) => results)
+            map(({ results }) => results),
           )
+           
+           
             
       } else if(media.title) {
         //movies has title in the return data
           return this.http
             .get<Results<TrailerKey[]>>(MOVIE_TRAILER_URL)
             .pipe(
-              map(({ results }) => results)
+              map(({ results }) => results),
             );
           }
+              
+              
           
-       return of([{ key: '', type: 'Trailer'}]); 
-        
+      return of([{ key: '', type: 'Trailer' }]); 
+      
   }
+      
+        
     
 
 

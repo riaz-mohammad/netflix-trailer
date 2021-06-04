@@ -21,7 +21,10 @@ export const routeAnimations = trigger('routeAnimations', [
     group([
       query('@registrationAnimation', animateChild(), { optional: true }),
       query('@logoAnimation', animateChild(), { optional: true }),
-      query('@loginButtonAnimation', animateChild(), {optional: true}),
+      query('@loginButtonAnimation', animateChild(), { optional: true }),
+      query('@imageFadeIn', animateChild(), { optional: true }),
+      
+
       query(
         ':enter',
         [

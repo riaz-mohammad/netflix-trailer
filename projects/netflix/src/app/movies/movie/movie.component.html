@@ -5,7 +5,7 @@
       <ng-container *ngFor="let movie of movies">
         <ng-container *ngIf="movie.backdrop_path">
         
-        <div class="image-container">
+        <div class="image-container" @imageFadeIn>
           <img (click)="getMovieInfo(movie)" [src]="images+movie.backdrop_path" alt="movie_poster">
         </div>
 

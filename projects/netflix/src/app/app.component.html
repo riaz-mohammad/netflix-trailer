@@ -6,6 +6,8 @@
            <div class="nav-overlay" 
                *ngIf="router.url !== '/'">
            </div>
+
+           <!-- Home Page Collection DropDown Component -->
             <app-home-collection-button *ngIf="showOrHide">
             </app-home-collection-button>
 
@@ -15,7 +17,28 @@
           </app-landing-page-login-button>
   </app-landing-page-navigation>
 
-      
+
+
+ <!-- Movie Trailer Player Component -->
+<ng-container *ngIf="trailerId | async as id">
+    <app-movie-trailer 
+        (closePlayer)="onClosePlayer()" 
+        [videoId]="id"
+        [width]="1000"
+        [height]="600">
+    </app-movie-trailer>
+</ng-container>
+
+  <!-- Movie Preview/Info Component  -->
+  <ng-container *ngIf="movieInfo | async as preview">
+      <app-movie-info 
+        [movieInfo]="preview"
+        [imageUrl]="movieImages"
+        (closeInfo)="onClosePreview()">
+      </app-movie-info>  
+  </ng-container> 
+
+
  <app-logout-modal *ngIf="showModal" 
       (confirmLogout)="onShowModal($event)"
       @modalFadeIn>

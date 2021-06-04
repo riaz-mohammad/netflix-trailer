@@ -1,8 +1,12 @@
 :host{
   display: flex;
-  justify-content: center;
+  // justify-content: center;
+  // align-items: center;
+  
   box-sizing: border-box;
-  position: absolute;
+  position: fixed;
+  justify-content: center;
+  align-items: center;
   top: 0;
   left: 0;
   right: 0;
@@ -10,12 +14,13 @@
   background-color: rgba(34, 29, 29, 0.707);
   z-index: 2000;
   cursor: pointer;
+
 }
 
 
 .player-container{
   position: fixed;
-  top: 10%;
+  // top: 10%;
   padding: 0;
   box-sizing: border-box;
 

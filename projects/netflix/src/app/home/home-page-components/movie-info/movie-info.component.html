@@ -5,7 +5,7 @@
       <div class="preview-container" >
           <img [src]="imageUrl+movieInfo.backdrop_path" alt="movie poster">
           <div class="title">
-              <h1 >{{ movieInfo.name || movieInfo.title}}</h1>
+              <h1 @titleAnimation>{{ movieInfo.name || movieInfo.title}}</h1>
               <h5> Released: {{movieInfo.release_date || movieInfo.first_air_date | date}}</h5>
           </div>
 
@@ -81,7 +81,7 @@
           {{selectDirective.select}}
         </p> 
 
-         <button (click)="closePreview($event)">CLOSE</button>
+         <button @buttonAnimation (click)="closePreview($event)">CLOSE</button>
          
       </div>
    
