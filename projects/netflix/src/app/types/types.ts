@@ -129,5 +129,5 @@ export interface Media {
 }
 
 
-export type ActivateRoute = 'shows' | 'movies' | 'home';
+export type ActivateRoute = 'shows' | 'movies' | 'home' | 'search';
 

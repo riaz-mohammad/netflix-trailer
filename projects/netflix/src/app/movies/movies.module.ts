@@ -1,3 +1,4 @@
+import { ShareModule } from './../share/share.module';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
@@ -13,7 +14,8 @@ import { MovieComponent } from './movie/movie.component';
   ],
   imports: [
     CommonModule,
-    MoviesRoutingModule
+    MoviesRoutingModule,
+    ShareModule
   ]
 })
 export class MoviesModule { }

@@ -22,7 +22,14 @@
       [appActivateRoute]="'shows'">
        SHOWS
     </app-collection-button>
-
+    
+    <app-collection-button
+      *ngIf="showOrHide('/search')"
+      (click)="toggleButtonsState()"
+      [appActivateRoute]="'search'">
+      SEARCH
+    </app-collection-button>
+      
   </ng-container>
 
   

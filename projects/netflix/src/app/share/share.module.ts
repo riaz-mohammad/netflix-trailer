@@ -1,6 +1,7 @@
+
 import { LandingPageNavigationComponent } from './../landing-page/landing-page-components/landing-page-navigation/landing-page-navigation.component';
 import { ObserveAndAnimateDirective } from '../directives/observe-and-animate.directive';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -25,12 +26,9 @@ import { LandingPageLoginButtonComponent } from './landing-page-login-button/lan
     LandingPageLoginButtonComponent,
     LandingPageFormWrapperComponent,
     LandingPageNavigationComponent,
+
   ],
-  imports: [
-    CommonModule,
-    ReactiveFormsModule,
-    
-  ],
+  imports: [CommonModule, ReactiveFormsModule],
   exports: [
     LandingPageNavigationComponent,
     LandingPageVideoBackgroundComponent,
@@ -39,8 +37,7 @@ import { LandingPageLoginButtonComponent } from './landing-page-login-button/lan
     LandingPageFormButtonComponent,
     LandingPageLoginButtonComponent,
     LandingPageFormWrapperComponent,
-    ObserveAndAnimateDirective
-  ]
+    ObserveAndAnimateDirective,
+  ],
 })
-
 export class ShareModule {}

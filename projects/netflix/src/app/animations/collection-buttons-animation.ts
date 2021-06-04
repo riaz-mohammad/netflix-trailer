@@ -8,7 +8,7 @@ export const buttonsAnimation = trigger('buttonsAnimation', [
     }),
 
     animate(
-      '400ms',
+      '300ms ease',
       style({
         opacity: 1,
         transform: 'translateY(0%)',
@@ -18,7 +18,7 @@ export const buttonsAnimation = trigger('buttonsAnimation', [
 
   transition(':leave', [
     animate(
-      '400ms ease',
+      '300ms ease',
       style({
         opacity: 0,
         transform: 'translateY(-100%)',

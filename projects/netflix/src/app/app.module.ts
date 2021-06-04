@@ -22,6 +22,7 @@ import { OnlikeDirective } from './directives/onlike.directive';
 
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -33,6 +34,7 @@ import { OnlikeDirective } from './directives/onlike.directive';
     LogoutModalComponent,
     OnlikeDirective,
     OndislikeDirective,
+
   ],
   imports: [
     BrowserModule,

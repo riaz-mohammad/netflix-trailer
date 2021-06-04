@@ -1,0 +1,36 @@
+
+
+
+      <h2 class="header">SEARCH A MOVIE OR SHOW</h2>
+        <form class="form" [formGroup]="searchForm" (ngSubmit)="onSubmit(input)">
+          <div class="field">
+            <app-landing-page-form-field #input
+              type="text"
+              placeholder="SEARCH"
+              formControlName="search">
+            </app-landing-page-form-field>
+          </div>
+
+
+            <div class="button">
+              <app-landing-page-form-button type="submit">
+                  SEARCH
+              </app-landing-page-form-button>
+            <p class="results" *ngIf="media$ | async as media">Total results found: {{media.length}}</p>
+            </div>
+        </form>
+
+
+
+
+<ng-container *ngIf="media$">
+  <app-search-result [media]="media$">
+  </app-search-result>
+</ng-container>
+
+
+
+    
+
+
+    

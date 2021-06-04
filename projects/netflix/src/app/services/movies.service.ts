@@ -117,8 +117,13 @@ export class MoviesService {
     
 
 
-  public search(name: string) {
-    return this.http.get<any>(this.SEARCH_URL + name);
+  public search(name: string): Observable<Media[]> {
+    return this.http
+      .get<Results<Media[]>>(this.SEARCH_URL + name)
+      .pipe(
+        map(({ results }) => results),
+        catchError(() => of([]))
+      );
   }
   
 }

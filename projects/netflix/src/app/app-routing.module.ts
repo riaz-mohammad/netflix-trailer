@@ -35,6 +35,11 @@ const routes: Routes = [
     data: {animation: 'showsPage'}
   },
   {
+    path: 'search',
+    loadChildren: () => import('./search/search.module').then(m => m.SearchModule),
+    data: {animation: 'searchPage'}
+  },
+  {
     path: '',
     pathMatch: 'full',
     redirectTo: '',

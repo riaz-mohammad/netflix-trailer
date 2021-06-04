@@ -7,12 +7,13 @@ import { Directive, ElementRef, HostBinding, OnDestroy, OnInit } from '@angular/
 export class ObserveAndAnimateDirective implements OnInit, OnDestroy {
   @HostBinding('@showOrHide')
     animationEffect = false;
+  
   private observation!: IntersectionObserver;
   constructor(private element: ElementRef) {}
   
   ngOnInit(): void {
         this.observation = new IntersectionObserver(([entry], observation) => {
-      if (entry.isIntersecting) {
+          if (entry.isIntersecting) {
         this.animationEffect = true;
         return;
       }

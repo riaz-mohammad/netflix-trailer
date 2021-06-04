@@ -27,7 +27,7 @@ export const moveOutPreview = trigger('moveOutPreview', [
       ':self',
       [
         animate(
-          '800ms ease',
+          '1000ms ease',
           style({
             opacity: 0
           })
