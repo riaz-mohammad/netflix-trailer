@@ -8,6 +8,7 @@ import { ShareModule } from './../share/share.module';
 import { LandingPageLoginComponent } from './landing-page-login-components/landing-page-login/landing-page-login.component';
 import { LandingPageFormFieldsComponent } from './landing-page-login-components/landing-page-form-fields/landing-page-form-fields.component';
 import { LandingPageLoginRoutingModule } from './landing-page-login-routing.module';
+import { LoadingComponent } from './landing-page-login-components/loading/loading.component';
 
 
 
@@ -16,6 +17,7 @@ import { LandingPageLoginRoutingModule } from './landing-page-login-routing.modu
   declarations: [
     LandingPageLoginComponent,
     LandingPageFormFieldsComponent,
+    LoadingComponent,
   ],
   imports: [
     CommonModule,

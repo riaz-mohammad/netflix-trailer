@@ -1,3 +1,4 @@
+import { UserService } from './services/user.service';
 import { Component } from '@angular/core';
 import {  Router, RouterOutlet } from '@angular/router';
 import { modalFadeIn } from './animations/modal-animation';
@@ -19,7 +20,8 @@ export class AppComponent {
     public router: Router,
     private videoIdService: VideoIdService,
     private moviePreview: MoviePreviewService,
-    private movieService: MoviesService
+    private movieService: MoviesService,
+    private user: UserService
   ) {}
 
   //video id Observable to pass to the trailer component in the template
@@ -53,6 +55,6 @@ export class AppComponent {
 
   public onShowModal(value: boolean): void {
     this.showModal = !this.showModal;
-    value ? this.router.navigate(['/']) : null;
+    value ? this.user.logoutUser() : null ;
   }
 }

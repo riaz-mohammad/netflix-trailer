@@ -131,3 +131,8 @@ export interface Media {
 
 export type ActivateRoute = 'shows' | 'movies' | 'home' | 'search';
 
+export interface User {
+  name: string;
+  country: string;
+  password: string;
+}

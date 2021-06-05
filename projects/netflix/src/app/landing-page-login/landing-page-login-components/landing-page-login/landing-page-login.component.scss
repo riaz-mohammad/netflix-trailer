@@ -46,7 +46,6 @@
   grid-template: .2fr repeat(3, 1fr) / .5fr 2fr .5fr;
   box-shadow: 1px 1px 30px 2px rgba(0, 0, 0, 0.74);
   transition: all 400ms ease;
-  cursor: pointer;
   position: relative;
   
   &:hover{

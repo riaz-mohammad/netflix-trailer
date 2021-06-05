@@ -3,6 +3,7 @@ import { FormControl, Validators, FormGroup, FormBuilder } from '@angular/forms'
 import { Router } from '@angular/router';
 import { invalidEmail } from '../../../animations/email-invalid-animation';
 import { LoginButtonClickService } from '../../../services/login-button-click.service';
+import { UserService } from './../../../services/user.service';
 
 
 
@@ -17,12 +18,13 @@ export class FormWrapperComponent implements OnInit{
   public formGroup!: FormGroup;
   constructor(private router: Router,
               private formBuilder: FormBuilder,
+              private userInfo: UserService,
               public buttonClick: LoginButtonClickService) { }
   
   ngOnInit(): void {
        this.formGroup = this.formBuilder.group({
-      email: ['', [Validators.required, Validators.email]]
-       }, { updateOn: 'blur' });
+            email: ['', [Validators.required, Validators.email]]
+            }, { updateOn: 'blur' });
   }
     
   public get email(): FormControl {
@@ -33,10 +35,11 @@ export class FormWrapperComponent implements OnInit{
     if (this.email.invalid) {
       input.focusOnInput()
       return;
-    } 
+    }
+      this.userInfo.storeUserEmail(this.email.value);
       this.router.navigate(['/login'])
-    
   }
+    
       
 
       

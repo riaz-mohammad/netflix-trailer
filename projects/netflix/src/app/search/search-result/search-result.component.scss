@@ -1,8 +1,9 @@
 :host{
   box-sizing: border-box;
   display: block;
-  padding: 1rem;
   z-index: 1;
+  
+
    
    &::before{
      position: absolute;
@@ -34,10 +35,10 @@
   justify-content: center;
   overflow-y: hidden;
   overflow-x: scroll;
-  padding-top: 2rem;
-  padding-bottom: 2rem;
-  cursor: pointer;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
   
+  cursor: pointer;
   &::-webkit-scrollbar {
    display: none;
   }
@@ -51,9 +52,10 @@
     box-sizing: border-box;
     display: flex;
     position: relative;
-    transition: transform 400ms ease-in-out;
+    transition: all 400ms ease;
     margin: 5px;
-
+    box-shadow: 4px 10px 16px -4px rgba(0, 0, 0, 0.616);
+    
     
     &::after{
       position: absolute;
@@ -76,6 +78,8 @@
     }
     &:hover {
       transform: scale(1.2);
+      box-shadow: 4px 10px 16px -4px rgba(0, 0, 0, 0.096);
+      
     }
 
     &:hover button{
@@ -107,7 +111,7 @@
         &:hover{
           background-color: rgba(255, 255, 255, 0.5);
           color: black;
-          font-weight: bold;
+          
         }
 
         .info{
@@ -126,7 +130,7 @@
       width: 250px;
       max-height: 400px;
       object-fit: contain;
-      box-shadow: 5px 5px 20px 1px rgba(2, 2, 2, 0.541);
+      
       
     }
 

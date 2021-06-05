@@ -1,6 +1,4 @@
-
-
-  <div class="login-container">
+<div class="login-container">
      
     <div class="logo-container">
        <app-landing-page-logo>
@@ -11,15 +9,23 @@
           <app-landing-page-video-background>
           </app-landing-page-video-background>
     </div>
+      
       <app-landing-page-form-wrapper>
-        <app-landing-page-form-fields>
+        <app-landing-page-form-fields (showLoading)="loading()">
         </app-landing-page-form-fields>
       </app-landing-page-form-wrapper>
     
   </div>
 
-              
-         
+
+ <ng-container *ngIf="showLoading | async">
+   <app-loading></app-loading>         
+ </ng-container>
+
+ 
+
+
+
          
     
     

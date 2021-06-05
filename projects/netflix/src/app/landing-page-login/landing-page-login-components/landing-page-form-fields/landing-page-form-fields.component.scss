@@ -1,15 +1,14 @@
 :host{
+  box-sizing: border-box;
   display: flex;
   justify-content: center;
   align-items: center;
-  box-sizing: border-box;
   height: 100%;
   width: 100%;
-
 }
+
   
 .form{
-  
   box-sizing: border-box;
   height: 90%;
   width: 90%;
@@ -32,18 +31,10 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    // left: 45%;
-    // width: 25px;
-    // height: 25px;
-    // clip-path: polygon(50% 0%, 0 100%, 99% 100%);
     box-sizing: border-box;
-
-
-
-   
   }
-
-  .form-field-container{
+    
+.form-field-container{
     box-sizing: border-box;
     flex-basis: 10%;
     width: 100%;

@@ -1,9 +1,10 @@
-import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { UserService } from './../../../services/user.service';
+import { Component, OnInit, ChangeDetectionStrategy, Output, EventEmitter } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { errorAnimation } from '../../../animations/form-error-animation';
 import { loginButtonAnimation } from './../../../animations/login-button-animation';
-
+export const TOKEN = 'TOKEN';
 @Component({
   selector: 'app-landing-page-form-fields',
   templateUrl: './landing-page-form-fields.component.html',
@@ -12,9 +13,11 @@ import { loginButtonAnimation } from './../../../animations/login-button-animati
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class LandingPageFormFieldsComponent implements OnInit {
+  @Output() showLoading: EventEmitter<boolean> = new EventEmitter();
   public formGroup!: FormGroup;
   constructor(private router: Router,
-              private formBuilder: FormBuilder) { }
+              private formBuilder: FormBuilder,
+              private user: UserService) { }
   public notValid: boolean | undefined;
   ngOnInit(): void {
     this.formGroup = this.formBuilder.group(
@@ -32,13 +35,15 @@ export class LandingPageFormFieldsComponent implements OnInit {
       this.notValid = true;
       return;
     }
-    this.notValid = false;
-    this.router.navigate(['/home'])
-    this.formGroup.reset({ name: '', country: '', password: '' });
-  
-    
-  }
 
+    this.notValid = false;
+    this.showLoading.emit(true);
+    this.user.storeUserInfo(this.formGroup.value);
+    this.formGroup.reset({ name: '', country: '', password: '' });
+
+  }
+  
+  
 }
       
       

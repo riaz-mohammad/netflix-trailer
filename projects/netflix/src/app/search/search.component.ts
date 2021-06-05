@@ -4,11 +4,20 @@ import { FormControl, Validators, FormGroup } from '@angular/forms';
 import { Component, OnInit, ChangeDetectionStrategy, OnDestroy } from '@angular/core';
 import { Media } from '../types/types';
 import { tap } from 'rxjs/operators';
+import { resultsTotalAnimation } from '../animations/results-total-animation';
+import { buttonAnimation } from '../animations/movie-preview-animation';
+import { searchButtonAnimation } from '../animations/search-button-animation';
+import { searchHeaderAnimation } from '../animations/search-header.animation';
 
 @Component({
   selector: 'app-search',
   templateUrl: './search.component.html',
   styleUrls: ['./search.component.scss'],
+  animations: [
+    resultsTotalAnimation,
+    searchButtonAnimation,
+    searchHeaderAnimation,
+  ],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class SearchComponent implements OnInit, OnDestroy {
@@ -33,16 +42,12 @@ export class SearchComponent implements OnInit, OnDestroy {
       input.focusOnInput();
       return;
     }
-    this.sub = this.movieService.search(this.search.value)
-      .subscribe((data: Media[]) => (
-        this.media.next(data)
-      ));
-        
-    
+    this.sub = this.movieService
+      .search(this.search.value)
+      .subscribe((data: Media[]) => this.media.next(data));
   }
 
   ngOnDestroy(): void {
     this.sub ? this.sub.unsubscribe : null;
   }
-    
 }
