@@ -14,7 +14,7 @@
 
             <div class="button" @searchButtonAnimation>
               <app-landing-page-form-button type="submit">
-                  SEARCH
+                  {{ searching ? 'SEARCHING...' : 'SEARCH'}}
               </app-landing-page-form-button>
             <p class="results" @resultsTotalAnimation 
                 *ngIf="media$ | async as media">

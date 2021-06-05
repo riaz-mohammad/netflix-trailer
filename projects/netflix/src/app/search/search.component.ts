@@ -21,10 +21,11 @@ import { searchHeaderAnimation } from '../animations/search-header.animation';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class SearchComponent implements OnInit, OnDestroy {
+  private sub!: Subscription;
   public media = new Subject<Media[]>();
   public media$ = this.media.asObservable();
   public searchForm!: FormGroup;
-  private sub!: Subscription;
+  public searching!: boolean;
   constructor(private movieService: MoviesService) {}
 
   ngOnInit(): void {
@@ -42,9 +43,13 @@ export class SearchComponent implements OnInit, OnDestroy {
       input.focusOnInput();
       return;
     }
+    this.searching = true;
     this.sub = this.movieService
       .search(this.search.value)
-      .subscribe((data: Media[]) => this.media.next(data));
+      .subscribe((data: Media[]) => (
+        this.media.next(data),
+        this.searching = false
+      ));
   }
 
   ngOnDestroy(): void {

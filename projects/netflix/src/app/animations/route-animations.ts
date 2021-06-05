@@ -25,6 +25,8 @@ export const routeAnimations = trigger('routeAnimations', [
       query('@imageFadeIn', animateChild(), { optional: true }),
       query('@searchButtonAnimation', animateChild(), { optional: true }),
       query('@searchHeaderAnimation', animateChild(), { optional: true }),
+      query('@bannerAnimation', animateChild(), { optional: true }),
+      query('@buttonAnimation', animateChild(), { optional: true }),
 
       query(
         ':enter',

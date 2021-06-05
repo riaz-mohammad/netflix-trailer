@@ -58,7 +58,7 @@
     font-size: clamp(2rem, 5vw, 3rem);
     width: 80%;
     box-sizing: border-box;
-    
+    position: relative;
 
     }
     
@@ -69,6 +69,7 @@
     box-sizing: border-box;
     font-size: normal;
     flex-basis: 30%;
+    position: relative;
   }
 }
    
@@ -85,6 +86,10 @@
       margin-top: 5px;
       margin-bottom: 20px;
       border: 1px solid white;
+      display: flex;
+      justify-content: center;
+      
+      align-items: center;
       @media(max-width: 600px) {
         width: 30%;
       }
@@ -104,7 +109,7 @@
         transform: scaleX(0);
         transform-origin: left;
        transition: transform 300ms ease-in-out;
-       z-index: -1;
+       z-index: -10;
       }
 
       &:hover::after{
@@ -113,6 +118,39 @@
         
       &:hover{
         color: black;
-      }  
+      } 
+
+     .play-container{
+       width: 30%;
+       height: 70%;
+       position: relative;
+       display: flex;
+       justify-content: center;
+       align-items: center;
+       right: -10%;
+     }
+
+      .play{
+        
+        transition: all 400ms ease;
+        background-color: red;
+        width: 100%;
+        height: 100%;
+        clip-path: polygon(20% 0, 20% 100%, 80% 43%);
+        position: absolute;
+        border-radius: 10px;
+        
+      }
+
+      &:hover .play.first {
+        transform: translateX(-10px);
+        background-color: rgba(255, 0, 0, 0.87);
+      }
+
+      &:hover .play.last {
+        transform: translateX(10px);
+        background-color: rgba(255, 0, 0, 0.87);
+      }
+ 
       
    }
