@@ -18,7 +18,7 @@
               </app-landing-page-form-button>
             <p class="results" @resultsTotalAnimation 
                 *ngIf="media$ | async as media">
-                Total results found: {{media.length}}
+                Total results found out of: {{media.length}}
             </p>
             </div>
         </form>

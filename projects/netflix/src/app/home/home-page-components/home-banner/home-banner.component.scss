@@ -1,7 +1,7 @@
 :host{
   box-sizing: border-box;
   position: relative;
-  height: 100vh;
+  height: 80vh;
   z-index: 100;
   display: grid;
   grid-template: repeat(2, 1fr) / repeat(2, 1fr);
@@ -76,7 +76,7 @@
     
 .banner-play-button{
       width: 12%;
-      flex-basis: 10%;
+      flex-basis: 12%;
       border: none;
       outline: none;
       font-weight: bold;
