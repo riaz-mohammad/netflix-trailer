@@ -15,9 +15,9 @@ import { LogoutModalComponent } from './logout-modal/logout-modal.component';
 import { MovieInfoComponent } from './home/home-page-components/movie-info/movie-info.component';
 import { MovieTrailerComponent } from './home/home-page-components/movie-trailer/movie-trailer.component';
 import { YouTubePlayerModule } from '@angular/youtube-player';
-import { OndislikeDirective } from './directives/ondislike.directive';
 import { OnlikeDirective } from './directives/onlike.directive';
 import { StarRatingDirective } from './directives/star-rating.directive';
+import { OndislikeDirective } from './directives/ondislike.directive';
 
 
 
