@@ -17,6 +17,7 @@ import { MovieTrailerComponent } from './home/home-page-components/movie-trailer
 import { YouTubePlayerModule } from '@angular/youtube-player';
 import { OndislikeDirective } from './directives/ondislike.directive';
 import { OnlikeDirective } from './directives/onlike.directive';
+import { StarRatingDirective } from './directives/star-rating.directive';
 
 
 
@@ -34,6 +35,7 @@ import { OnlikeDirective } from './directives/onlike.directive';
     LogoutModalComponent,
     OnlikeDirective,
     OndislikeDirective,
+    StarRatingDirective,
 
   ],
   imports: [

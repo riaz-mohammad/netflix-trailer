@@ -1,9 +1,8 @@
 
-import { VideoIdService } from '../../../services/video-id.service';
-import { Component, OnInit, ChangeDetectionStrategy, Input, Output, EventEmitter, ViewChild, ElementRef, AfterViewInit, HostListener, HostBinding, QueryList, ViewContainerRef, ViewChildren } from '@angular/core';
+import { Component, ChangeDetectionStrategy, Input, Output, EventEmitter,  HostBinding } from '@angular/core';
 import { Preview } from '../../../types/types';
-import { OnSelectDirective } from '../../../directives/on-select.directive';
 import {buttonAnimation, moveOutPreview, moviePreviewAnimation, titleAnimation } from '../../../animations/movie-preview-animation';
+import { VideoIdService } from '../../../services/video-id.service';
 
 
 
@@ -21,7 +20,7 @@ import {buttonAnimation, moveOutPreview, moviePreviewAnimation, titleAnimation }
   ],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class MovieInfoComponent implements OnInit, AfterViewInit {
+export class MovieInfoComponent {
   @HostBinding('@moveOutPreview')
   get runAnimation(): boolean {
     return true;
@@ -30,19 +29,10 @@ export class MovieInfoComponent implements OnInit, AfterViewInit {
   @Input() movieInfo!: Preview;
   @Input() imageUrl!: string;
   @Output() closeInfo: EventEmitter<void> = new EventEmitter();
-  @ViewChildren(OnSelectDirective) onSelect!: QueryList<OnSelectDirective>;
-  public get selected(): boolean[] {
-    return this.onSelect?.map((selected) => selected.select) ?? [false, false];
-  }
+  
+  
   constructor(private movieTrailer: VideoIdService) {}
 
-  ngOnInit(): void {
-    console.log();
-  }
-
-  ngAfterViewInit(): void {
-    console.log();
-  }
 
   public playTheTrailer(): void {
     this.movieTrailer.findTrailer(this.movieInfo);
