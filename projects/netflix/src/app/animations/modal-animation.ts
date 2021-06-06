@@ -18,7 +18,7 @@ export const modalAnimation = trigger('modalAnimation', [
 export const modalFadeIn = trigger('modalFadeIn', [
   transition(':leave', [
     query(':self', [
-      animate('800ms ease', style({
+      animate('500ms ease', style({
         opacity: 0
       }))
     ])

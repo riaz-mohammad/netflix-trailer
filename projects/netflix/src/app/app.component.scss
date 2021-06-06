@@ -1,5 +1,7 @@
 :host{
+  display: block;
   position: relative;
+  
   
 }
 
@@ -22,4 +24,26 @@
   background-image: linear-gradient(to bottom, black, rgba(0, 0, 0, 0.301));
   z-index: -100;
   box-sizing: border-box;
+}
+
+
+
+.media-not-found{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 8%;
+  z-index: 2000;
+  width: 100%;
+
+   h4{
+   color: white;
+   background-color: red;
+   padding: 1rem;
+   border-radius: 10px;
+   font-size: clamp(10px, 1vw, 1rem);
+  }
+
+  
 }

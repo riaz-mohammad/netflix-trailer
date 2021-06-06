@@ -1,4 +1,12 @@
+<div class="media-not-found"
+     *ngIf="noMediaFound | async"
+     @mediaNotFound>
+    <h4 >
+        REQUESTED MEDIA NOT AVAILABLE!
+    </h4>
+</div>
    
+
    <app-landing-page-navigation *ngIf="router.url !== '/login'">
           <app-landing-page-logo>
           </app-landing-page-logo>
@@ -23,9 +31,7 @@
 <ng-container *ngIf="trailerId | async as id">
     <app-movie-trailer 
         (closePlayer)="onClosePlayer()" 
-        [videoId]="id"
-        [width]="1000"
-        [height]="600">
+        [videoId]="id">
     </app-movie-trailer>
 </ng-container>
 
@@ -52,6 +58,5 @@
     </router-outlet>
  </div>
  
-
 
 

@@ -1,8 +1,5 @@
 :host{
   display: flex;
-  // justify-content: center;
-  // align-items: center;
-  
   box-sizing: border-box;
   position: fixed;
   justify-content: center;
@@ -20,18 +17,26 @@
 
 .player-container{
   position: fixed;
-  // top: 10%;
   padding: 0;
   box-sizing: border-box;
 
   .container{
     position: relative;
-    width: 100%;
-    height: 100%;
-    box-sizing: border-box;
     padding: 0;
     margin: 0;
-    box-sizing: border-box;
+    .player{
+     display: flex;
+
+   @media (max-width: 900px) {
+        width: 600px; 
+     }
+
+     @media (max-width: 630px) {
+            width: 400px;
+            
+     }
+            
+   }
   }
   button{
     position: absolute;
@@ -41,6 +46,7 @@
     height: 5%;
     border: none;
     outline: none;
+    font-size: clamp(10px, 1vw, 1rem);
     background-color: red;
     color: white;
     font-weight: bold;

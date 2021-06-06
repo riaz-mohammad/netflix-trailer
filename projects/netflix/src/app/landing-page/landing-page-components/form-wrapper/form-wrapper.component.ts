@@ -24,7 +24,7 @@ export class FormWrapperComponent implements OnInit{
   ngOnInit(): void {
        this.formGroup = this.formBuilder.group({
             email: ['', [Validators.required, Validators.email]]
-            }, { updateOn: 'blur' });
+            }, { updateOn: 'change' });
   }
     
   public get email(): FormControl {
@@ -35,7 +35,7 @@ export class FormWrapperComponent implements OnInit{
     if (this.email.invalid) {
       input.focusOnInput()
       return;
-    }
+    } 
       this.userInfo.storeUserEmail(this.email.value);
       this.router.navigate(['/login'])
   }

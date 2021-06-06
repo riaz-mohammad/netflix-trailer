@@ -26,13 +26,13 @@
      z-index: 2;
    }
    h1{
-     font-size: clamp(1rem, 5vw, 2rem);
+     font-size: clamp(1rem, 4vw, 2rem);
    }
 
    .n{
      color: rgba(255, 0, 0, 0.87);
      font-weight: bold;
-     font-size: clamp(1.2rem, 5.2vw, 2.5rem);
+     font-size: clamp(1.1rem, 4vw, 2.1rem);
      line-height: 10px;
    }
 
@@ -142,6 +142,16 @@
       max-height: 400px;
       object-fit: contain;
       box-shadow: 5px 5px 20px 1px rgba(2, 2, 2, 0.541);
+
+      @media (max-width: 800px) {
+        width: 210px;
+        height: 350px;
+      }
+
+      @media (max-width: 600px) {
+        width: 190px;
+        height: 300px;
+      }
       
     }
 

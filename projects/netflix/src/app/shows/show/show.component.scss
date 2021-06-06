@@ -1,7 +1,7 @@
 :host{
   display: block;
   box-sizing: border-box;
-  background-color: rgba(17, 17, 17, 0.664);
+  background-color: black;
   padding: 10px;
   height: 30vh;
   .header{
@@ -9,6 +9,7 @@
     width: 50%;
     box-sizing: border-box;
     padding-left: 1rem;
+    font-size: clamp(20px, 3vw, 2rem);
   }
 
   
@@ -45,6 +46,14 @@
       width: 300px;
       max-height: 300px;
       object-fit: contain;
+
+      @media (max-width: 800px) {
+        width: 250px;
+      }
+
+      @media (max-width: 600px) {
+        width: 220px;
+      }
     }
      
   }

@@ -75,8 +75,8 @@
    
     
 .banner-play-button{
-      width: 15%;
-      flex-basis: 12%;
+      width: 12%;
+      flex-basis: 10%;
       border: none;
       outline: none;
       font-weight: bold;
@@ -92,6 +92,7 @@
       align-items: center;
       @media(max-width: 600px) {
         width: 30%;
+        flex-basis: 8%;
       }
       
       position: relative;
@@ -122,7 +123,7 @@
 
      .play-container{
        width: 30%;
-       height: 70%;
+       height: 60%;
        position: relative;
        display: flex;
        justify-content: center;
@@ -131,7 +132,6 @@
      }
 
       .play{
-        
         transition: all 400ms ease;
         background-color: red;
         width: 100%;

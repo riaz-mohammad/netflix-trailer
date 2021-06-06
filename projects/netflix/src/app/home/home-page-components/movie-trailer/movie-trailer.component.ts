@@ -14,8 +14,6 @@ import {trailerAnimation } from '../../../animations/trailer-animation';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class MovieTrailerComponent implements OnInit {
-  @Input() width!: number;
-  @Input() height!: number;
   @Input() videoId!: TrailerKey;
   @Output() closePlayer: EventEmitter<void> = new EventEmitter();
   @HostBinding('@fadeIn')

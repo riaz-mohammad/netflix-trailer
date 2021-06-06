@@ -23,7 +23,6 @@ export class LandingPageLoginComponent {
       take(1)
     ).subscribe(_ => (
       this.router.navigate(['/home']),
-      this.showLoading.next(false),
       this.sub.unsubscribe()
     ));
   }

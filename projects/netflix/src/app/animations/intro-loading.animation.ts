@@ -12,13 +12,5 @@ export const introLoading = trigger('introLoading', [
     }))
   ]),
 
-  transition(':leave', [
-    style({
-      opacity: 1
-    }),
-
-    animate('500ms ease', style({
-      opacity: 0
-    }))
-  ])
+  
 ])

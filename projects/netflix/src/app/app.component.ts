@@ -6,13 +6,15 @@ import { routeAnimations } from './animations/route-animations';
 import { MoviePreviewService } from './services/movie-preview.service';
 import { MoviesService } from './services/movies.service';
 import { VideoIdService } from './services/video-id.service';
+import { MediaNotFoundService } from './services/media-not-found.service';
+import { mediaNotFound } from './animations/media-notfound-animation';
 
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
-  animations: [routeAnimations, modalFadeIn],
+  animations: [routeAnimations, modalFadeIn, mediaNotFound],
 })
 export class AppComponent {
   public showModal!: boolean;
@@ -21,7 +23,8 @@ export class AppComponent {
     private videoIdService: VideoIdService,
     private moviePreview: MoviePreviewService,
     private movieService: MoviesService,
-    private user: UserService
+    private user: UserService,
+    private noMedia: MediaNotFoundService
   ) {}
 
   //video id Observable to pass to the trailer component in the template
@@ -30,6 +33,8 @@ export class AppComponent {
   public movieInfo = this.moviePreview.preview$;
   // All media images url
   public movieImages = this.movieService.IMAGES;
+  //If http request for movie/show return no result
+  public noMediaFound = this.noMedia.error$;
 
   public onClosePlayer(): void {
     this.videoIdService.removeTrailer();
@@ -55,6 +60,6 @@ export class AppComponent {
 
   public onShowModal(value: boolean): void {
     this.showModal = !this.showModal;
-    value ? this.user.logoutUser() : null ;
+    value ? this.user.logoutUser() : null;
   }
 }
