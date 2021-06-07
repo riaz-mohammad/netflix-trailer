@@ -26,21 +26,24 @@ export class VideoDemoService {
       'first',
       'Enjoy on your TV.',
       'Watch on Smart TVs, Playstation, Xbox, Chromecast, Apple TV, Blu-ray players, and more.',
-      '../../assets/first-demo-video.mp4'
+      // '../../assets/first-demo-video.mp4'
+      '../../assets/demo-movie-1.gif'
     ),
 
     new Demo(
       'second',
       'Download and watch offline.',
       'Save your favorites easily and always have something to watch.',
-      '../../assets/second-demo-video.mp4'
+      // '../../assets/second-demo-video.mp4'
+      '../../assets/demo-movie-2.gif'
     ),
 
     new Demo(
       'third',
       'Watch everywhere.',
       'Stream unlimited movies and TV shows on your phone, tablet, laptop, and TV without paying more.',
-      '../../assets/third-demo-video.mp4'
+      // '../../assets/third-demo-video.mp4'
+      '../../assets/demo-movie-3.gif'
     ),
   ];
 
