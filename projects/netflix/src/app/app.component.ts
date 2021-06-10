@@ -8,6 +8,7 @@ import { MoviesService } from './services/movies.service';
 import { VideoIdService } from './services/video-id.service';
 import { MediaNotFoundService } from './services/media-not-found.service';
 import { mediaNotFound } from './animations/media-notfound-animation';
+import { delay, filter } from 'rxjs/operators';
 
 
 @Component({
@@ -29,6 +30,8 @@ export class AppComponent {
 
   //video id Observable to pass to the trailer component in the template
   public trailerId = this.videoIdService.trailerKey$;
+    
+    
   //Movie or Show Object to pass to the info component in the template
   public movieInfo = this.moviePreview.preview$;
   // All media images url

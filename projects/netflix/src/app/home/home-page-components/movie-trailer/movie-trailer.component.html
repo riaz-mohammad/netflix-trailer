@@ -1,15 +1,21 @@
+    
     <div class="player-container">
-        <div class="container" @trailerAnimation>
-          <youtube-player class="player"
-                  [videoId]="videoId.key" 
-                  [playerVars]="playerVars"
-                  [width]="1000"
-                  [height]="600"
-                  (ready)="onReady($event)"
-                  (stateChange)="onStateChange($event)">
-          </youtube-player>
-          <button (click)="onClick()">CLOSE</button>
+         <div class="container" @trailerAnimation>
+                <youtube-player class="player"
+                        [videoId]="videoId.key"
+                        [playerVars]="playerVars"
+                        [width]="1000"
+                        [height]="600"
+                        (ready)="onReady($event)"
+                        (stateChange)="onStateChange($event)">
+                </youtube-player>
+
+              
+              <button (click)="onClick()">CLOSE</button>
         </div>
+
+          
+    
       </div>
 
  

@@ -18,6 +18,7 @@ import { YouTubePlayerModule } from '@angular/youtube-player';
 import { OnlikeDirective } from './directives/onlike.directive';
 import { StarRatingDirective } from './directives/star-rating.directive';
 import { OndislikeDirective } from './directives/ondislike.directive';
+import { FirstIntroComponent } from './first-intro/first-intro.component';
 
 
 
@@ -36,6 +37,7 @@ import { OndislikeDirective } from './directives/ondislike.directive';
     OnlikeDirective,
     OndislikeDirective,
     StarRatingDirective,
+    FirstIntroComponent,
 
   ],
   imports: [

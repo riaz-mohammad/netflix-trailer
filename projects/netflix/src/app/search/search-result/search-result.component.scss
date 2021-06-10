@@ -32,13 +32,13 @@
 .image-container{
   box-sizing: border-box;
   display: flex;
-  justify-content: center;
   overflow-y: hidden;
   overflow-x: scroll;
-  padding-top: 3rem;
-  padding-bottom: 3rem;
   
+  padding: 3rem;
+  padding-left: 2rem;
   cursor: pointer;
+  
   &::-webkit-scrollbar {
    display: none;
   }
