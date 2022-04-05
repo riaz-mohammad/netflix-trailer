@@ -1,3 +1,17 @@
+
+## A Fully functional and responsive NETFLIX-TRAILER APP, connected to a Movie database, via REST API.
+## You can search and watch all the Netflix shows and movies Trailers.
+
+ 
+
+I build this project from scratch with Angular and with its native dependencies along with all custom Css for styling.
+No other external liberaries, the only additional package is Angular-Youtube-Component.
+The code of this project is not refactored, its based on the first-attempt, There is alot of room for refactoreing and improvment.
+
+
+
+
+
 <img width="1532" alt="landing-page" src="https://user-images.githubusercontent.com/58525175/161741270-661e04da-a9d1-4a60-b50a-08ac4cf06e8e.png">
 <img width="1536" alt="landing-page copy" src="https://user-images.githubusercontent.com/58525175/161741291-f5c449d5-65f5-470a-98e7-af008953accd.png">
 <img width="1531" alt="landing-page-footer" src="https://user-images.githubusercontent.com/58525175/161741296-ebfb90ff-6358-46ed-b2b2-3920951fab01.png">
@@ -9,13 +23,6 @@
 <img width="1524" alt="trailer-preview" src="https://user-images.githubusercontent.com/58525175/161741309-6d0e8abc-4dd0-41b5-b111-b1930c566252.png">
 # NETFLIX-DEMO-PROJECT
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12
 
-## A Fully functional and responsive NETFLIX-TRAILER APP, connected to a Movie database, via REST API.
-## You can search and watch all the Netflix shows and movies Trailers.
 
- 
 
-I build this project from scratch with Angular and with its native dependencies along with all custom Css for styling.
-No other external liberaries, the only additional package is Angular-Youtube-Component.
-The code of this project is not refactored, its based on the first-attempt, There is alot of room for refactoreing and improvment.
