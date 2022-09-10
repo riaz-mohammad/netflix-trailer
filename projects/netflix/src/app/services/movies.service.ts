@@ -27,7 +27,7 @@ export enum NETFLIX {
 })
 export class MoviesService {
   private readonly BASE_URL = 'https://api.themoviedb.org/3';
-  private readonly API_KEY = '214849890feefa84c31c1ba22d9ef072';
+ 
   public readonly IMAGES = 'https://image.tmdb.org/t/p/original/';
   MOVIE_INFO_URL = `${this.BASE_URL}/movie/${123}?api_key=${this.API_KEY}`;
   NETFLIX_ORIGINAL_MOVIES_URL = `${this.BASE_URL}/discover/movie?api_key=${this.API_KEY}&with_networks=213`;
